@@ -151,4 +151,133 @@
   justify-content: start;
   gap: 5px;
   border-top: 1px solid #d3d7db;
+} 
+/* #################### PHỤ SẢN ################################ */
+.property_ps {
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  color: #263238;
+  display: flex;
+  font-size: 14px;
+  gap: 15px;
+  height: 30px;
+  justify-content: center;
+  padding: 4px;
+  position: relative;
+  position: relative;
+  transition: all 0.3s ease-out;
+  width: 30px;
+  flex-direction: column;
+}
+
+.property_ps::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid rgb(239, 89, 162);
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 95%;
+  transform: translate(-50%, 0);
+  transition: all 0.3s ease-out;
+  width: 0;
+  z-index: 1;
+}
+.property_ps .icon img{
+height: 50px;
+width: auto;
+}
+.property_ps .icon {
+align-items: center;
+display: flex;
+justify-content: center;
+color: #FFFFFF;
+position: relative;
+};
+
+/*
+* Property styles in highlighted state.
+*/
+
+
+.property_ps.highlight::after {
+border-top: 9px solid rgb(239, 89, 162);
+}
+
+
+
+.property_ps.highlight .icon svg {
+width: 50px;
+height: 50px;
+}
+.property_ps .addressTitle p {
+margin: 0;
+width: 180px;
+}
+
+/* hover */
+.property_ps .addressTitle{
+text-align: center;
+background-color: white;
+padding: 5px;
+border-radius: 12px;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
+border: solid 1px rgb(239, 89, 162);
+transform: translateY(-10px);
+display: none;
+}
+.yNHHyP-marker-view:hover .property_ps .addressTitle{
+display: block;
+}
+.yNHHyP-marker-view:hover .property_ps .icon{
+transform: translateY(-22px)
+}
+.property_ps .detail {
+display: none;
+flex-direction: column;
+flex: 1;
+}
+.property_ps.highlight {
+flex-direction: row;
+background-color: #FFFFFF;
+border-radius: 12px;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
+height: 100px;
+padding: 8px 15px;
+width: 350px;
+overflow: hidden;
+}
+.property_ps.highlight {
+padding: 10px;
+background-color: white;
+color: var(--color-title);
+border: 1px solid  rgb(239, 89, 162);
+}
+.property_ps.highlight .detail {
+display: flex;
+line-height: 25px;
+
+}
+.property_ps.highlight_ps::after{
+border-top: 9px solid white;
+}
+
+.yNHHyP-marker-view:hover .property_ps.highlight .addressTitle{
+  display: none;
+}
+.yNHHyP-marker-view:hover .property_ps.highlight .icon{
+  transform: unset
+}
+.property_ps.highlight .icon img{
+  width: 65px;
+}
+
+.property_ps.highlight .detail .clockWork{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  border-top: 1px solid #d3d7db;
 }
