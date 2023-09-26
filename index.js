@@ -2,7 +2,7 @@ const parser = new DOMParser();
 
 async function initMap() {
   // Request needed libraries.
-  
+
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   const map = new Map(document.getElementById("map"), {
@@ -22,7 +22,10 @@ async function initMap() {
     }
     if (property.type === "NK") {
       content.classList.add("property_nk");
-    }  else {
+    }
+    if (property.type === "IVY") {
+      content.classList.add("property_ivy");
+    } else {
       content.classList.add("property");
     }
 
@@ -39,25 +42,31 @@ async function initMap() {
             ? "color:#DF5EA2"
             : property.type == "LK"
             ? "color: #F58220"
+            : property.type == "IVY"
+            ? "color: #23989C"
             : "color: #00afef"
         }">${property.name}</spam></div>
         <div class = "address" > Địa chỉ: <span style="color: black;">${
           property.address
         }<span/> <a target="_blank"  href = "${property.linkAddress}" style="${
-      property.type == "PS"
-        ? "color:#DF5EA2"
-        : property.type == "LK"
-        ? "color: #F58220"
-        : "color: #00afef"
+          property.type == "PS"
+          ? "color:#DF5EA2"
+          : property.type == "LK"
+          ? "color: #F58220"
+          : property.type == "IVY"
+          ? "color: #23989C"
+          : "color: #00afef"
     }">Chỉ Đường </a> </div>
         <div class = "clockWork">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.1654 7.00065C13.1654 10.406 10.4047 13.1673 6.9987 13.1673C3.59336 13.1673 0.832031 10.406 0.832031 7.00065C0.832031 3.59465 3.59336 0.833984 6.9987 0.833984C10.4047 0.833984 13.1654 3.59465 13.1654 7.00065Z" stroke="#8E9AAB" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.79344 7.51113L6.77344 7.4618V4.23047" stroke="#8E9AAB" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         ${property.timeWork} <span style="${
-      property.type == "PS"
-        ? "color:#DF5EA2"
-        : property.type == "LK"
-        ? "color: #F58220"
-        : "color: #00afef"
+          property.type == "PS"
+          ? "color:#DF5EA2"
+          : property.type == "LK"
+          ? "color: #F58220"
+          : property.type == "IVY"
+          ? "color: #23989C"
+          : "color: #00afef"
     }">Mở cửa</span>
         </div>
       </div>
@@ -719,8 +728,8 @@ const dataNhiDong315 = [
     address: " 634 Nguyễn Thị Định, Phường Thạnh Mỹ Lợi, Quận 2, TP.HCM",
     linkAddress: "https://maps.app.goo.gl/9RNuHLvoctiDriDKA",
     position: {
-      lat: 10.776608,
-      lng: 106.7641573,
+      lat: 10.7766034,
+      lng: 106.7653338,
     },
   },
   {
@@ -888,6 +897,18 @@ const dataNhiDong315 = [
     position: {
       lat: 16.0536125,
       lng: 108.2198378,
+    },
+  },
+  {
+    titleAddress: "Số 764-766 Kha Vạn Cân",
+    img: "https://static.ladipage.net/5aa6273ea81f66ca2eacc40b/z3224820945183_a275c59effa3fe08b33cefff65cf4844-20220315094641.png",
+    timeWork: "8:00 - 11:30 và 13:30 - 20:30",
+    name: "Bệnh Viện Nhi Đồng 315",
+    address: "764-766 Kha Vạn Cân, Linh Đông, TP. Thủ Đức",
+    linkAddress: "https://maps.app.goo.gl/AQH9svysjdHfzJj29",
+    position: {
+      lat: 10.8474474,
+      lng: 106.7522647,
     },
   },
   {
@@ -1382,6 +1403,19 @@ const dataNhiDong315 = [
     },
   },
   {
+    titleAddress: "Số 88-90 Tây Thạnh",
+    img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
+    type: "PS",
+    timeWork: "T2-T6: 17:00-20:30",
+    name: "Bệnh Viện Phụ Sản 315",
+    address: "88-90 Tây Thạnh, Tân Phú, Thành phố Hồ Chí Minh",
+    linkAddress: "https://maps.app.goo.gl/3kNCUTUvH1xGKDDB6",
+    position: {
+      lat: 10.8142164,
+      lng: 106.6234297,
+    },
+  },
+  {
     titleAddress: "Số 174A Nguyễn Trãi",
     img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
     type: "PS",
@@ -1443,11 +1477,10 @@ const dataNhiDong315 = [
     type: "LK",
     timeWork: "8:00-11:30 và 13:30-20:30",
     name: "Tiêm Mạch Tiểu Đường 315",
-    address:
-      "733 Quốc lộ 50, Bình Chánh, Thành phố Hồ Chí Minh",
+    address: "733 Quốc lộ 50, Bình Chánh, Thành phố Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/AxaZH7nU9DHSPEc6A",
     position: {
-      lat:10.724189,
+      lat: 10.724189,
       lng: 106.6553803,
     },
   },
@@ -1471,8 +1504,7 @@ const dataNhiDong315 = [
     type: "LK",
     timeWork: "8:00-11:30 và 13:30-20:30",
     name: "Tiêm Mạch Tiểu Đường 315",
-    address:
-      "187 Nguyễn Sơn, Phú Thạnh, Tân Phú, Thành phố Hồ Chí Minh",
+    address: "187 Nguyễn Sơn, Phú Thạnh, Tân Phú, Thành phố Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/GRyis8RRYsaYVz3o8",
     position: {
       lat: 10.7826971,
@@ -1485,11 +1517,10 @@ const dataNhiDong315 = [
     type: "LK",
     timeWork: "8:00-11:30 và 13:30-20:30",
     name: "Tiêm Mạch Tiểu Đường 315",
-    address:
-      "20/7B Ấp Tiền Lân, Bà Điểm, Hóc Môn, Thành phố Hồ Chí Minh",
+    address: "20/7B Ấp Tiền Lân, Bà Điểm, Hóc Môn, Thành phố Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/w7TEfZjEPQDZgFrG9",
     position: {
-      lat:10.8452152,
+      lat: 10.8452152,
       lng: 106.5931876,
     },
   },
@@ -1499,11 +1530,10 @@ const dataNhiDong315 = [
     type: "NK",
     timeWork: "8:00-11:30 và 13:30-20:30",
     name: "Mắt 315",
-    address:
-      " 228-230 Hoàng Văn Thụ, Phường 4, quận Tân Bình, TP.HCM",
+    address: " 228-230 Hoàng Văn Thụ, Phường 4, quận Tân Bình, TP.HCM",
     linkAddress: "https://maps.app.goo.gl/w7TEfZjEPQDZgFrG9",
     position: {
-      lat:10.7995058,
+      lat: 10.7995058,
       lng: 106.6598336,
     },
   },
@@ -1513,12 +1543,11 @@ const dataNhiDong315 = [
     type: "NK",
     timeWork: "8:00-11:30 và 13:30-20:30",
     name: "Mắt 315",
-    address:
-      " 896 Âu Cơ, Phường 14, quận Tân Bình, TP. Hồ Chí Minh",
+    address: " 896 Âu Cơ, Phường 14, quận Tân Bình, TP. Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/LaFG5Hu8anEmzip97",
     position: {
-      lat:10.795082,
-      lng:106.6374253,
+      lat: 10.795082,
+      lng: 106.6374253,
     },
   },
   {
@@ -1527,12 +1556,25 @@ const dataNhiDong315 = [
     type: "NK",
     timeWork: "8:00-11:30 và 13:30-20:30",
     name: "Mắt 315",
-    address:
-      "190A Phan Văn Trị, Phường 12, Quận Bình Thạnh, Tp. Hồ Chí Minh",
+    address: "190A Phan Văn Trị, Phường 12, Quận Bình Thạnh, Tp. Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/YqgRbdFHT5pEb35N8",
     position: {
-      lat:10.813107,
-      lng:106.6952941,
+      lat: 10.813107,
+      lng: 106.6952941,
+    },
+  },
+  {
+    titleAddress: "Số 120 Nguyễn Trãi",
+    img: "./img/IVY.png",
+    type: "IVY",
+    timeWork: "8:00-11:30 và 13:30-20:30",
+    name: "Đa Khoa Quốc Tê IVY",
+    address:
+      "120 Đ. Nguyễn Trãi, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh",
+    linkAddress: "https://maps.app.goo.gl/fEHFK39yLx8rLGx37",
+    position: {
+      lat: 10.7698019,
+      lng: 106.6908475,
     },
   },
 ];

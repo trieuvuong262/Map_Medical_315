@@ -536,3 +536,135 @@ display: none;
   gap: 5px;
   border-top: 1px solid #d3d7db;
 }
+/* ################### ĐA KHOA IVY ####################### */
+.property_ivy {
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  color: #263238;
+  display: flex;
+  font-size: 14px;
+  gap: 15px;
+  height: 30px;
+  justify-content: center;
+  padding: 4px;
+  position: relative;
+  position: relative;
+  transition: all 0.3s ease-out;
+  width: 30px;
+  flex-direction: column;
+}
+
+.property_ivy::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #23989C;
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 114%;
+  transform: translate(-50%, 0);
+  transition: all 0.3s ease-out;
+  width: 0;
+  z-index: 1;
+}
+.property_ivy .icon img{
+border: 2px solid #23989C;
+border-radius: 50%;
+height: 47px;
+width: auto;
+}
+.property_ivy .icon {
+align-items: center;
+display: flex;
+justify-content: center;
+color: #FFFFFF;
+position: relative;
+};
+
+/*
+* Property styles in highlighted state.
+*/
+
+
+
+
+
+
+.property_ivy.highlight .icon svg {
+width: 50px;
+height: 50px;
+}
+.property_ivy .addressTitle p {
+margin: 0;
+width: 180px;
+}
+
+/* hover */
+.property_ivy .addressTitle{
+text-align: center;
+background-color: white;
+padding: 5px;
+border-radius: 12px;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
+border: solid 1px #1EC2D2;
+transform: translateY(-10px);
+display: none;
+}
+.yNHHyP-marker-view:hover .property_ivy .addressTitle{
+display: block;
+}
+.yNHHyP-marker-view:hover .property_ivy .icon{
+transform: translateY(-22px)
+}
+.property_ivy .detail {
+display: none;
+flex-direction: column;
+flex: 1;
+}
+.property_ivy.highlight {
+flex-direction: row;
+background-color: #FFFFFF;
+border-radius: 12px;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
+height: 100px;
+padding: 8px 15px;
+width: 350px;
+overflow: hidden;
+}
+.property_ivy.highlight {
+padding: 10px;
+background-color: white;
+color: var(--color-title);
+border: 1px solid  #1EC2D2;
+}
+.property_ivy.highlight .detail {
+display: flex;
+line-height: 25px;
+
+}
+.property_ivy.highlight::after{
+border-top: 9px solid white;
+display: none;
+}
+
+.yNHHyP-marker-view:hover .property_ivy.highlight .addressTitle{
+  display: none;
+}
+.yNHHyP-marker-view:hover .property_ivy.highlight .icon{
+  transform: unset
+}
+.property_ivy.highlight .icon img{
+  width: 65px;
+  border: none;
+border-radius: unset;
+}
+
+.property_ivy.highlight .detail .clockWork{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  border-top: 1px solid #d3d7db;
+}
