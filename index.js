@@ -15,7 +15,7 @@ async function initMap() {
   const buildContent = (property) => {
     const content = document.createElement("div");
     if (property.type === "PS") {
-      content.classList.add("property_ps");
+      content.classList.add("property_");
     }
     if (property.type === "LK") {
       content.classList.add("property_lk");
@@ -25,7 +25,13 @@ async function initMap() {
     }
     if (property.type === "IVY") {
       content.classList.add("property_ivy");
-    } else {
+    } 
+    if (property.type === "IVY") {
+      content.classList.add("property_ivy");
+    }
+    if (property.type === "BV") {
+      content.classList.add("property_bv");
+    }else {
       content.classList.add("property");
     }
 
@@ -44,6 +50,8 @@ async function initMap() {
             ? "color: #F58220"
             : property.type == "IVY"
             ? "color: #23989C"
+            : property.type == "BV"
+            ? "color: #1576bd"
             : "color: #00afef"
         }">${property.name}</spam></div>
         <div class = "address" > Địa chỉ: <span style="color: black;">${
@@ -55,6 +63,8 @@ async function initMap() {
           ? "color: #F58220"
           : property.type == "IVY"
           ? "color: #23989C"
+          : property.type == "BV"
+          ? "color: #1576bd"
           : "color: #00afef"
     }">Chỉ Đường </a> </div>
         <div class = "clockWork">
@@ -66,6 +76,8 @@ async function initMap() {
           ? "color: #F58220"
           : property.type == "IVY"
           ? "color: #23989C"
+          : property.type == "BV"
+          ? "color: #1576bd"
           : "color: #00afef"
     }">Mở cửa</span>
         </div>
@@ -901,7 +913,8 @@ const dataNhiDong315 = [
   },
   {
     titleAddress: "Số 764-766 Kha Vạn Cân",
-    img: "https://static.ladipage.net/5aa6273ea81f66ca2eacc40b/z3224820945183_a275c59effa3fe08b33cefff65cf4844-20220315094641.png",
+    type:"BV",
+    img: "https://png.pngtree.com/png-clipart/20220626/original/pngtree-png-hospital-icon-vector-file-png-image_8186871.png",
     timeWork: "8:00 - 11:30 và 13:30 - 20:30",
     name: "Bệnh Viện Nhi Đồng 315",
     address: "764-766 Kha Vạn Cân, Linh Đông, TP. Thủ Đức",
@@ -1404,8 +1417,8 @@ const dataNhiDong315 = [
   },
   {
     titleAddress: "Số 88-90 Tây Thạnh",
-    img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
-    type: "PS",
+    img: "https://png.pngtree.com/png-clipart/20220626/original/pngtree-png-hospital-icon-vector-file-png-image_8186871.png",
+    type: "BV",
     timeWork: "T2-T6: 17:00-20:30",
     name: "Bệnh Viện Phụ Sản 315",
     address: "88-90 Tây Thạnh, Tân Phú, Thành phố Hồ Chí Minh",
