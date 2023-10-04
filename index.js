@@ -15,16 +15,13 @@ async function initMap() {
   const buildContent = (property) => {
     const content = document.createElement("div");
     if (property.type === "PS") {
-      content.classList.add("property_");
+      content.classList.add("property_ps");
     }
     if (property.type === "LK") {
       content.classList.add("property_lk");
     }
     if (property.type === "NK") {
       content.classList.add("property_nk");
-    }
-    if (property.type === "IVY") {
-      content.classList.add("property_ivy");
     } 
     if (property.type === "IVY") {
       content.classList.add("property_ivy");
