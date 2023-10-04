@@ -130,6 +130,18 @@ const dataNhiDong315 = [
     },
   },
   {
+    titleAddress: "Số 898 Quốc Lộ 22",
+    img: "https://static.ladipage.net/5aa6273ea81f66ca2eacc40b/z3224820945183_a275c59effa3fe08b33cefff65cf4844-20220315094641.png",
+    name: "Nhi đồng và Tiêm chủng",
+    address: "898 Quốc lộ 22, Khu phố 8,Thị trấn Củ Chi, Huyện Củ Chi, TP.HCM",
+    timeWork: "8:00 - 11:30 và 13:30 - 20:30",
+    linkAddress: "https://maps.app.goo.gl/HhjzkestY7VGiRBF7",
+    position: {
+      lat: 10.968153,
+      lng: 106.48688,
+    },
+  },
+  {
     titleAddress: "Số 148 Trần Quốc Thảo",
     img: "https://static.ladipage.net/5aa6273ea81f66ca2eacc40b/z3224820945183_a275c59effa3fe08b33cefff65cf4844-20220315094641.png",
     name: "Nhi đồng và Tiêm chủng",
