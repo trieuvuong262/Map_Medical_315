@@ -1456,7 +1456,7 @@ const dataNhiDong315 = [
     img: "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/1t-20230612033443-n9-wa.png",
     type: "LK",
     timeWork: "8:00-11:30 và 13:30-20:30",
-    name: "Tiêm Mạch Tiểu Đường 315",
+    name: "Tim Mạch Tiểu Đường 315",
     address:
       "917-917A Đ. Nguyễn Ảnh Thủ, Tân Chánh Hiệp, Quận 12, TP. Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/18597Njkbqh868Qc8",
@@ -1470,7 +1470,7 @@ const dataNhiDong315 = [
     img: "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/1t-20230612033443-n9-wa.png",
     type: "LK",
     timeWork: "8:00-11:30 và 13:30-20:30",
-    name: "Tiêm Mạch Tiểu Đường 315",
+    name: "Tim Mạch Tiểu Đường 315",
     address:
       "582 Đ. Lê Văn Quới, Bình Hưng Hoà A, Bình Tân, Thành phố Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/pCSSGzQpRs8wDRhQ9",
@@ -1484,7 +1484,7 @@ const dataNhiDong315 = [
     img: "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/1t-20230612033443-n9-wa.png",
     type: "LK",
     timeWork: "8:00-11:30 và 13:30-20:30",
-    name: "Tiêm Mạch Tiểu Đường 315",
+    name: "Tim Mạch Tiểu Đường 315",
     address:
       "605 Huỳnh Tấn Phát, Tân Thuận Đông, Quận 7, Thành phố Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/WfWhyjzxAVHuxHUE9",
@@ -1498,7 +1498,7 @@ const dataNhiDong315 = [
     img: "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/1t-20230612033443-n9-wa.png",
     type: "LK",
     timeWork: "8:00-11:30 và 13:30-20:30",
-    name: "Tiêm Mạch Tiểu Đường 315",
+    name: "Tim Mạch Tiểu Đường 315",
     address: "733 Quốc lộ 50, Bình Chánh, Thành phố Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/AxaZH7nU9DHSPEc6A",
     position: {
@@ -1511,7 +1511,7 @@ const dataNhiDong315 = [
     img: "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/1t-20230612033443-n9-wa.png",
     type: "LK",
     timeWork: "8:00-11:30 và 13:30-20:30",
-    name: "Tiêm Mạch Tiểu Đường 315",
+    name: "Tim Mạch Tiểu Đường 315",
     address:
       "592 Nguyễn Thị Định, Phường Thạnh Mỹ Lợi, Quận 2, Thành phố Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/vpVAvb7w6tPZVydE6",
@@ -1525,7 +1525,7 @@ const dataNhiDong315 = [
     img: "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/1t-20230612033443-n9-wa.png",
     type: "LK",
     timeWork: "8:00-11:30 và 13:30-20:30",
-    name: "Tiêm Mạch Tiểu Đường 315",
+    name: "Tim Mạch Tiểu Đường 315",
     address: "187 Nguyễn Sơn, Phú Thạnh, Tân Phú, Thành phố Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/GRyis8RRYsaYVz3o8",
     position: {
@@ -1538,7 +1538,7 @@ const dataNhiDong315 = [
     img: "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/1t-20230612033443-n9-wa.png",
     type: "LK",
     timeWork: "8:00-11:30 và 13:30-20:30",
-    name: "Tiêm Mạch Tiểu Đường 315",
+    name: "Tim Mạch Tiểu Đường 315",
     address: "20/7B Ấp Tiền Lân, Bà Điểm, Hóc Môn, Thành phố Hồ Chí Minh",
     linkAddress: "https://maps.app.goo.gl/w7TEfZjEPQDZgFrG9",
     position: {
