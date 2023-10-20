@@ -28,6 +28,9 @@ async function initMap() {
     }
     if (property.type === "BV") {
       content.classList.add("property_bv");
+    }
+    if (property.type === "VP") {
+      content.classList.add("property_vp");
     }else {
       content.classList.add("property");
     }
@@ -106,8 +109,9 @@ async function initMap() {
 }
 const dataNhiDong315 = [
   {
-    titleAddress: "Số 207B Hoàng Văn Thụ ( OFFICE )",
-    img: "https://static.ladipage.net/5aa6273ea81f66ca2eacc40b/z3224820945183_a275c59effa3fe08b33cefff65cf4844-20220315094641.png",
+    titleAddress: "Số 207B Hoàng Văn Thụ",
+    img: "https://landsoft.com.vn/matbien/uploads/2020/12/icon-quan-ly-van-phong.png",
+    type: "VP",
     name: "Văn phòng 315 medical",
     address: "207B Hoàng Văn Thụ, P.8, Q.Phú Nhuận, TP. Hồ Chí Minh",
     timeWork: "8:00 - 12:00 và 13:00 - 5:00",
@@ -175,18 +179,6 @@ const dataNhiDong315 = [
     position: {
       lat: 10.7505335,
       lng: 106.6594886,
-    },
-  },
-  {
-    titleAddress: "Số 472B Trần Hưng Đạo",
-    img: "https://static.ladipage.net/5aa6273ea81f66ca2eacc40b/z3224820945183_a275c59effa3fe08b33cefff65cf4844-20220315094641.png",
-    name: "Nhi đồng và Tiêm chủng",
-    address: " 472B Đ. Trần Hưng Đạo, Phường 2, Quận 5, TP.Hồ Chí Minh",
-    timeWork: "8:00 - 11:30 và 13:30 - 20:30",
-    linkAddress: "https://maps.app.goo.gl/fxZ3QqnxN7QCLJEj7",
-    position: {
-      lat: 10.7559531,
-      lng: 106.6826805,
     },
   },
   {
@@ -1449,6 +1441,20 @@ const dataNhiDong315 = [
     position: {
       lat: 10.9056175,
       lng: 106.7568245,
+    },
+  },
+  {
+    titleAddress: "Số 886 Quốc lộ 22",
+    img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
+    type: "PS",
+    timeWork: "T2-T6: 17:00-20:30",
+    name: "Phụ Sản 315",
+    address:
+      "886 Quốc lộ 22, Khu phố 8, thị trấn Củ Chi, huyện Củ Chi, TP.HCM",
+    linkAddress: "https://maps.app.goo.gl/DNx4xPrYj5dEgFM28",
+    position: {
+      lat: 10.9706271,
+      lng: 106.4826178,
     },
   },
   {
