@@ -1444,6 +1444,34 @@ const dataNhiDong315 = [
     },
   },
   {
+    titleAddress: "Số 996 Lạc Long Quân",
+    img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
+    type: "PS",
+    timeWork: "T2-T6: 17:00-20:30",
+    name: "Phụ Sản 315",
+    address:
+      "996 Lạc Long Quân, Phường 8, Tân Bình, TP.HCM",
+    linkAddress: "https://maps.app.goo.gl/bkD9VxFUKCTrvnAR6",
+    position: {
+      lat: 10.7829356,
+      lng: 106.6505663,
+    },
+  },
+  {
+    titleAddress: "Số 958/35/15L Lạc Long Quân",
+    img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
+    type: "PS",
+    timeWork: "T2-T6: 17:00-20:30",
+    name: "Phụ Sản 315",
+    address:
+      "958/35/15L Lạc Long Quân, Phường 8, quận Tân Bình, TP.HCM",
+    linkAddress: "https://maps.app.goo.gl/2ieTvi9XStFv6UkH6",
+    position: {
+      lat: 10.782935,
+      lng: 106.6514153,
+    },
+  },
+  {
     titleAddress: "Số 886 Quốc lộ 22",
     img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
     type: "PS",
@@ -1451,7 +1479,7 @@ const dataNhiDong315 = [
     name: "Phụ Sản 315",
     address:
       "886 Quốc lộ 22, Khu phố 8, thị trấn Củ Chi, huyện Củ Chi, TP.HCM",
-    linkAddress: "https://maps.app.goo.gl/DNx4xPrYj5dEgFM28",
+    linkAddress: "https://maps.app.goo.gl/G8XTc7duVEo6NXFP6",
     position: {
       lat: 10.9706271,
       lng: 106.4826178,
