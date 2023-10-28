@@ -913,6 +913,19 @@ const dataNhiDong315 = [
     },
   },
   {
+    titleAddress: "Số 91 đường Trần Não",
+    img: "https://static.ladipage.net/5aa6273ea81f66ca2eacc40b/z3224820945183_a275c59effa3fe08b33cefff65cf4844-20220315094641.png",
+    timeWork: "8:00 - 11:30 và 13:30 - 20:30",
+    name: "Nhi đồng và Tiêm chủng",
+    address:
+      "91 đường Trần Não, Khu phố 4, phường Bình An, Quận 2, TP.HCM",
+    linkAddress: "https://maps.app.goo.gl/SiraiLDmed39Y7PP8",
+    position: {
+      lat: 10.7943798,
+      lng: 106.7309859,
+    },
+  },
+  {
     titleAddress: "Số 764-766 Kha Vạn Cân",
     type:"BV",
     img: "https://png.pngtree.com/png-clipart/20220626/original/pngtree-png-hospital-icon-vector-file-png-image_8186871.png",
@@ -1617,6 +1630,19 @@ const dataNhiDong315 = [
     position: {
       lat: 10.813107,
       lng: 106.6952941,
+    },
+  },
+  {
+    titleAddress: "Số 679 - 681 Huỳnh Tấn Phát",
+    img: "./img/logoMat.png",
+    type: "NK",
+    timeWork: "8:00-11:30 và 13:30-20:30",
+    name: "Mắt 315",
+    address: "679 - 681 Huỳnh Tấn Phát, Khu phố 1, phường Phú Thuận, Quận 7, TP.HCM",
+    linkAddress: "https://maps.app.goo.gl/Rg91sUEcGYePkSb58",
+    position: {
+      lat: 10.7369054,
+      lng: 106.7305473,
     },
   },
   {
