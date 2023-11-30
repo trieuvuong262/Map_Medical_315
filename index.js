@@ -107,6 +107,7 @@ async function initMap() {
     // console.log(markerView.content);
   }
 }
+
 const dataNhiDong315 = [
   {
     titleAddress: "Số 207B Hoàng Văn Thụ",
@@ -1471,20 +1472,6 @@ const dataNhiDong315 = [
     },
   },
   {
-    titleAddress: "Số 958/35/15L Lạc Long Quân",
-    img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
-    type: "PS",
-    timeWork: "T2-T6: 17:00-20:30",
-    name: "Phụ Sản 315",
-    address:
-      "958/35/15L Lạc Long Quân, Phường 8, quận Tân Bình, TP.HCM",
-    linkAddress: "https://maps.app.goo.gl/2ieTvi9XStFv6UkH6",
-    position: {
-      lat: 10.782935,
-      lng: 106.6514153,
-    },
-  },
-  {
     titleAddress: "Số 886 Quốc lộ 22",
     img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
     type: "PS",
@@ -1496,6 +1483,33 @@ const dataNhiDong315 = [
     position: {
       lat: 10.9706271,
       lng: 106.4826178,
+    },
+  },
+  {
+    titleAddress: "Số 12A/12B Quốc Lộ 50",
+    img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
+    type: "PS",
+    timeWork: "T2-T6: 17:00-20:30",
+    name: "Phụ Sản 315",
+    address:
+      "12A/12B QL50, Bình Hưng, Bình Chánh, TP. HCM",
+    linkAddress: "https://maps.app.goo.gl/5j8CvwwaWbPocEf78",
+    position: {
+      lat: 10.7238094,
+      lng: 106.6555318,
+    },
+  },
+  {
+    titleAddress: "Số 601 Dương Bá Trạc ",
+    img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
+    name: "Phụ Sản 315",
+    type: "PS",
+    address: "601 D. Bá Trạc, Phường 1, Quận 8, TP.HCM",
+    timeWork: "8:00 - 11:30 và 13:30 - 20:30",
+    linkAddress: "https://maps.app.goo.gl/KpQfg3scyyFeW2wZA",
+    position: {
+      lat: 10.7440398,
+      lng: 106.6888678,
     },
   },
   {
