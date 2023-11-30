@@ -1499,6 +1499,20 @@ const dataNhiDong315 = [
     },
   },
   {
+    titleAddress: "Số 41 Nguyễn Thái Sơn",
+    img: "https://w.ladicdn.com/s550x450/5aa6273ea81f66ca2eacc40b/phu-san-315-20220326030218.png",
+    type: "PS",
+    timeWork: "T2-T6: 17:00-20:30",
+    name: "Phụ Sản 315",
+    address:
+      "41 Nguyễn Thái Sơn, Phường 04, Quận Gò Vấp, TP.HCM",
+    linkAddress: "https://maps.app.goo.gl/cexTebTxpuT5pAtZ8",
+    position: {
+      lat: 10.8208022,
+      lng: 106.6835268,
+    },
+  },
+  {
     titleAddress: "Số 917 Nguyễn Ảnh Thủ",
     img: "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/1t-20230612033443-n9-wa.png",
     type: "LK",
