@@ -1675,6 +1675,19 @@ const dataNhiDong315 = [
     },
   },
   {
+    titleAddress: "Số 53 Nguyễn Oanh",
+    img: "./img/logoMat.png",
+    type: "NK",
+    timeWork: "8:00-11:30 và 13:30-20:30",
+    name: "Mắt 315",
+    address: "53 Nguyễn Oanh, Phường 17, Quận Gò Vấp, TP Hồ Chí Minh",
+    linkAddress: "https://maps.app.goo.gl/CWqBx6HxNkYymEXa6",
+    position: {
+      lat: 10.8438388,
+      lng: 106.6770386,
+    },
+  },
+  {
     titleAddress: "Số 679 - 681 Huỳnh Tấn Phát",
     img: "./img/logoMat.png",
     type: "NK",
