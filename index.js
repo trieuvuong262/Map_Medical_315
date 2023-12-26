@@ -1688,6 +1688,19 @@ const dataNhiDong315 = [
     },
   },
   {
+    titleAddress: "Số 8A-8B Lê Trọng Tấn",
+    img: "./img/logoMat.png",
+    type: "NK",
+    timeWork: "8:00-11:30 và 13:30-20:30",
+    name: "Mắt 315",
+    address: "8A - 8B Lê Trọng Tấn, Tây Thạnh, Tân Phú, TP. HCM",
+    linkAddress: "https://maps.app.goo.gl/Lq5w8oXqTSLVtKwNA",
+    position: {
+      lat: 10.8041265,
+      lng: 106.6323814,
+    },
+  },
+  {
     titleAddress: "Số 679 - 681 Huỳnh Tấn Phát",
     img: "./img/logoMat.png",
     type: "NK",
