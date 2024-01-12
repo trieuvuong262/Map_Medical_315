@@ -1636,6 +1636,19 @@ const dataNhiDong315 = [
     },
   },
   {
+    titleAddress: "Số 182 Tô Hiến Thành",
+    img: "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/1t-20230612033443-n9-wa.png",
+    type: "LK",
+    timeWork: "8:00-11:30 và 13:30-20:30",
+    name: "Tim Mạch Tiểu Đường 315",
+    address: "182 Tô Hiến Thành, Phường 15, Quận 10, Thành phố Hồ Chí Minh",
+    linkAddress: "https://maps.app.goo.gl/p5qSmEUncnKFUPLW7",
+    position: {
+      lat: 10.7802885,
+      lng: 106.6683021,
+    },
+  },
+  {
     titleAddress: "Số 228-230 Hoàng Văn Thụ",
     img: "./img/logoMat.png",
     type: "NK",
