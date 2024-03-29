@@ -30,6 +30,7 @@ async function initMap() {
         break;
       case "BV":
         content.classList.add("property_san");
+        content.classList.add("property_bv");
         break;
       default:
         content.classList.add("property_nhi");
