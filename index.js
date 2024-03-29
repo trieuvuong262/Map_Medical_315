@@ -13,7 +13,6 @@ async function initMap() {
   // Default marker with title text (no PinElement).
   const buildContent = (property) => {
     const content = document.createElement("div");
-    console.log(content)
     content.classList.add("property");
     switch (property.type) {
       case "VP":
