@@ -2,72 +2,78 @@
  * Always set the map height explicitly to define the size of the div element
  * that contains the map. 
  */
- #map {
-    height: 100%;
-  }
-  
-  /* 
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* 
    * Optional: Makes the sample page fill the window. 
    */
-:root{
-    --color-title: #919396;
-    --color-second-title:rgb(0, 175, 239);
+:root {
+  --color-title: #919396;
+  --color-second-title: rgb(0, 175, 239);
 }
-  
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
 
-  }
-  
-  [class$=api-load-alpha-banner] {
-    display: none;
-  }
-  .property {
-    align-items: center;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-    color: #263238;
-    display: flex;
-    font-size: 14px;
-    gap: 15px;
-    height: 30px;
-    justify-content: center;
-    padding: 4px;
-    position: relative;
-    position: relative;
-    transition: all 0.3s ease-out;
-    width: 30px;
-    flex-direction: column;
-  }
-  
-  .property::after {
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    border-top: 9px solid var(--color-second-title);
-    content: "";
-    height: 0;
-    left: 50%;
-    position: absolute;
-    top: 85%;
-    transform: translate(-50%, 0);
-    transition: all 0.3s ease-out;
-    width: 0;
-    z-index: 1;
-  }
-.property .icon img{
-  height: 40px;
-  width: auto;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+[class$=api-load-alpha-banner] {
+  display: none;
+}
+
+.property {
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  color: #263238;
+  display: flex;
+  font-size: 14px;
+  gap: 15px;
+  height: 30px;
+  justify-content: center;
+  padding: 4px;
+  position: relative;
+  position: relative;
+  transition: all 0.3s ease-out;
+  width: 30px;
+  flex-direction: column;
+}
+
+.property::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid var(--color-second-title);
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 85%;
+  transform: translate(-50%, 0);
+  transition: all 0.3s ease-out;
+  width: 0;
+  z-index: 1;
+}
+
+.property .icon img {
+  height: auto;
+  width: 50px;
+  margin-bottom: 20px;
+}
+
 .property .icon {
   align-items: center;
   display: flex;
   justify-content: center;
   color: #FFFFFF;
   position: relative;
-};
+}
+
+
 
 /*
  * Property styles in highlighted state.
@@ -84,13 +90,28 @@
   width: 50px;
   height: 50px;
 }
+
 .property .addressTitle p {
+  padding: 0 5px;
+  text-transform: capitalize;
   margin: 0;
-  width: 180px;
+  width: max-content;
 }
 
 /* hover */
- .property .addressTitle{
+.yNHHyP-marker-view:hover {
+  z-index: 10 !important;
+}
+
+.yNHHyP-marker-view:has(.property_vp) {
+  z-index: 1;
+}
+
+.property:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.property .addressTitle {
   text-align: center;
   background-color: white;
   padding: 5px;
@@ -100,836 +121,238 @@
   transform: translateY(-10px);
   display: none;
 }
-.yNHHyP-marker-view:hover .property .addressTitle{
+
+.yNHHyP-marker-view:hover .property .addressTitle {
   display: block;
 }
-.yNHHyP-marker-view:hover .property .icon{
+
+.yNHHyP-marker-view:hover .property .icon {
   transform: translateY(-22px)
 }
+
 .property .detail {
   display: none;
   flex-direction: column;
   flex: 1;
 }
+
 .property.highlight {
   flex-direction: row;
   background-color: #FFFFFF;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-  height: 100px;
+  height: fit-content;
   padding: 8px 15px;
-  width: 350px;
+  width: max-content;
   overflow: hidden;
 }
+
 .property.highlight {
   padding: 10px;
   background-color: white;
   color: var(--color-title);
   border: 1px solid var(--color-second-title);
 }
+
 .property.highlight .detail {
   display: flex;
   line-height: 25px;
 
 }
-.property.highlight::after{
-  border-top: 9px solid white;
+
+.property.highlight::after {
+  border-top: 9px solid transparent;
 }
-.yNHHyP-marker-view:hover .property.highlight .addressTitle{
+
+.yNHHyP-marker-view:hover .property.highlight .addressTitle {
   display: none;
 }
-.yNHHyP-marker-view:hover .property.highlight .icon{
+
+.yNHHyP-marker-view:hover .property.highlight .icon {
   transform: unset
 }
-.property.highlight .icon img{
+
+.property.highlight .icon img {
   width: 65px;
 }
 
-.property.highlight .detail .clockWork{
+.property.highlight .detail .clockWork {
   display: flex;
   align-items: center;
   justify-content: start;
   gap: 5px;
   border-top: 1px solid #d3d7db;
-} 
-/* #################### PHỤ SẢN ################################ */
-.property_ps {
-  align-items: center;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  color: #263238;
-  display: flex;
-  font-size: 14px;
-  gap: 15px;
-  height: 30px;
-  justify-content: center;
-  padding: 4px;
-  position: relative;
-  position: relative;
-  transition: all 0.3s ease-out;
-  width: 30px;
-  flex-direction: column;
+  text-transform: uppercase;
 }
 
-.property_ps::after {
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
+/*
+* Property styles in highlighted state.
+*/
+/* hover */
+.property .addressTitle,
+.property .icon,
+.property .detail {
+  color: #666;
+  /* font-weight: bold; */
+}
+
+.property .addressTitle,
+.property .detail span {
+  font-weight: bold;
+}
+
+.property .detail .clockWork span {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.property .detail .clockWork svg path {
+  filter: invert(16%) sepia(3%) saturate(16%) hue-rotate(11deg) brightness(98%) contrast(87%);
+  border: #666;
+}
+
+.property .detail {
+  line-height: 22px !important;
+}
+
+.property .detail .address {
+  padding-bottom: 3px;
+}
+
+.property .detail a {
+  color: #666;
+  text-decoration: none;
+}
+
+.property .detail a:hover,
+.property .detail a:active {
+  color: #222;
+}
+
+.property .detail {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+}
+
+.property .detail .svg_icon {
+  margin: -3px 0;
+  height: 17px;
+  width: 17px;
+}
+
+.property .detail .name {
+  text-transform: uppercase;
+}
+
+.property .detail .address {
+  text-transform: capitalize;
+}
+
+.logo_pk {
+  margin-bottom: 10px !important;
+  width: 75px !important;
+}
+
+.coming_soon {
+  color: red;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.color_nhi {
+  color: #00ADEF;
+  fill: #00ADEF;
+}
+
+.color_san {
+  color: #DF5EA2;
+  fill: #DF5EA2;
+}
+
+.color_lao {
+  color: #F58220;
+  fill: #F58220;
+}
+
+.color_mat {
+  color: #1DBFD7;
+  fill: #1DBFD7;
+}
+
+.property_nhi::after {
+  border-top: 9px solid #00ADEF;
+}
+
+
+.property_san::after {
   border-top: 9px solid #DF5EA2;
-  content: "";
-  height: 0;
-  left: 50%;
-  position: absolute;
-  top: 85%;
-  transform: translate(-50%, 0);
-  transition: all 0.3s ease-out;
-  width: 0;
-  z-index: 1;
-}
-.property_ps .icon img{
-height: 38px;
-width: auto;
-}
-.property_ps .icon {
-align-items: center;
-display: flex;
-justify-content: center;
-color: #FFFFFF;
-position: relative;
-};
-
-/*
-* Property styles in highlighted state.
-*/
-
-
-
-
-
-
-.property_ps.highlight .icon svg {
-width: 50px;
-height: 50px;
-}
-.property_ps .addressTitle p {
-margin: 0;
-width: 180px;
 }
 
-/* hover */
-.property_ps .addressTitle{
-text-align: center;
-background-color: white;
-padding: 5px;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-border: solid 1px #DF5EA2;
-transform: translateY(-10px);
-display: none;
-}
-.yNHHyP-marker-view:hover .property_ps .addressTitle{
-display: block;
-}
-.yNHHyP-marker-view:hover .property_ps .icon{
-transform: translateY(-22px)
-}
-.property_ps .detail {
-display: none;
-flex-direction: column;
-flex: 1;
-}
-.property_ps.highlight {
-flex-direction: row;
-background-color: #FFFFFF;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-height: 100px;
-padding: 8px 15px;
-width: 350px;
-overflow: hidden;
-}
-.property_ps.highlight {
-padding: 10px;
-background-color: white;
-color: var(--color-title);
-border: 1px solid  #DF5EA2;
-}
-.property_ps.highlight .detail {
-display: flex;
-line-height: 25px;
-
-}
-.property_ps.highlight::after{
-border-top: 9px solid white;
-display: none;
-}
-
-.yNHHyP-marker-view:hover .property_ps.highlight .addressTitle{
-  display: none;
-}
-.yNHHyP-marker-view:hover .property_ps.highlight .icon{
-  transform: unset
-}
-.property_ps.highlight .icon img{
-  width: 65px;
-}
-
-.property_ps.highlight .detail .clockWork{
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 5px;
-  border-top: 1px solid #d3d7db;
-}
-/* ##################################LÃO KHOA 315######################################### */
-.property_lk {
-  align-items: center;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  color: #263238;
-  display: flex;
-  font-size: 14px;
-  gap: 15px;
-  height: 30px;
-  justify-content: center;
-  padding: 4px;
-  position: relative;
-  position: relative;
-  transition: all 0.3s ease-out;
-  width: 30px;
-  flex-direction: column;
-}
-
-.property_lk::after {
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
+.property_lao::after {
   border-top: 9px solid #F58220;
-  content: "";
-  height: 0;
-  left: 50%;
-  position: absolute;
-  top: 88%;
-  transform: translate(-50%, 0);
-  transition: all 0.3s ease-out;
-  width: 0;
-  z-index: 1;
-}
-.property_lk .icon img{
-height: 39px;
-width: auto;
-}
-.property_lk .icon {
-align-items: center;
-display: flex;
-justify-content: center;
-color: #FFFFFF;
-position: relative;
-};
-
-/*
-* Property styles in highlighted state.
-*/
-
-
-
-
-
-
-.property_lk.highlight .icon svg {
-width: 50px;
-height: 50px;
-}
-.property_lk .addressTitle p {
-margin: 0;
-width: 180px;
 }
 
-/* hover */
-.property_lk .addressTitle{
-text-align: center;
-background-color: white;
-padding: 5px;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-border: solid 1px #F58220;
-transform: translateY(-10px);
-display: none;
-}
-.yNHHyP-marker-view:hover .property_lk .addressTitle{
-display: block;
-}
-.yNHHyP-marker-view:hover .property_lk .icon{
-transform: translateY(-22px)
-}
-.property_lk .detail {
-display: none;
-flex-direction: column;
-flex: 1;
-}
-.property_lk.highlight {
-flex-direction: row;
-background-color: #FFFFFF;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-height: 100px;
-padding: 8px 15px;
-width: 350px;
-overflow: hidden;
-}
-.property_lk.highlight {
-padding: 10px;
-background-color: white;
-color: var(--color-title);
-border: 1px solid  #F58220;
-}
-.property_lk.highlight .detail {
-display: flex;
-line-height: 25px;
-
-}
-.property_lk.highlight::after{
-border-top: 9px solid white;
-display: none;
+.property_mat::after {
+  border-top: 9px solid #1DBFD7;
 }
 
-.yNHHyP-marker-view:hover .property_lk.highlight .addressTitle{
-  display: none;
-}
-.yNHHyP-marker-view:hover .property_lk.highlight .icon{
-  transform: unset
-}
-.property_lk.highlight .icon img{
-  width: 65px;
+.property_nhi.highlight,
+.property_nhi .addressTitle {
+  border: 1px solid #00ADEF;
 }
 
-.property_lk.highlight .detail .clockWork{
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 5px;
-  border-top: 1px solid #d3d7db;
-}
-/* ############################Nhãn khoa## */
-.property_nk {
-  align-items: center;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  color: #263238;
-  display: flex;
-  font-size: 14px;
-  gap: 15px;
-  height: 30px;
-  justify-content: center;
-  padding: 4px;
-  position: relative;
-  position: relative;
-  transition: all 0.3s ease-out;
-  width: 30px;
-  flex-direction: column;
+.property_san.highlight,
+.property_san .addressTitle {
+  border: 1px solid #DF5EA2;
 }
 
-.property_nk::after {
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 9px solid #1EC2D2;
-  content: "";
-  height: 0;
-  left: 50%;
-  position: absolute;
-  top: 88%;
-  transform: translate(-50%, 0);
-  transition: all 0.3s ease-out;
-  width: 0;
-  z-index: 1;
-}
-.property_nk .icon img{
-height: 74px;
-width: auto;
-}
-.property_nk .icon {
-align-items: center;
-display: flex;
-justify-content: center;
-color: #FFFFFF;
-position: relative;
-};
-
-/*
-* Property styles in highlighted state.
-*/
-
-
-
-
-
-
-.property_nk.highlight .icon svg {
-width: 50px;
-height: 50px;
-}
-.property_nk .addressTitle p {
-margin: 0;
-width: 180px;
+.property_lao.highlight,
+.property_lao .addressTitle {
+  border: 1px solid #F58220;
 }
 
-/* hover */
-.property_nk .addressTitle{
-text-align: center;
-background-color: white;
-padding: 5px;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-border: solid 1px #1EC2D2;
-transform: translateY(-10px);
-display: none;
-}
-.yNHHyP-marker-view:hover .property_nk .addressTitle{
-display: block;
-}
-.yNHHyP-marker-view:hover .property_nk .icon{
-transform: translateY(-22px)
-}
-.property_nk .detail {
-display: none;
-flex-direction: column;
-flex: 1;
-}
-.property_nk.highlight {
-flex-direction: row;
-background-color: #FFFFFF;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-height: 100px;
-padding: 8px 15px;
-width: 350px;
-overflow: hidden;
-}
-.property_nk.highlight {
-padding: 10px;
-background-color: white;
-color: var(--color-title);
-border: 1px solid  #1EC2D2;
-}
-.property_nk.highlight .detail {
-display: flex;
-line-height: 25px;
-
-}
-.property_nk.highlight::after{
-border-top: 9px solid white;
-display: none;
+.property_mat.highlight,
+.property_mat .addressTitle {
+  border: 1px solid #1DBFD7;
 }
 
-.yNHHyP-marker-view:hover .property_nk.highlight .addressTitle{
-  display: none;
-}
-.yNHHyP-marker-view:hover .property_nk.highlight .icon{
-  transform: unset
-}
-.property_nk.highlight .icon img{
-  width: 65px;
-}
-
-.property_nk.highlight .detail .clockWork{
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 5px;
-  border-top: 1px solid #d3d7db;
-}
-/* ################### ĐA KHOA IVY ####################### */
-.property_ivy {
-  align-items: center;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  color: #263238;
-  display: flex;
-  font-size: 14px;
-  gap: 15px;
-  height: 30px;
-  justify-content: center;
-  padding: 4px;
-  position: relative;
-  position: relative;
-  transition: all 0.3s ease-out;
-  width: 30px;
-  flex-direction: column;
+.exit {
+  width: 15px;
+  height: 15px;
+  float: right;
+  position: sticky;
+  fill: #666;
+  margin-top: -2px;
 }
 
-.property_ivy::after {
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 9px solid #23989C;
-  content: "";
-  height: 0;
-  left: 50%;
-  position: absolute;
-  top: 109%;
-  transform: translate(-50%, 0);
-  transition: all 0.3s ease-out;
-  width: 0;
-  z-index: 1;
-}
-.property_ivy .icon img{
-border: 2px solid #23989C;
-border-radius: 50%;
-height: 47px;
-width: auto;
-}
-.property_ivy .icon {
-align-items: center;
-display: flex;
-justify-content: center;
-color: #FFFFFF;
-position: relative;
-};
-
-/*
-* Property styles in highlighted state.
-*/
-
-
-
-
-
-
-.property_ivy.highlight .icon svg {
-width: 50px;
-height: 50px;
-}
-.property_ivy .addressTitle p {
-margin: 0;
-width: 180px;
+.exit:hover {
+  transform: scale(1.15, 1.15);
+  fill: #222;
 }
 
-/* hover */
-.property_ivy .addressTitle{
-text-align: center;
-background-color: white;
-padding: 5px;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-border: solid 1px #1EC2D2;
-transform: translateY(-10px);
-display: none;
-}
-.yNHHyP-marker-view:hover .property_ivy .addressTitle{
-display: block;
-}
-.yNHHyP-marker-view:hover .property_ivy .icon{
-transform: translateY(-22px)
-}
-.property_ivy .detail {
-display: none;
-flex-direction: column;
-flex: 1;
-}
-.property_ivy.highlight {
-flex-direction: row;
-background-color: #FFFFFF;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-height: 100px;
-padding: 8px 15px;
-width: 350px;
-overflow: hidden;
-}
-.property_ivy.highlight {
-padding: 10px;
-background-color: white;
-color: var(--color-title);
-border: 1px solid  #1EC2D2;
-}
-.property_ivy.highlight .detail {
-display: flex;
-line-height: 25px;
+@media only screen and (min-width: 300px) {
+  html {
+    zoom: 3;
+  }
 
-}
-.property_ivy.highlight::after{
-border-top: 9px solid white;
-display: none;
+  .address {
+    width: 275px;
+  }
 }
 
-.yNHHyP-marker-view:hover .property_ivy.highlight .addressTitle{
-  display: none;
-}
-.yNHHyP-marker-view:hover .property_ivy.highlight .icon{
-  transform: unset
-}
-.property_ivy.highlight .icon img{
-  width: 65px;
-  border: none;
-border-radius: unset;
+@media only screen and (min-width: 769px) {
+  html {
+    zoom: 2.2;
+  }
 }
 
-.property_ivy.highlight .detail .clockWork{
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 5px;
-  border-top: 1px solid #d3d7db;
-}
+@media only screen and (min-width: 1080px) {
+  html {
+    zoom: 1;
+  }
 
-/* ######################### BENH VIEN ######################## */
-
-.property_bv {
-  align-items: center;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  color: #263238;
-  display: flex;
-  font-size: 14px;
-  gap: 15px;
-  height: 30px;
-  justify-content: center;
-  padding: 4px;
-  position: relative;
-  position: relative;
-  transition: all 0.3s ease-out;
-  width: 30px;
-  flex-direction: column;
-}
-
-.property_bv::after {
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 9px solid #1576bd;
-  content: "";
-  height: 0;
-  left: 50%;
-  position: absolute;
-  top: 95%;
-  transform: translate(-50%, 0);
-  transition: all 0.3s ease-out;
-  width: 0;
-  z-index: 1;
-}
-.property_bv .icon img{
-border-radius: 50%;
-height: 52px;
-width: auto;
-}
-.property_bv .icon {
-align-items: center;
-display: flex;
-justify-content: center;
-color: #FFFFFF;
-position: relative;
-};
-
-/*
-* Property styles in highlighted state.
-*/
-
-
-
-
-
-
-.property_bv.highlight .icon svg {
-width: 50px;
-height: 50px;
-}
-.property_bv .addressTitle p {
-margin: 0;
-width: 180px;
-}
-
-/* hover */
-.property_bv .addressTitle{
-text-align: center;
-background-color: white;
-padding: 5px;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-border: solid 1px #1576bd;
-transform: translateY(-10px);
-display: none;
-}
-.yNHHyP-marker-view:hover .property_bv .addressTitle{
-display: block;
-}
-.yNHHyP-marker-view:hover .property_bv .icon{
-transform: translateY(-22px)
-}
-.property_bv .detail {
-display: none;
-flex-direction: column;
-flex: 1;
-}
-.property_bv.highlight {
-flex-direction: row;
-background-color: #FFFFFF;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-height: 100px;
-padding: 8px 15px;
-width: 350px;
-overflow: hidden;
-}
-.property_bv.highlight {
-padding: 10px;
-background-color: white;
-color: var(--color-title);
-border: 1px solid  #1576bd;
-}
-.property_bv.highlight .detail {
-display: flex;
-line-height: 25px;
-
-}
-.property_bv.highlight::after{
-border-top: 9px solid white;
-display: none;
-}
-
-.yNHHyP-marker-view:hover .property_bv.highlight .addressTitle{
-  display: none;
-}
-.yNHHyP-marker-view:hover .property_bv.highlight .icon{
-  transform: unset
-}
-.property_bv.highlight .icon img{
-  width: 52px;
-  border: none;
-border-radius: unset;
-}
-
-.property_bv.highlight .detail .clockWork{
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 5px;
-  border-top: 1px solid #d3d7db;
-}
-
-/* ######################### Văn Phòng ######################## */
-.property_vp {
-  align-items: center;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  color: #263238;
-  display: flex;
-  font-size: 14px;
-  gap: 15px;
-  height: 30px;
-  justify-content: center;
-  padding: 4px;
-  position: relative;
-  position: relative;
-  transition: all 0.3s ease-out;
-  width: 30px;
-  flex-direction: column;
-}
-
-.property_vp::after {
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 9px solid #1c9a46;
-  content: "";
-  height: 0;
-  left: 50%;
-  position: absolute;
-  top: 102%;
-  transform: translate(-50%, 0);
-  transition: all 0.3s ease-out;
-  width: 0;
-  z-index: 1;
-}
-.property_vp .icon img{
-border-radius: 50%;
-height: 52px;
-width: auto;
-}
-.property_vp .icon {
-align-items: center;
-display: flex;
-justify-content: center;
-color: #FFFFFF;
-position: relative;
-};
-
-/*
-* Property styles in highlighted state.
-*/
-
-
-
-
-
-
-.property_vp.highlight .icon svg {
-width: 50px;
-height: 50px;
-}
-.property_vp .addressTitle p {
-margin: 0;
-width: 180px;
-}
-
-/* hover */
-.property_vp .addressTitle{
-text-align: center;
-background-color: white;
-padding: 5px;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-border: solid 1px #1576bd;
-transform: translateY(-10px);
-display: none;
-}
-.yNHHyP-marker-view:hover .property_vp .addressTitle{
-display: block;
-}
-.yNHHyP-marker-view:hover .property_vp .icon{
-transform: translateY(-22px)
-}
-.property_vp .detail {
-display: none;
-flex-direction: column;
-flex: 1;
-}
-.property_vp.highlight {
-flex-direction: row;
-background-color: #FFFFFF;
-border-radius: 12px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
-height: 100px;
-padding: 8px 15px;
-width: 350px;
-overflow: hidden;
-}
-.property_vp.highlight {
-padding: 10px;
-background-color: white;
-color: var(--color-title);
-border: 1px solid  #1576bd;
-}
-.property_vp.highlight .detail {
-display: flex;
-line-height: 25px;
-
-}
-.property_vp.highlight::after{
-border-top: 9px solid white;
-display: none;
-}
-
-.yNHHyP-marker-view:hover .property_vp.highlight .addressTitle{
-  display: none;
-}
-.yNHHyP-marker-view:hover .property_vp.highlight .icon{
-  transform: unset
-}
-.property_vp.highlight .icon img{
-  width: 78px;
-  border: none;
-border-radius: unset;
-}
-
-.property_vp.highlight .detail .clockWork{
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 5px;
-  border-top: 1px solid #d3d7db;
+  .address {
+    width: max-content;
+  }
 }
