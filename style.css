@@ -3,8 +3,9 @@
  * that contains the map. 
  */
 #map {
-  width: 100%;
-  height: 100%;
+  margin: 50px auto;
+  width: 960px;
+  height: 600px;
 }
 
 /* 
@@ -285,7 +286,8 @@ body {
 }
 
 
-.property_san::after {
+.property_san::after,
+.property_bv::after {
   border-top: 9px solid #DF5EA2;
 }
 
@@ -303,7 +305,9 @@ body {
 }
 
 .property_san.highlight,
-.property_san .addressTitle {
+.property_san .addressTitle,
+.property_bv.highlight,
+.property_bv .addressTitle {
   border: 1px solid #DF5EA2;
 }
 

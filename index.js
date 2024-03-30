@@ -6,7 +6,7 @@ async function initMap() {
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   const map = new Map(document.getElementById("map"), {
     center: { lat: 10.7996365, lng: 106.6717373 },
-    zoom: 12,
+    zoom: 13,
     mapId: "4504f8b37365c3d0",
   });
   // Each PinElement is paired with a MarkerView to demonstrate setting each parameter.
@@ -28,7 +28,6 @@ async function initMap() {
         content.classList.add("property_mat");
         break;
       case "BV":
-        content.classList.add("property_san");
         content.classList.add("property_bv");
         break;
       default:
