@@ -49,7 +49,7 @@ async function initMap() {
       }
       ">${property.title}</p>
     </div>
-
+    
     <div class="icon">
       <img class="
       ${property.type == "BV" || property.type == "VP"
@@ -121,10 +121,11 @@ async function initMap() {
       </div>
     </div>
       `;
-
-
     return content;
   };
+
+
+
   for (const property of dataNhiDong315) {
     const positionMap = {
       lat: Number(property.latitude),
