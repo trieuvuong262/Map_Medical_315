@@ -334,9 +334,9 @@ body {
   fill: #222;
 }
 
-/* @media only screen and (min-width: 300px) {
+@media only screen and (min-width: 300px) {
   html {
-    zoom: 3;
+    zoom: 0.85;
   }
 
   .address {
@@ -346,7 +346,7 @@ body {
 
 @media only screen and (min-width: 769px) {
   html {
-    zoom: 2.2;
+    zoom: 0.9;
   }
 }
 
@@ -358,7 +358,7 @@ body {
   .address {
     width: max-content;
   }
-} */
+}
 
 .property_vp img,
 .property_bv img {
