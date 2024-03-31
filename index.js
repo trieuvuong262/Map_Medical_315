@@ -19,8 +19,8 @@ async function initMap() {
     const content = document.createElement("div");
     content.classList.add("property");
     switch (property.type) {
-      case "VP":
-        content.classList.add("property_vp");
+      case "NHI":
+        content.classList.add("property_nhi");
         break;
       case "SAN":
         content.classList.add("property_san");
@@ -33,6 +33,9 @@ async function initMap() {
         break;
       case "BV":
         content.classList.add("property_bv");
+        break;
+      case "VP":
+        content.classList.add("property_vp");
         break;
       default:
         content.classList.add("property_nhi");
@@ -154,6 +157,8 @@ async function initMap() {
         property.img = "https://w.ladicdn.com/5aa6273ea81f66ca2eacc40b/map-icon-vp-20240327164436-ojkt8.png";
         property.name = "Văn phòng 315 MEDICAL";
         break;
+      default:
+        break;
     }
 
     switch (property.workingTime) {
@@ -169,8 +174,10 @@ async function initMap() {
       case "Time.comingsoon":
         property.workingTime = "Coming soon";
         break;
+      default:
+        break;
     }
-    if (property.hotline == "Hotline315" || property.hotline === undefined) {
+    if (property.hotline === "Hotline315" || property.hotline === undefined) {
       property.hotline = "0901.315.315";
     }
     const positionMap = {
@@ -196,6 +203,60 @@ async function initMap() {
     }
   }
 }
-
-
 initMap();
+
+// ********************** FORM SEARCH FILTER **********************
+let divElem = document.getElementById("loai_chi_nhanh");
+let inputElements = divElem.querySelectorAll("input"); // danh sach input loai chi nhanh
+
+let inputChonTatCa = document.getElementById("ckb_all");
+let inputNhi = document.getElementById("ckb_nhi");
+let inputSan = document.getElementById("ckb_san");
+let inputLao = document.getElementById("ckb_lao");
+let inputMat = document.getElementById("ckb_mat");
+let inputBV = document.getElementById("ckb_bv");
+let inputVP = document.getElementById("ckb_vp");
+
+let listDivChiNhanh = document.getElementsByClassName("property")
+// inputNhi.addEventListener("change", changeLoaiChiNhanh(inputElements[0]));
+const changeChonTatCa = () => {
+  if (inputChonTatCa.checked) {
+    inputElements.forEach(input => {
+      input.disabled = true;
+      input.checked = true;
+    });
+    changeLoaiChiNhanh();
+  } else {
+    inputElements.forEach(input => {
+      input.disabled = false;
+    });
+  }
+  return inputElements;
+}
+const anHienChiNhanh = (check, div) => {
+  if (check) {
+    return div.style.display = "";
+  } else {
+    return div.style.display = "none";
+  }
+}
+const changeLoaiChiNhanh = () => {
+  Array.from(listDivChiNhanh).map((divChiNhanh) => {
+    if (divChiNhanh.classList.contains('property_nhi')) {
+      anHienChiNhanh(inputNhi.checked, divChiNhanh);
+    } else if (divChiNhanh.classList.contains('property_san')) {
+      anHienChiNhanh(inputSan.checked, divChiNhanh);
+    } else if (divChiNhanh.classList.contains('property_lao')) {
+      anHienChiNhanh(inputLao.checked, divChiNhanh);
+    } else if (divChiNhanh.classList.contains('property_mat')) {
+      anHienChiNhanh(inputMat.checked, divChiNhanh);
+    } else if (divChiNhanh.classList.contains('property_bv')) {
+      anHienChiNhanh(inputBV.checked, divChiNhanh);
+    } else if (divChiNhanh.classList.contains('property_vp')) {
+      anHienChiNhanh(inputVP.checked, divChiNhanh);
+    }
+  });
+  return listDivChiNhanh;
+}
+divElem.addEventListener("change", changeLoaiChiNhanh);
+inputChonTatCa.addEventListener("change", changeChonTatCa);

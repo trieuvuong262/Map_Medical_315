@@ -366,3 +366,18 @@ body {
   -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
   filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
 }
+
+
+/********************** CSS FORM SEARCH FILTER **********************/
+#form_select_filter * {
+  padding: 0;
+  margin: 0;
+}
+
+#form_select_filter input {
+  margin: 4px auto;
+}
+
+#ckb_all {
+  margin: 5px auto !important;
+}
