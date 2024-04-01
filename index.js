@@ -198,10 +198,10 @@ async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa 
       content: buildContent(property),
     });
     glyphSvgMarkerView.addListener("click", () => {
-      toggleHighlight(glyphSvgMarkerView, property);
+      toggleHighlight(glyphSvgMarkerView);
     });
   }
-  function toggleHighlight(markerView, property) {
+  function toggleHighlight(markerView) {
     if (markerView.content.classList.contains("highlight")) {
       markerView.content.classList.remove("highlight");
       markerView.zIndex = null;

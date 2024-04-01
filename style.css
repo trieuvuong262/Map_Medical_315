@@ -220,7 +220,6 @@ body {
 }
 
 .property .detail a {
-  display: block;
   color: #666;
   text-decoration: none;
 }
@@ -368,6 +367,10 @@ body {
   filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
 }
 
+.highlight a {
+  display: block;
+  z-index: 2;
+}
 
 /********************** CSS FORM SEARCH FILTER **********************/
 #form_select_filter * {
