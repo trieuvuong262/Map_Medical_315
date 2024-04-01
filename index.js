@@ -1,18 +1,20 @@
 const parser = new DOMParser();
-const dataMap = await import('./data_map.json', {
+const dataMap315 = await import('./data_map.json', {
   with: { type: 'json' }
 });
-// console.log(dataMap.default[0].title);
-async function initMap() {
+let zoomHCM = 12,
+  latHCM = 10.7996365,
+  lngHCM = 106.6717373;
+async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa do hcm 10.7996365, 106.6717373 
+
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   const map = new Map(document.getElementById("map"), {
-    center: { lat: 10.7996365, lng: 106.6717373 },
-    zoom: 13,
+    center: { lat: latCanXem, lng: lngCanXem },
+    zoom: zoomCanXem,
     mapId: "4504f8b37365c3d0",
   });
-
   // Each PinElement is paired with a MarkerView to demonstrate setting each parameter.
   // Default marker with title text (no PinElement).
   const buildContent = (property) => {
@@ -131,7 +133,7 @@ async function initMap() {
 
 
 
-  for (const property of dataMap.default) {
+  for (const property of dataMapCanXem) {
     switch (property.type) {
       case "NHI":
         property.img = "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/logo-315-moi-real-20230620043518-tn2we.png";
@@ -160,7 +162,6 @@ async function initMap() {
       default:
         break;
     }
-
     switch (property.workingTime) {
       case "Time.vp":
         property.workingTime = "T2-CN: 8:00 - 12:00 & 13:00 - 17:00";
@@ -184,6 +185,9 @@ async function initMap() {
       lat: Number(property.latitude),
       lng: Number(property.longitude),
     }
+
+
+
     const glyphSvgMarkerView = new AdvancedMarkerElement({
       map,
       position: positionMap,
@@ -203,7 +207,7 @@ async function initMap() {
     }
   }
 }
-initMap();
+initMap(dataMap315.default, zoomHCM, latHCM, lngHCM);
 
 // ********************** FORM SEARCH FILTER **********************
 let divElem = document.getElementById("loai_chi_nhanh");
@@ -218,7 +222,6 @@ let inputBV = document.getElementById("ckb_bv");
 let inputVP = document.getElementById("ckb_vp");
 
 let listDivChiNhanh = document.getElementsByClassName("property")
-// inputNhi.addEventListener("change", changeLoaiChiNhanh(inputElements[0]));
 const changeChonTatCa = () => {
   if (inputChonTatCa.checked) {
     inputElements.forEach(input => {
@@ -233,30 +236,21 @@ const changeChonTatCa = () => {
   }
   return inputElements;
 }
-const anHienChiNhanh = (check, div) => {
-  if (check) {
-    return div.style.display = "";
-  } else {
-    return div.style.display = "none";
-  }
-}
+// const anHienChiNhanh = (check, div) => {
+//   if (check) {
+//     return div.style.display = "";
+//   } else {
+//     return div.style.display = "none";
+//   }
+// }
 const changeLoaiChiNhanh = () => {
-  Array.from(listDivChiNhanh).map((divChiNhanh) => {
-    if (divChiNhanh.classList.contains('property_nhi')) {
-      anHienChiNhanh(inputNhi.checked, divChiNhanh);
-    } else if (divChiNhanh.classList.contains('property_san')) {
-      anHienChiNhanh(inputSan.checked, divChiNhanh);
-    } else if (divChiNhanh.classList.contains('property_lao')) {
-      anHienChiNhanh(inputLao.checked, divChiNhanh);
-    } else if (divChiNhanh.classList.contains('property_mat')) {
-      anHienChiNhanh(inputMat.checked, divChiNhanh);
-    } else if (divChiNhanh.classList.contains('property_bv')) {
-      anHienChiNhanh(inputBV.checked, divChiNhanh);
-    } else if (divChiNhanh.classList.contains('property_vp')) {
-      anHienChiNhanh(inputVP.checked, divChiNhanh);
+  const dataMapDaLoc = [];
+  dataMap315.default.map((dataChiNhanh) => {
+    if ((dataChiNhanh.type === "NHI" && inputNhi.checked) || (dataChiNhanh.type === "SAN" && inputSan.checked) || (dataChiNhanh.type === "LAO" && inputLao.checked) || (dataChiNhanh.type === "MAT" && inputMat.checked) || (dataChiNhanh.type === "BV" && inputBV.checked) || (dataChiNhanh.type === "VP" && inputVP.checked)) {
+      dataMapDaLoc.push(dataChiNhanh);
     }
   });
-  return listDivChiNhanh;
+  return initMap(dataMapDaLoc, zoomHCM, latHCM, lngHCM);
 }
 divElem.addEventListener("change", changeLoaiChiNhanh);
 inputChonTatCa.addEventListener("change", changeChonTatCa);
