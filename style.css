@@ -225,8 +225,10 @@ body {
 }
 
 .property .detail a:hover,
-.property .detail a:active {
-  color: #222;
+.property .detail a:active,
+.color_text *,
+.color_text input::placeholder {
+  color: #222 !important;
 }
 
 .property .detail {
@@ -365,11 +367,6 @@ body {
 .property_bv img {
   -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
   filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
-}
-
-.highlight a {
-  display: block;
-  z-index: 2;
 }
 
 /********************** CSS FORM SEARCH FILTER **********************/

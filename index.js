@@ -6,7 +6,6 @@ let zoomHCM = 12,
   latHCM = 10.7996365,
   lngHCM = 106.6717373;
 async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa do hcm 10.7996365, 106.6717373 
-
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
@@ -134,6 +133,15 @@ async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa 
       `;
     return content;
   };
+  function toggleHighlight(markerView) {
+    if (markerView.content.classList.contains("highlight")) {
+      markerView.content.classList.remove("highlight");
+      markerView.zIndex = null;
+    } else {
+      markerView.content.classList.add("highlight");
+      markerView.zIndex = 1;
+    }
+  }
 
 
 
@@ -191,7 +199,6 @@ async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa 
     }
 
 
-
     const glyphSvgMarkerView = new AdvancedMarkerElement({
       map,
       position: positionMap,
@@ -201,31 +208,34 @@ async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa 
       toggleHighlight(glyphSvgMarkerView);
     });
   }
-  function toggleHighlight(markerView) {
-    if (markerView.content.classList.contains("highlight")) {
-      markerView.content.classList.remove("highlight");
-      markerView.zIndex = null;
-    } else {
-      markerView.content.classList.add("highlight");
-      markerView.zIndex = 1;
-    }
-  }
 }
 initMap(dataMap315.default, zoomHCM, latHCM, lngHCM);
 
 // ********************** FORM SEARCH FILTER **********************
-let divElem = document.getElementById("loai_chi_nhanh");
-let inputElements = divElem.querySelectorAll("input"); // danh sach input loai chi nhanh
+let divElem = document.getElementById("loai_chi_nhanh"), inputElements = divElem.querySelectorAll("input"), // danh sach input loai chi nhanh
+  inputChonTatCa = document.getElementById("ckb_all"),
+  inputNhi = document.getElementById("ckb_nhi"),
+  inputSan = document.getElementById("ckb_san"),
+  inputLao = document.getElementById("ckb_lao"),
+  inputMat = document.getElementById("ckb_mat"),
+  inputBV = document.getElementById("ckb_bv"),
+  inputVP = document.getElementById("ckb_vp"),
+  inputTuKhoa = document.getElementById("txt_tukhoa"),
+  inputTinhTP = document.getElementById("txt_tinhtp");
 
-let inputChonTatCa = document.getElementById("ckb_all");
-let inputNhi = document.getElementById("ckb_nhi");
-let inputSan = document.getElementById("ckb_san");
-let inputLao = document.getElementById("ckb_lao");
-let inputMat = document.getElementById("ckb_mat");
-let inputBV = document.getElementById("ckb_bv");
-let inputVP = document.getElementById("ckb_vp");
-
-let listDivChiNhanh = document.getElementsByClassName("property")
+function xuLyChuoi(str) {
+  str = str.trim();
+  str = str.toLowerCase();
+  str = str.replace(/\s+/g, ' ');
+  str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, 'a');
+  str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, 'e');
+  str = str.replace(/ì|í|ị|ỉ|ĩ/g, 'i');
+  str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, 'o');
+  str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, 'u');
+  str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, 'y');
+  str = str.replace(/đ/g, 'd');
+  return str;
+}
 const changeChonTatCa = () => {
   if (inputChonTatCa.checked) {
     inputElements.forEach(input => {
@@ -240,21 +250,55 @@ const changeChonTatCa = () => {
   }
   return inputElements;
 }
-// const anHienChiNhanh = (check, div) => {
-//   if (check) {
-//     return div.style.display = "";
-//   } else {
-//     return div.style.display = "none";
-//   }
-// }
 const changeLoaiChiNhanh = () => {
-  const dataMapDaLoc = [];
-  dataMap315.default.map((dataChiNhanh) => {
-    if ((dataChiNhanh.type === "NHI" && inputNhi.checked) || (dataChiNhanh.type === "SAN" && inputSan.checked) || (dataChiNhanh.type === "LAO" && inputLao.checked) || (dataChiNhanh.type === "MAT" && inputMat.checked) || (dataChiNhanh.type === "BV" && inputBV.checked) || (dataChiNhanh.type === "VP" && inputVP.checked)) {
-      dataMapDaLoc.push(dataChiNhanh);
+  let tuKhoa = xuLyChuoi(inputTuKhoa.value),
+    tinhTP = xuLyChuoi(inputTinhTP.value),
+    diaChi = "";
+  dataTam = [];
+  dataMapCanTim = [...dataMap315.default];
+  dataMapCanTim.map((dataChiNhanh) => {
+    if ((dataChiNhanh.type === "NHI" && inputNhi.checked)
+      || (dataChiNhanh.type === "SAN" && inputSan.checked)
+      || (dataChiNhanh.type === "LAO" && inputLao.checked)
+      || (dataChiNhanh.type === "MAT" && inputMat.checked)
+      || (dataChiNhanh.type === "BV" && inputBV.checked)
+      || (dataChiNhanh.type === "VP" && inputVP.checked)) {
+      dataTam.push(dataChiNhanh);
     }
   });
-  return initMap(dataMapDaLoc, zoomHCM, latHCM, lngHCM);
+  dataMapCanTim = [...dataTam];
+  if (tinhTP) {
+    //if (tinhTP === "hcm") tinhTP = "ho chi minh";
+    dataTam = [];
+    dataMapCanTim.map((dataChiNhanh) => {
+      diaChi = xuLyChuoi(dataChiNhanh.address);
+      if (diaChi.search(tinhTP) !== -1) {
+        dataTam.push(dataChiNhanh);
+      }
+    });
+    dataMapCanTim = [...dataTam];
+    dataTam = [];
+  }
+  if (tuKhoa) {
+    dataTam = [];
+    dataMapCanTim.map((dataChiNhanh) => {
+      diaChi = xuLyChuoi(dataChiNhanh.address);
+      if (diaChi.search(tuKhoa) !== -1) {
+        dataTam.push(dataChiNhanh);
+      }
+    });
+    dataMapCanTim = [...dataTam];
+    dataTam = [];
+  }
+  var dataMapCanTim, dataTam;
+  if (dataMapCanTim.length > 0 && dataTam.length == 0) {
+    let latCanTim = Number(dataMapCanTim[0].latitude),
+      lngCanTim = Number(dataMapCanTim[0].longitude);
+    return initMap(dataMapCanTim, zoomHCM, latCanTim, lngCanTim);
+  }
+  return initMap(dataMapCanTim, zoomHCM, latHCM, lngHCM);
 }
 divElem.addEventListener("change", changeLoaiChiNhanh);
 inputChonTatCa.addEventListener("change", changeChonTatCa);
+inputTuKhoa.addEventListener("change", changeLoaiChiNhanh);
+inputTinhTP.addEventListener("change", changeLoaiChiNhanh);
