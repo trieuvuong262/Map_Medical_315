@@ -92,6 +92,7 @@ async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa 
 </svg>
       </div>
       <div class="hotline">
+      <a href="tel: ${property.hotline}">
         <svg class="svg_icon 
         ${property.type == "SAN" || property.type == "BV"
         ? "color_san"
@@ -102,9 +103,11 @@ async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa 
             : "color_nhi"
       }
       " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" fill="rgba(0, 175, 239, 1)"> <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"></path> </svg>
-        <span><a href="tel: ${property.hotline}">${property.hotline}</a></span>
+        <span>${property.hotline}</span>
+        </a>
       </div>
       <div class="address">
+      <a target="_blank" href="${property.linkMap}">
         <svg class="svg_icon 
         ${property.type == "SAN" || property.type == "BV"
         ? "color_san"
@@ -115,7 +118,8 @@ async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa 
             : "color_nhi"
       }
       " viewBox="0 0 24 24" id="magicoon-Filled" xmlns="http://www.w3.org/2000/svg"><path id="map-marker-Filled-2" data-name="map-marker-Filled" class="cls-1" d="M14,10a2,2,0,1,1-2-2A2.006,2.006,0,0,1,14,10Zm5.5,0c0,6.08-4.67,9.89-6.67,11.24a1.407,1.407,0,0,1-.83.26,1.459,1.459,0,0,1-.84-.26C9.16,19.89,4.5,16.09,4.5,10A7.33,7.33,0,0,1,12,2.5,7.336,7.336,0,0,1,19.5,10ZM16,10a4,4,0,1,0-4,4A4,4,0,0,0,16,10Z"/></g></svg>
-        <span><a target="_blank" href="${property.linkMap}">${property.address}</a></span>
+        <span>${property.address}</span>
+        </a>
       </div>
       <div class="clockWork">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"> <path d="M10,20C4.5,20,0,15.5,0,10S4.5,0,10,0s10,4.5,10,10S15.5,20,10,20z M10,2c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S14.4,2,10,2 z"/> <path d="M13.8,12l-4-1C9.3,10.9,9,10.5,9,10V5c0-0.6,0.4-1,1-1s1,0.4,1,1v4.2l3.2,0.8c0.5,0.1,0.9,0.7,0.7,1.2 C14.8,11.8,14.3,12.1,13.8,12z"/> </svg>
