@@ -391,3 +391,9 @@ body {
   background-color: #00ADEF;
   border-color: #00ADEF;
 }
+
+#datalist_diachi option {
+  max-height: 20em !important;
+  width: 350px !important;
+  cursor: pointer !important;
+}

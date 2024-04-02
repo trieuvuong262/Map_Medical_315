@@ -5,6 +5,7 @@ const dataMap315 = await import('./data_map.json', {
 let zoomHCM = 12,
   latHCM = 10.7996365,
   lngHCM = 106.6717373;
+
 async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa do hcm 10.7996365, 106.6717373 
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
@@ -209,10 +210,9 @@ async function initMap(dataMapCanXem, zoomCanXem, latCanXem, lngCanXem) {// toa 
     });
   }
 }
-initMap(dataMap315.default, zoomHCM, latHCM, lngHCM);
-
 // ********************** FORM SEARCH FILTER **********************
-let divElem = document.getElementById("loai_chi_nhanh"), inputElements = divElem.querySelectorAll("input"), // danh sach input loai chi nhanh
+let divElem = document.getElementById("loai_chi_nhanh"),
+  inputElements = divElem.querySelectorAll("input"), // danh sach input loai chi nhanh
   inputChonTatCa = document.getElementById("ckb_all"),
   inputNhi = document.getElementById("ckb_nhi"),
   inputSan = document.getElementById("ckb_san"),
@@ -221,9 +221,33 @@ let divElem = document.getElementById("loai_chi_nhanh"), inputElements = divElem
   inputBV = document.getElementById("ckb_bv"),
   inputVP = document.getElementById("ckb_vp"),
   inputTuKhoa = document.getElementById("txt_tukhoa"),
-  inputTinhTP = document.getElementById("txt_tinhtp");
+  inputTinhTP = document.getElementById("txt_tinhtp"),
+  dataListDiaChi = document.getElementById("datalist_diachi"),
+  dataListTinhTP = document.getElementById("datalist_tinhtp");
 
-function xuLyChuoi(str) {
+const loadDataList = () => {
+  const dataMap = [...dataMap315.default];
+  danhSachTinhTP = [];
+  dataMap.map((dataChiNhanh) => {
+    let optDiaChi = document.createElement("option");
+
+    optDiaChi.value = dataChiNhanh.address;
+    optDiaChi.innerHTML = `${dataChiNhanh.address}`;
+
+    dataListDiaChi.appendChild(optDiaChi);
+    if (danhSachTinhTP.some(tinhTP => tinhTP.includes(dataChiNhanh.city)) === false) {
+      danhSachTinhTP.push(dataChiNhanh.city);
+    };
+  });
+  danhSachTinhTP.map((tinhTP) => {
+    let optTinhTP = document.createElement("option");
+    optTinhTP.value = tinhTP;
+    optTinhTP.innerHTML = tinhTP;
+    dataListTinhTP.appendChild(optTinhTP);
+  });
+  var danhSachTinhTP;
+}
+const xuLyChuoi = (str) => {
   str = str.trim();
   str = str.toLowerCase();
   str = str.replace(/\s+/g, ' ');
@@ -242,7 +266,7 @@ const changeChonTatCa = () => {
       input.disabled = true;
       input.checked = true;
     });
-    changeLoaiChiNhanh();
+    changeChiNhanh();
   } else {
     inputElements.forEach(input => {
       input.disabled = false;
@@ -250,10 +274,11 @@ const changeChonTatCa = () => {
   }
   return inputElements;
 }
-const changeLoaiChiNhanh = () => {
+const changeChiNhanh = () => {
   let tuKhoa = xuLyChuoi(inputTuKhoa.value),
     tinhTP = xuLyChuoi(inputTinhTP.value),
-    diaChi = "";
+    diaChi = "",
+    city = "";
   dataTam = [];
   dataMapCanTim = [...dataMap315.default];
   dataMapCanTim.map((dataChiNhanh) => {
@@ -272,7 +297,8 @@ const changeLoaiChiNhanh = () => {
     dataTam = [];
     dataMapCanTim.map((dataChiNhanh) => {
       diaChi = xuLyChuoi(dataChiNhanh.address);
-      if (diaChi.search(tinhTP) !== -1) {
+      city = xuLyChuoi(dataChiNhanh.city);
+      if (diaChi.includes(tinhTP) || city.includes(tinhTP)) {
         dataTam.push(dataChiNhanh);
       }
     });
@@ -283,7 +309,8 @@ const changeLoaiChiNhanh = () => {
     dataTam = [];
     dataMapCanTim.map((dataChiNhanh) => {
       diaChi = xuLyChuoi(dataChiNhanh.address);
-      if (diaChi.search(tuKhoa) !== -1) {
+      city = xuLyChuoi(dataChiNhanh.city);
+      if (diaChi.includes(tuKhoa) || city.includes(tuKhoa)) {
         dataTam.push(dataChiNhanh);
       }
     });
@@ -295,10 +322,16 @@ const changeLoaiChiNhanh = () => {
     let latCanTim = Number(dataMapCanTim[0].latitude),
       lngCanTim = Number(dataMapCanTim[0].longitude);
     return initMap(dataMapCanTim, zoomHCM, latCanTim, lngCanTim);
+  } else if (dataMapCanTim == 0) {
+    return initMap(dataMapCanTim, 5, 15.96008004884515, 105.8365630818173);
   }
   return initMap(dataMapCanTim, zoomHCM, latHCM, lngHCM);
 }
-divElem.addEventListener("change", changeLoaiChiNhanh);
+divElem.addEventListener("change", changeChiNhanh);
 inputChonTatCa.addEventListener("change", changeChonTatCa);
-inputTuKhoa.addEventListener("change", changeLoaiChiNhanh);
-inputTinhTP.addEventListener("change", changeLoaiChiNhanh);
+inputTuKhoa.addEventListener("change", changeChiNhanh);
+inputTinhTP.addEventListener("change", changeChiNhanh);
+dataListDiaChi.addEventListener("click", changeChiNhanh);
+dataListTinhTP.addEventListener("click", changeChiNhanh);
+initMap(dataMap315.default, zoomHCM, latHCM, lngHCM);
+loadDataList();
