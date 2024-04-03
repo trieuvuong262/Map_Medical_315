@@ -229,6 +229,8 @@ let divElem = document.getElementById("loai_chi_nhanh"),
 const loadDataList = () => {
   const dataMap = [...dataMap315.default];
   danhSachTinhTP = [];
+  dataListDiaChi.innerHTML = ``;
+  dataListTinhTP.innerHTML = ``;
   dataMap.map((dataChiNhanh) => {
     let optDiaChi = document.createElement("li");
     optDiaChi.classList.add("p-2");
