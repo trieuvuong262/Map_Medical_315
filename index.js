@@ -236,7 +236,6 @@ const loadDataList = () => {
     optDiaChi.addEventListener("click", () => {
       inputTuKhoa.value = dataChiNhanh.address;
       dataListDiaChi.style.display = "none";
-      console.log(inputTuKhoa, inputTuKhoa.value, optDiaChi.innerHTML);
       changeChiNhanh();
     });
     dataListDiaChi.appendChild(optDiaChi);
