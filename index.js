@@ -230,7 +230,7 @@ const loadDataList = () => {
   const dataMap = [...dataMap315.default];
   danhSachTinhTP = [];
   dataListDiaChi.innerHTML = ``;
-  dataListTinhTP.innerHTML = ``;
+  dataListTinhTP.innerHTML = `<option value selected>Tất cả các Tỉnh/TP...</option>`;
   dataMap.map((dataChiNhanh) => {
     let optDiaChi = document.createElement("li");
     optDiaChi.classList.add("p-2");
