@@ -262,7 +262,7 @@ const xuLyChuoi = (str) => {
   str = str.replace(/\s+/g, ' ');
   str = str.trim();
   str = str.replace(/q2|q9|quận 2|quận 9|quan 2|quan 9/g, 'tp. thủ đức');
-  str = str.replace(/quận/g, 'q.');
+  str = str.replace(/quận|q |q./g, 'q. ');
   str = str.replace(/q1|quận 1|quan 1/g, 'q. 1');
   str = str.replace(/q3|quận 3|quan 3/g, 'q. 3');
   str = str.replace(/q4|quận 4|quan 4/g, 'q. 4');
@@ -280,6 +280,8 @@ const xuLyChuoi = (str) => {
   str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, 'u');
   str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, 'y');
   str = str.replace(/đ/g, 'd');
+  str = str.replace(/\s+/g, ' ');
+  str = str.trim();
   return str;
 }
 const changeChiNhanh = () => {
