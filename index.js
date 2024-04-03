@@ -385,11 +385,9 @@ inputTuKhoa.addEventListener("focusout", () => {
   divKhongTimThay.style.display = "none";
   setTimeout(() => {
     dataListDiaChi.style.display = "none";
+    changeChiNhanh();
     loadDataList();
   }, 200);
-  if (xuLyChuoi(inputTuKhoa.value) !== "") {
-    changeChiNhanh();
-  }
 });
 inputTuKhoa.addEventListener("keyup", keypressTuKhoa);
 divElem.addEventListener("change", changeChiNhanh);
