@@ -344,15 +344,34 @@ body {
   .address {
     width: 275px;
   }
-}
 
-@media only screen and (min-width: 769px) {
-  #map {
-    zoom: 0.9;
+  #datalist_diachi,
+  #khong_tim_thay {
+    max-width: 87.5% !important;
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 600px) {
+
+  #datalist_diachi,
+  #khong_tim_thay {
+    max-width: 45.313rem !important;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+  #map {
+    zoom: 0.9;
+  }
+
+  #datalist_diachi,
+  #khong_tim_thay {
+    max-width: 28.688rem !important;
+  }
+}
+
+@media only screen and (min-width: 961px) {
   #map {
     zoom: 1;
   }
@@ -360,6 +379,11 @@ body {
   .address {
     width: max-content;
     margin-right: 5px;
+  }
+
+  #datalist_diachi,
+  #khong_tim_thay {
+    width: min-content;
   }
 }
 
@@ -396,4 +420,32 @@ body {
   max-height: 20em !important;
   width: 350px !important;
   cursor: pointer !important;
+}
+
+#datalist_diachi,
+#khong_tim_thay {
+  z-index: 1;
+  background-color: #fbfbfb;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  top: 66px;
+  border: solid 1px #aaa;
+  border-radius: 3px;
+  max-height: 27.5%;
+  display: none;
+}
+
+#datalist_diachi li {
+  border-bottom: solid 1px #ccc;
+}
+
+#datalist_diachi li:hover {
+  color: #fff !important;
+  background-color: #00ADEF;
+  cursor: pointer !important;
+}
+
+#khong_tim_thay {
+  z-index: 2;
 }

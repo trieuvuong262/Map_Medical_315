@@ -24,16 +24,23 @@
         <div class="row justify-content-center color_text">
           <div class="col-md-6">
             <div class="row mb-3">
-              <input id="txt_tukhoa" type="search" class="form-control p-2"
-                list="datalist_diachi" placeholder="Tìm địa chỉ...">
-              <datalist id="datalist_diachi">
-              </datalist>
+              <input id="txt_tukhoa" class="form-control p-2 dropdown-toggle"
+                placeholder="Tìm địa chỉ..." type="search">
+              <div class="p-2" id="khong_tim_thay" style="display:none;">
+                Không
+                tìm thấy chi nhánh!
+              </div>
+              <ul class="m-auto"
+                id="datalist_diachi">
+              </ul>
             </div>
             <div class="row mb-3">
-              <input id="txt_tinhtp" type="search" class="form-control p-2"
-                list="datalist_tinhtp" placeholder="Tất cả các Tỉnh/TP...">
-              <datalist id="datalist_tinhtp">
-              </datalist>
+              <!-- <input id="txt_tinhtp" type="search" class="form-control p-2"
+                list="datalist_tinhtp" placeholder="Tất cả các Tỉnh/TP..."> -->
+              <select id="datalist_tinhtp" class="form-select p-2">
+                <option value selected>Tất cả
+                  các Tỉnh/TP...</option>
+              </select>
             </div>
             <div class="row">
               <div class="form-check form-switch fs-5 checkbox">
