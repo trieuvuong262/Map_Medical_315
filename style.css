@@ -434,6 +434,7 @@ body {
   border-radius: 3px;
   max-height: 27.5%;
   display: none;
+  width: 100%;
 }
 
 #datalist_diachi li {
