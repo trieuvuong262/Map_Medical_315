@@ -4,7 +4,7 @@
  */
 #map {
   width: 100%;
-  height: 550px;
+  height: 100%;
 }
 
 /* 
@@ -262,12 +262,15 @@ body {
   text-transform: capitalize;
 }
 
-.color_nhi {
+.color_nhi,
+.color_bvnhi,
+.color_vp {
   color: #00ADEF;
   fill: #00ADEF;
 }
 
-.color_san {
+.color_san,
+.color_bvsan {
   color: #DF5EA2;
   fill: #DF5EA2;
 }
@@ -282,13 +285,14 @@ body {
   fill: #1DBFD7;
 }
 
-.property_nhi::after {
+.property_nhi::after,
+.property_bvnhi::after {
   border-top: 9px solid #00ADEF;
 }
 
 
 .property_san::after,
-.property_bv::after {
+.property_bvsan::after {
   border-top: 9px solid #DF5EA2;
 }
 
@@ -301,14 +305,16 @@ body {
 }
 
 .property_nhi.highlight,
-.property_nhi .addressTitle {
+.property_nhi .addressTitle,
+.property_bvnhi.highlight,
+.property_bvnhi .addressTitle {
   border: 1px solid #00ADEF;
 }
 
 .property_san.highlight,
 .property_san .addressTitle,
-.property_bv.highlight,
-.property_bv .addressTitle {
+.property_bvsan.highlight,
+.property_bvsan .addressTitle {
   border: 1px solid #DF5EA2;
 }
 
@@ -331,7 +337,10 @@ body {
   margin-top: -2px;
 }
 
-.exit:hover {
+.exit:hover,
+#exit_timkiem svg:hover,
+.exit:active,
+#exit_timkiem svg:active {
   transform: scale(1.15, 1.15);
   fill: #222;
 }
@@ -345,16 +354,14 @@ body {
     width: 275px;
   }
 
-  #datalist_diachi,
-  #khong_tim_thay {
+  #ds_diachi {
     max-width: 89.808% !important;
   }
 }
 
 @media only screen and (min-width: 600px) {
 
-  #datalist_diachi,
-  #khong_tim_thay {
+  #ds_diachi {
     max-width: 45.313rem !important;
   }
 
@@ -365,8 +372,7 @@ body {
     zoom: 0.9;
   }
 
-  #datalist_diachi,
-  #khong_tim_thay {
+  #ds_diachi {
     max-width: 28.688rem !important;
   }
 }
@@ -381,19 +387,68 @@ body {
     margin-right: 5px;
   }
 
-  #datalist_diachi,
-  #khong_tim_thay {
+  #ds_diachi {
     width: min-content;
   }
 }
 
 .property_vp img,
-.property_bv img {
+.property_bvsan img,
+.property_bvnhi img {
   -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
   filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
 }
 
 /********************** CSS FORM SEARCH FILTER **********************/
+#btn_timkiem {
+  width: 50px;
+  fill: #666;
+  display: block;
+}
+
+#div_timkiem {
+  display: none;
+}
+
+#btn_timkiem:hover,
+#btn_timkiem:active {
+  fill: #fbfbfb;
+  background-color: #00ADEF;
+}
+
+#form_select_filter {
+  max-width: fit-content;
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  left: 10px;
+  max-height: 97.5%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background-color: #00ADEF;
+}
+
 #form_select_filter * {
   padding: 0;
   margin: 0;
@@ -416,37 +471,55 @@ body {
   border-color: #00ADEF;
 }
 
-#datalist_diachi option {
-  max-height: 20em !important;
-  width: 350px !important;
-  cursor: pointer !important;
-}
-
-#datalist_diachi,
-#khong_tim_thay {
+#ds_diachi {
   z-index: 1;
   background-color: #fbfbfb;
   position: absolute;
   overflow-x: hidden;
-  overflow-y: scroll;
-  top: 66px;
+  overflow-y: auto;
+  top: 62px;
   border: solid 1px #aaa;
   border-radius: 3px;
-  max-height: 27.5%;
+  max-height: 300px;
   display: none;
-  width: 100%;
+  width: fit-content;
 }
 
-#datalist_diachi li {
+#ds_diachi li {
   border-bottom: solid 1px #ccc;
 }
 
-#datalist_diachi li:hover {
+#ds_diachi li:hover {
   color: #fff !important;
   background-color: #00ADEF;
   cursor: pointer !important;
 }
 
-#khong_tim_thay {
-  z-index: 2;
+.width25 {
+  width: 25% !important;
+  max-width: 25% !important;
+}
+
+#exit_timkiem {
+  position: absolute;
+  top: 3.5px;
+  left: 3.5px;
+  line-height: 15px;
+  cursor: pointer;
+  fill: #666;
+}
+
+#exit_timkiem svg {
+  width: 15px;
+  height: 15px;
+}
+
+#bo_chon_tat_ca {
+  position: absolute;
+  top: 150px;
+  left: 175px;
+  line-height: 30px;
+  cursor: pointer;
+  fill: #666;
+  display: none;
 }
