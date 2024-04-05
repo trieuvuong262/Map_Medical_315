@@ -1975,9 +1975,9 @@
     },
     {
         "title": "Số 40 Đặng Văn Bi",
-        "type": "BV",
-        "img": "SrcLogo.bv",
-        "name": "Name.bv",
+        "type": "BVSAN",
+        "img": "SrcLogo.bvsan",
+        "name": "Name.bvsan",
         "hotline": "Hotline315",
         "address": "40 Đặng Văn Bi, P. Bình Thọ, TP. Thủ Đức, TP. Hồ Chí Minh",
         "city": "TP. HCM",
@@ -1989,9 +1989,9 @@
     },
     {
         "title": "Số 764 Kha Vạn Cân",
-        "type": "BV",
-        "img": "SrcLogo.bv",
-        "name": "Name.bv",
+        "type": "BVNHI",
+        "img": "SrcLogo.bvnhi",
+        "name": "Name.bvnhi",
         "hotline": "Hotline315",
         "address": "764 Kha Vạn Cân, P. Linh Đông, TP. Thủ Đức, TP. Hồ Chí Minh",
         "city": "TP. HCM",
@@ -2003,9 +2003,9 @@
     },
     {
         "title": "Số 88-90 Tây Thạnh",
-        "type": "BV",
-        "img": "SrcLogo.bv",
-        "name": "Name.bv",
+        "type": "BVSAN",
+        "img": "SrcLogo.bvsan",
+        "name": "Name.bvsan",
         "hotline": "Hotline315",
         "address": "88-90 Tây Thạnh, P. Tây Thạnh, Q. Tân Phú, TP. Hồ Chí Minh",
         "city": "TP. HCM",
@@ -2017,9 +2017,9 @@
     },
     {
         "title": "Số 502-504 Lạc Long Quân",
-        "type": "BV",
-        "img": "SrcLogo.bv",
-        "name": "Name.bv",
+        "type": "BVSAN",
+        "img": "SrcLogo.bvsan",
+        "name": "Name.bvsan",
         "hotline": "Hotline315",
         "address": "502-504 Lạc Long Quân, TX. Hiệp Tân, TX. Hòa Thành, TP. Tây Ninh",
         "city": "Tây Ninh",
@@ -2031,9 +2031,9 @@
     },
     {
         "title": "Số 323-297 Quốc Lộ 1",
-        "type": "BV",
-        "img": "SrcLogo.bv",
-        "name": "Name.bv",
+        "type": "BVSAN",
+        "img": "SrcLogo.bvsan",
+        "name": "Name.bvsan",
         "hotline": "Hotline315",
         "address": "323-297 Quốc Lộ 1, P. 4, TP. Tân An, Tỉnh Long An",
         "city": "Long An",
@@ -2042,20 +2042,6 @@
         "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d566.4948677563095!2d106.39815337543072!3d10.534012635735714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDMyJzAyLjQiTiAxMDbCsDIzJzU0LjIiRQ!5e0!3m2!1svi!2s!4v1711705159486!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "latitude": "10.533993594045882",
         "longitude": "106.39839663888196"
-    },
-    {
-        "title": "Số 622-624 Cách Mạng Tháng Tám",
-        "type": "BV",
-        "img": "SrcLogo.bv",
-        "name": "Name.bv",
-        "hotline": "Hotline315",
-        "address": "622-624 Cách Mạng Tháng Tám, P. Phước Nguyễn, TP. Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu",
-        "city": "Bà Rịa - Vũng Tàu",
-        "workingTime": "Time.comingsoon",
-        "linkMap": "https://maps.app.goo.gl/6qWbbcegNwg93D9L9",
-        "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.124940559794!2d107.18459347601076!3d10.490815864394877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31757350819acc7d%3A0x180a82a1e3af9ded!2zNjI0IEPDoWNoIE3huqFuZyBUaMOhbmcgVMOhbSwgUGjGsOG7m2MgTmd1eeG7hW4sIELDoCBS4buLYSwgQsOgIFLhu4thIC0gVsWpbmcgVMOgdSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1711705230581!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
-        "latitude": "10.49081058964795",
-        "longitude": "107.18716839672777"
     },
     {
         "title": "Số 1184 Huỳnh Tấn Phát",
@@ -2070,5 +2056,19 @@
         "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.1940066798657!2d106.73398947601244!3d10.719514560238919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752542ddc65cf9%3A0x2bce05ea5fe7bd4!2zMTE4NCBIdeG7s25oIFThuqVuIFBow6F0LCBQaMO6IE3hu7ksIFF14bqtbiA3LCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1711705249426!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "latitude": "10.719509289432702",
         "longitude": "106.73654293905682"
+    },
+    {
+        "title": "Số 525-525A Phạm Văn Thuận",
+        "type": "NHI",
+        "img": "SrcLogo.nhi",
+        "name": "Name.nhi",
+        "hotline": "Hotline315",
+        "address": "525-525A Phạm Văn Thuận, P. Tam Hiệp, TP. Biên Hoà, Tỉnh Đồng Nai",
+        "city": "Đồng Nai",
+        "workingTime": "Time.comingsoon",
+        "linkMap": "https://maps.app.goo.gl/4ffWDfPfJMqkTSdy9",
+        "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.82814360323408!2d106.85792136749382!3d10.944455951502258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174de85ed3dd1c5%3A0x82b10f28452fcbb!2zNTI1IFBo4bqhbSBWxINuIFRodeG6rW4sIFRhbSBIaeG7h3AsIFRow6BuaCBwaOG7kSBCacOqbiBIw7JhLCDEkOG7k25nIE5haQ!5e0!3m2!1svi!2s!4v1712290660693!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "latitude": "10.944412500000851",
+        "longitude": "106.85786370000153"
     }
 ]
