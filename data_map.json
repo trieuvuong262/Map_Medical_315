@@ -2056,5 +2056,19 @@
         "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.1940066798657!2d106.73398947601244!3d10.719514560238919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752542ddc65cf9%3A0x2bce05ea5fe7bd4!2zMTE4NCBIdeG7s25oIFThuqVuIFBow6F0LCBQaMO6IE3hu7ksIFF14bqtbiA3LCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1711705249426!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "latitude": "10.719509289432702",
         "longitude": "106.73654293905682"
+    },
+    {
+        "title": "Số 525-525A Phạm Văn Thuận",
+        "type": "NHI",
+        "img": "SrcLogo.nhi",
+        "name": "Name.nhi",
+        "hotline": "Hotline315",
+        "address": "525-525A Phạm Văn Thuận, P. Tam Hiệp, TP. Biên Hoà, Tỉnh Đồng Nai",
+        "city": "Đồng Nai",
+        "workingTime": "Time.comingsoon",
+        "linkMap": "https://maps.app.goo.gl/4ffWDfPfJMqkTSdy9",
+        "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.82814360323408!2d106.85792136749382!3d10.944455951502258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174de85ed3dd1c5%3A0x82b10f28452fcbb!2zNTI1IFBo4bqhbSBWxINuIFRodeG6rW4sIFRhbSBIaeG7h3AsIFRow6BuaCBwaOG7kSBCacOqbiBIw7JhLCDEkOG7k25nIE5haQ!5e0!3m2!1svi!2s!4v1712290660693!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "latitude": "10.944412500000851",
+        "longitude": "106.85786370000153"
     }
 ]

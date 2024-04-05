@@ -265,23 +265,23 @@ body {
 .color_nhi,
 .color_bvnhi,
 .color_vp {
-  color: #00ADEF;
+  color: #00ADEF !important;
   fill: #00ADEF;
 }
 
 .color_san,
 .color_bvsan {
-  color: #DF5EA2;
+  color: #DF5EA2 !important;
   fill: #DF5EA2;
 }
 
 .color_lao {
-  color: #F58220;
+  color: #F58220 !important;
   fill: #F58220;
 }
 
 .color_mat {
-  color: #1DBFD7;
+  color: #1DBFD7 !important;
   fill: #1DBFD7;
 }
 
@@ -489,15 +489,22 @@ body {
   border-bottom: solid 1px #ccc;
 }
 
-#ds_diachi li:hover {
+#ds_diachi li span {
+  font-weight: bold !important;
+}
+
+#ds_diachi li:hover,
+#ds_diachi li:hover * {
   color: #fff !important;
   background-color: #00ADEF;
   cursor: pointer !important;
 }
 
-.width25 {
+.mo_khung_timkiem {
   width: 25% !important;
   max-width: 25% !important;
+  height: 97.5% !important;
+  max-height: 97.5% !important;
 }
 
 #exit_timkiem {
