@@ -495,7 +495,7 @@ body {
 
 #ds_diachi li:hover,
 #ds_diachi li:hover * {
-  color: #fff !important;
+  color: #fbfbfb !important;
   background-color: #00ADEF;
   cursor: pointer !important;
 }
@@ -503,7 +503,7 @@ body {
 .mo_khung_timkiem {
   width: 25% !important;
   max-width: 25% !important;
-  height: 97.5% !important;
+  height: 50% !important;
   max-height: 97.5% !important;
 }
 
@@ -529,4 +529,47 @@ body {
   cursor: pointer;
   fill: #666;
   display: none;
+}
+
+#btn_lancan {
+  display: none;
+  color: #fbfbfb !important;
+  fill: #fbfbfb !important;
+  background-color: #00ADEF;
+  line-height: 24px;
+}
+
+#btn_lancan span {
+  color: #fbfbfb !important;
+  fill: #fbfbfb !important;
+}
+
+#btn_lancan svg {
+  height: 24px;
+}
+
+#btn_lancan:hover {
+  background-color: #5ed1ff;
+}
+
+#btn_lancan:hover svg,
+#btn_lancan:hover span {
+  font-weight: bold;
+  color: #222 !important;
+  fill: #222 !important;
+}
+
+.div_lancan {
+  display: flex !important;
+}
+
+.yNHHyP-marker-view:has(.div_chinh) {
+  z-index: 2 !important;
+}
+
+@media only screen and (max-width: 960px) {
+  .mo_khung_timkiem {
+    width: 40% !important;
+    max-width: 40% !important;
+  }
 }
