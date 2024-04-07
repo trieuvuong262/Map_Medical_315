@@ -621,9 +621,9 @@ body {
   }
 
   .mo_khung_timkiem {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 450px !important;
+    width: 95% !important;
+    max-width: 95% !important;
+    height: 370px !important;
   }
 }
 
