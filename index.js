@@ -9,7 +9,9 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     lngHCM = 106.6717373;
   const dataMap315 = [...dataMap315json.default];
   let dataMapDangXem = [...dataMap315],
-    dataMapChiNhanhLanCan = [];
+    dataMapChiNhanhLanCan = [],
+    dsTinhTp = [],
+    dsQuanHuyen = [];
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   const map = new Map(document.getElementById("map"), {
@@ -28,7 +30,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     bvsan: "Bệnh viện Phụ Sản Quốc Tế 315",
     bvnhi: "Bệnh viện Nhi Đồng Quốc Tế 315",
     vp: "Văn phòng 315 MEDICAL",
-  }
+  };
   const layIdChiNhanh = (chiNhanh) => {
     return "id" + dataMap315.indexOf(chiNhanh);
   };
@@ -42,7 +44,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     </div>
 
     <div class="icon">
-      <img class="${chiNhanh.type == "BVSAN" || chiNhanh.type == "BVNHI" || chiNhanh.type == "VP" ? "" : "logo_pk"}" src="${chiNhanh.img}"></img>
+      <img class="${chiNhanh.type === "BVSAN" || chiNhanh.type === "BVNHI" || chiNhanh.type === "VP" ? "" : "logo_pk"}" src="${chiNhanh.img}"></img>
     </div>
 
     <div class="detail">
@@ -67,7 +69,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       </div>
       <div class="clockWork">
         <svg version="1.1" id="Layer_1" width="14" height="14" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"> <path d="M10,20C4.5,20,0,15.5,0,10S4.5,0,10,0s10,4.5,10,10S15.5,20,10,20z M10,2c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S14.4,2,10,2 z"/> <path d="M13.8,12l-4-1C9.3,10.9,9,10.5,9,10V5c0-0.6,0.4-1,1-1s1,0.4,1,1v4.2l3.2,0.8c0.5,0.1,0.9,0.7,0.7,1.2 C14.8,11.8,14.3,12.1,13.8,12z"/> </svg>
-        <span class="${chiNhanh.workingTime == "Coming soon" ? "coming_soon" : ""}" style="margin-top:2px">&nbsp${chiNhanh.workingTime}</span>
+        <span class="${chiNhanh.workingTime === "Coming soon" ? "coming_soon" : ""}" style="margin-top:2px">&nbsp${chiNhanh.workingTime}</span>
       </div>
     </div>
       `;
@@ -140,7 +142,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       default:
         break;
     };
-    if (chiNhanh.hotline == "Hotline315" || chiNhanh.hotline == "" || chiNhanh.hotline === undefined) {
+    if (chiNhanh.hotline === "Hotline315" || chiNhanh.hotline === "" || chiNhanh.hotline === undefined) {
       chiNhanh.hotline = "0901.315.315";
     };
     const glyphSvgMarkerView = new AdvancedMarkerElement({
@@ -156,7 +158,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     });
 
     markers.push(glyphSvgMarkerView);
-  }
+  };
 
 
   // ********************** FORM SEARCH FILTER **********************
@@ -171,7 +173,11 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     divLoaiTimLanCan = document.getElementById("div_loaitimlancan"),
     dsInputLoaiTimLanCan = document.getElementsByName("rad_timlancan"),// 0 = rad ban kinh, 1 = rad quan huyen
     inputBanKinh = document.getElementById("txt_bankinh"),
-    inputQuanHuyen = document.getElementById("txt_quanhuyen");
+    divQuanHuyen = document.getElementById("div_quanhuyen"),
+    divQuanHuyenCot1 = document.getElementById("div_quanhuyen_cot1"),
+    divQuanHuyenCot2 = document.getElementById("div_quanhuyen_cot2"),
+    divQuanHuyenCot3 = document.getElementById("div_quanhuyen_cot3");
+
   const xuLyChuoi = (str) => {
     str = str.toLowerCase();
     str = str.replace(/\s+/g, ' ');
@@ -232,12 +238,44 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     dsDiaChiInput.appendChild(liDiaChi);
     return false;
   };
+  const sapXepQuanHuyen = (a, b) => {
+    return a.quanHuyen.localeCompare(b.quanHuyen);
+  };
+  const loadQuanHuyen = (tinhTp) => {
+    let flag = 1,
+      stt = 1;
+    divQuanHuyenCot1.innerHTML = ``;
+    divQuanHuyenCot2.innerHTML = ``;
+    divQuanHuyenCot3.innerHTML = ``;
+    dsQuanHuyen.map((qh) => {
+      if (qh.tinhTp === tinhTp) {
+        let quanHuyen = qh.quanHuyen;
+        if (quanHuyen === "TP. Thủ Đức") {
+          quanHuyen += ` (Q. 2 & Q. 9)`
+        };
+        let divQuanHuyenCot = document.getElementById("div_quanhuyen_cot" + flag);
+        divQuanHuyenCot.innerHTML += `<div class="row">
+        <label class="form-check-label" for="ckb_quanhuyen${stt}">
+          <input id="ckb_quanhuyen${stt}" class="form-check-input"
+           value="${qh.quanHuyen}" type="checkbox">&nbsp;${quanHuyen}
+        </label></div>`;
+        if (flag === 1 || flag === 2) {
+          flag++;
+        } else if (flag === 3) {
+          flag = 1;
+        };
+        stt++;
+      };
+    });
+  }
   const loadDsTinhTp = () => {
     inputTimTinhTp.innerHTML = `<option value="all" selected>Tất cả các Tỉnh/TP...</option>`;
-    let dsTinhTp = [];
     dataMap315.map((chiNhanh) => {
       if (dsTinhTp.some(tinhTp => tinhTp.includes(chiNhanh.city)) === false) {
         dsTinhTp.push(chiNhanh.city);
+      };
+      if (dsQuanHuyen.some(qh => qh.quanHuyen.includes(chiNhanh.district)) === false) {
+        dsQuanHuyen.push({ tinhTp: chiNhanh.city, quanHuyen: chiNhanh.district });
       };
     });
     dsTinhTp.map((tinhTp) => {
@@ -246,6 +284,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       optTinhTp.innerHTML = tinhTp.replace(/TP. HCM/g, 'Hồ Chí Minh');
       inputTimTinhTp.appendChild(optTinhTp);
     });
+    return dsQuanHuyen.sort(sapXepQuanHuyen);
   };
   const checkInputChuyenKhoa = (chuyenKhoa) => {
     let inputCheckBox = document.getElementById("ckb_" + chuyenKhoa.toLowerCase());
@@ -302,12 +341,14 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     dataMapDangXem = locTheoTuKhoa(dataMapDangXem, tinhTpCanTim);
     dataMapDangXem = locTheoTuKhoa(dataMapDangXem, diaChiCanTim);
     anHienChiNhanh(dataMapDangXem);
+    resetChiNhanhLanCan();
     if (dataMapDangXem.length > 0 && inputTimDiaChi.value === dataMapDangXem[0].address) {
       divTimLanCan.style.display = "block";
+      inputTimLanCan.checked = false;
+      divLoaiTimLanCan.style.display = "none";
     } else {
       divTimLanCan.style.display = "none";
     };
-    resetChiNhanhLanCan();
     return dataMapDangXem;
   };
   const timDiaChi = () => {
@@ -325,6 +366,12 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   inputTimDiaChi.addEventListener("focusout", () => {
     setTimeout(() => {
       dsDiaChiInput.style.display = "none";
+      if (inputTimDiaChi.value === "") {
+        loadChiNhanh();
+        loadDsDiaChi(dataMapDangXem);
+        zoomToiChiNhanh(dataMapDangXem);
+        anHienChiNhanh(dataMapDangXem);
+      };
     }, 250);
   });
   inputTimDiaChi.addEventListener("change", () => {
@@ -339,6 +386,9 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     anHienChiNhanh(timDiaChi());
   });
   inputTimDiaChi.addEventListener("mousemove", () => {
+    if (inputTimDiaChi.value === "") {
+      loadChiNhanh();
+    };
     loadDsDiaChi(timDiaChi());
     anHienChiNhanh(timDiaChi());
   });
@@ -378,22 +428,6 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     zoomToiChiNhanh(dataMapDangXem);
     anHienChiNhanh(dataMapDangXem);
   });
-  inputTimLanCan.addEventListener("change", () => {
-    if (inputTimLanCan.checked) {
-      divLoaiTimLanCan.style.display = "block";
-      if (dsInputLoaiTimLanCan[0].checked) {
-        inputBanKinh.style.display = "block";
-        inputQuanHuyen.style.display = "none";
-        timLanCanTheoKm();
-      } else {
-        inputBanKinh.style.display = "none";
-        inputQuanHuyen.style.display = "block";
-      };
-    } else {
-      resetChiNhanhLanCan();
-      divLoaiTimLanCan.style.display = "none";
-    }
-  });
   const tinhKhoangCach2ChiNhanh = (lat1, lng1, lat2, lng2) => {
     const R = 6371e3,
       φ1 = lat1 * Math.PI / 180,
@@ -405,8 +439,8 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     return R * c / 1000;
   };
   const resetChiNhanhLanCan = () => {
-    let divDangXem = document.getElementsByClassName("div_chinh");
-    let dsDivChiNhanhLanCan = document.getElementsByClassName("div_lancan");
+    let divDangXem = document.getElementsByClassName("div_chinh"),
+      dsDivChiNhanhLanCan = document.getElementsByClassName("div_lancan");
     while (divDangXem.length > 0) {
       for (const div of divDangXem) {
         div.classList.remove("div_chinh");
@@ -422,7 +456,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     dataMapChiNhanhLanCan = [];
     return dataMapChiNhanhLanCan;
   };
-  const timLanCanTheoKm = () => {
+  const timLanCanTheoBanKinh = () => {
     resetChiNhanhLanCan();
     let banKinh = inputBanKinh.value;
     if (0 < banKinh && banKinh <= 1750 && dsInputLoaiTimLanCan[0].checked && inputTimLanCan.checked) {
@@ -434,11 +468,9 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       });
       if (dataMapChiNhanhLanCan.length > 0) {
         dataMapChiNhanhLanCan.map((chiNhanh) => {
-          console.log(chiNhanh);
           let idChiNhanh = layIdChiNhanh(chiNhanh),
             divChiNhanh = document.getElementById(idChiNhanh);
           if (divChiNhanh) {
-            console.log(divChiNhanh);
             divChiNhanh.classList.add("div_lancan");
           }
         });
@@ -451,18 +483,68 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     inputBanKinh.value = "";
     return resetChiNhanhLanCan();
   };
+  const timLanCanTheoQuanHuyen = () => {
+    resetChiNhanhLanCan();
+    let dsInputQuanHuyen = document.getElementById("div_quanhuyen").querySelectorAll("input");
+    if (dsInputLoaiTimLanCan[1].checked && inputTimLanCan.checked) {
+      let chiNhanhCanXemLanCan = dataMapDangXem[0];
+      dataMap315.map((chiNhanh) => {
+        dsInputQuanHuyen.forEach((input) => {
+          if (input.checked && input.value === chiNhanh.district) {
+            dataMapChiNhanhLanCan.push(chiNhanh);
+          };
+        });
+      });
+      if (dataMapChiNhanhLanCan.length > 0) {
+        dataMapChiNhanhLanCan.map((chiNhanh) => {
+          let idChiNhanh = layIdChiNhanh(chiNhanh),
+            divChiNhanh = document.getElementById(idChiNhanh);
+          if (divChiNhanh) {
+            divChiNhanh.classList.add("div_lancan");
+          }
+        });
+      };
+      let idChiNhanh = layIdChiNhanh(chiNhanhCanXemLanCan),
+        divChiNhanh = document.getElementById(idChiNhanh);
+      divChiNhanh.classList.add("div_chinh");
+      return dataMapChiNhanhLanCan;
+    };
+    return resetChiNhanhLanCan();
+  };
+  inputTimLanCan.addEventListener("change", () => {
+    if (inputTimLanCan.checked) {
+      divLoaiTimLanCan.style.display = "block";
+      if (dsInputLoaiTimLanCan[0].checked) {
+        inputBanKinh.style.display = "block";
+        divQuanHuyen.style.display = "none";
+        timLanCanTheoBanKinh();
+      } else if (dsInputLoaiTimLanCan[1].checked) {
+        inputBanKinh.style.display = "none";
+        divQuanHuyen.style.display = "block";
+        loadQuanHuyen(dataMapDangXem[0].city);
+      };
+    } else {
+      resetChiNhanhLanCan();
+      divLoaiTimLanCan.style.display = "none";
+    }
+  });
   divLoaiTimLanCan.addEventListener("change", () => {
     if (dsInputLoaiTimLanCan[0].checked) {
       inputBanKinh.style.display = "block";
-      inputQuanHuyen.style.display = "none";
-      timLanCanTheoKm();
-    } else {
+      divQuanHuyen.style.display = "none";
+      timLanCanTheoBanKinh();
+    } else if (dsInputLoaiTimLanCan[1].checked) {
       inputBanKinh.style.display = "none";
-      inputQuanHuyen.style.display = "block";
+      divQuanHuyen.style.display = "block";
+      timLanCanTheoQuanHuyen();
     };
   });
+  dsInputLoaiTimLanCan[1].addEventListener("change", () => {
+    resetChiNhanhLanCan();
+    loadQuanHuyen(dataMapDangXem[0].city);
+  });
   inputBanKinh.addEventListener("keyup", () => {
-    timLanCanTheoKm();
+    timLanCanTheoBanKinh();
   });
   document.getElementById("btn_timkiem").addEventListener("click", () => {
     document.getElementById("btn_timkiem").style.display = "none";

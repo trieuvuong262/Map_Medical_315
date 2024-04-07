@@ -487,11 +487,7 @@ body {
 }
 
 .div_chinh {
-  animation: bounce 1.5s ease infinite;
-}
-
-#txt_bankinh::placeholder {
-  display: block !important;
+  animation: bounce 1.25s ease infinite;
 }
 
 @keyframes bounce {
@@ -500,7 +496,7 @@ body {
   }
 
   80% {
-    transform: translateY(-25%);
+    transform: translateY(-45%);
   }
 
   90% {
@@ -508,7 +504,7 @@ body {
   }
 
   95% {
-    transform: translateY(-15%);
+    transform: translateY(-25%);
   }
 
   97% {
@@ -516,7 +512,7 @@ body {
   }
 
   99% {
-    transform: translateY(-5%);
+    transform: translateY(-15%);
   }
 
   100% {
@@ -527,52 +523,8 @@ body {
 .mo_khung_timkiem {
   width: 25% !important;
   max-width: 25% !important;
-  height: 65% !important;
   max-height: 97.5% !important;
 }
-
-/* @media only screen and (min-width: 300px) {
-  #map {
-    zoom: 0.85;
-  }
-
-  .address {
-    width: 275px;
-  }
-
-  #ds_diachi {
-    max-width: 89.808% !important;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-
-  #ds_diachi {
-    max-width: 45.313rem !important;
-  }
-
-}
-
-@media only screen and (min-width: 768px) {
-  #map {
-    zoom: 0.9;
-  }
-
-  #ds_diachi {
-    max-width: 28.688rem !important;
-  }
-}
-
-@media only screen and (min-width: 961px) {
-  #map {
-    zoom: 1;
-  }
-
-  .address {
-    width: max-content;
-    margin-right: 5px;
-  }
-} */
 
 @media only screen and (max-width: 1280px) {
   .mo_khung_timkiem {
