@@ -214,6 +214,7 @@ body {
 
 .property .detail .address {
   padding-bottom: 3px;
+  margin-right: 5px;
 }
 
 .property .detail a {
@@ -621,8 +622,8 @@ body {
   }
 
   .mo_khung_timkiem {
-    width: 97.5% !important;
-    max-width: 97.5% !important;
+    width: 95.5% !important;
+    max-width: 95.5% !important;
     height: 375px !important;
   }
 }
