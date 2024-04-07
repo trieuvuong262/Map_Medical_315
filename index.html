@@ -22,18 +22,14 @@
       class="form-control p-0">
       <button id="btn_timkiem" type="button" class="btn p-2"
         title="Mở khung tìm kiếm chi nhánh"><svg
-          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path
+          viewBox="0 0 24 24"><path
             d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z" /></svg>
       </button>
       <div class="row justify-content-center color_text p-3"
         id="div_timkiem">
         <div class="col-md-12">
           <div id="exit_timkiem" title="Đóng khung tìm kiếm chi nhánh">
-            <svg viewBox="0 0 16 16"
-              xmlns:dc="http://purl.org/dc/elements/1.1/"
-              xmlns:cc="http://creativecommons.org/ns#"
-              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-              xmlns="http://www.w3.org/2000/svg" id="svg2" version="1.1">
+            <svg viewBox="0 0 16 16" id="svg2" version="1.1">
               <g id="layer1" transform="rotate(45 1254.793 524.438)"><path
                   d="m7.295 1048.652 1.412-1.411-6.364-6.364 6.364-6.364-1.414-1.414-7.778 7.778z"
                   id="path4179" />
@@ -48,11 +44,11 @@
               id="ds_diachi">
             </ul>
           </div>
-          <div class="row mb-3">
+          <div class="row mb-3 checkbox">
             <select id="cbb_timtinhtp" class="form-select p-2">
             </select>
           </div>
-          <div class="row">
+          <div class="row mb-3">
             <div class="form-check form-switch fs-5 checkbox">
               <label class="form-check-label" for="ckb_all">
                 <input id="ckb_all" class="form-check-input"
@@ -60,15 +56,12 @@
                   role="switch" checked>&nbsp;Chọn tất cả
               </label>
               <div id="bo_chon_tat_ca" title="Bỏ chọn tất cả các chuyên khoa">
-                <svg class="exit" viewBox="0 0 1920 1920"
-                  xmlns="http://www.w3.org/2000/svg">
+                <svg class="exit" viewBox="0 0 1920 1920">
                   <path
                     d="M797.32 985.882 344.772 1438.43l188.561 188.562 452.549-452.549 452.548 452.549 188.562-188.562-452.549-452.548 452.549-452.549-188.562-188.561L985.882 797.32 533.333 344.772 344.772 533.333z" />
                 </svg>
               </div>
             </div>
-          </div>
-          <div class="row mb-3">
             <div id="div_chuyenkhoa" class="form-control p-2">
               <div class="checkbox">
                 <label class="form-check-label" for="ckb_nhi">
@@ -121,20 +114,51 @@
               </div>
             </div>
           </div>
-          <div class="row mb-3 justify-content-center">
-            <button id="btn_lancan" value type="button"
-              class="btn p-2"><!-- License: MIT. Made by phosphor: https://github.com/phosphor-icons/phosphor-icons -->
-              <span><svg width="15px" height="15px"
-                  viewBox="0 0 256.00098 256.00098" id="Flat"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M159.99707,116a12.00028,12.00028,0,0,1-12,12h-20v20a12,12,0,0,1-24,0V128h-20a12,12,0,0,1,0-24h20V84a12,12,0,0,1,24,0v20h20A12.00028,12.00028,0,0,1,159.99707,116Zm72.47949,116.48242a12.00033,12.00033,0,0,1-16.9707,0l-40.67871-40.67871a96.10513,96.10513,0,1,1,16.97168-16.96979l40.67773,40.6778A11.99973,11.99973,0,0,1,232.47656,232.48242ZM115.99707,187.99609a72,72,0,1,0-72-72A72.08124,72.08124,0,0,0,115.99707,187.99609Z" />
-                </svg>&nbsp;Lân cận</span></button>
-            <div class="col-md-6">
-
+          <div class="row mb-3 pt-3 border-top border-1 justify-content-center"
+            id="div_timlancan">
+            <div class="form-check form-switch fs-5 checkbox">
+              <label class="form-check-label" for="ckb_timlancan">
+                <input id="ckb_timlancan" class="form-check-input"
+                  type="checkbox" role="switch">&nbsp;Tìm chi nhánh lân
+                cận
+              </label>
             </div>
-          </div>
-          <!-- <div class="row mt-3 mb-1 pt-3 border-top border-1">
+            <div class="form-control p-2" id="div_loaitimlancan">
+              <div class="form-check">
+                <label class="form-check-label checkbox cursor"
+                  for="rad_timtheokm">
+                  <input class="form-check-input" name="rad_timlancan"
+                    type="radio" value="km"
+                    id="rad_timtheokm"
+                    checked>&nbsp;Bán kính</label>
+                <div class="row justify-content-center">
+                  <div class="col-md-3 checkbox">
+                    <input id="txt_bankinh"
+                      class="form-control ps-2 mb-5 fs-5"
+                      maxlength="4"
+                      placeholder="...Km" type="number"
+                      min="0" max="1750">
+                  </div>
+                </div>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label checkbox cursor"
+                  for="rad_timtheoquan">
+                  <input class="form-check-input" name="rad_timlancan"
+                    type="radio" value="quan"
+                    id="rad_timtheoquan">&nbsp;Quận / Huyện</label>
+                <div class="row justify-content-center">
+                  <div class="col-md-3">
+                    <input id="txt_quanhuyen"
+                      class="form-control ps-2 mb-5 fs-5" value="5"
+                      maxlength="4"
+                      placeholder="...Km" type="number"
+                      min="0" max="1750">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row mt-3 mb-1 pt-3 border-top border-1">
             <div class="form-control p-2">464 Nguyễn An Ninh, P. Dĩ An, TP. Dĩ
               An, Tỉnh Bình Dương</div>
           </div>
@@ -143,16 +167,16 @@
               An, Tỉnh Bình Dương</div>
           </div> -->
 
+          </div>
         </div>
       </div>
-    </div>
-    <!-- prettier-ignore -->
-    <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+      <!-- prettier-ignore -->
+      <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
       ({ key: "AIzaSyD3GG7Qq1XgRMAcjPejT9spgnR4RZ9xzbU", v: "weekly" });</script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"></script>
-  </body>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    </body>
 
-</html>
+  </html>
