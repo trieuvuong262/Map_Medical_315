@@ -572,10 +572,6 @@ body {
     width: max-content;
     margin-right: 5px;
   }
-
-  #ds_diachi {
-    width: min-content;
-  }
 }
 
 @media only screen and (max-width: 960px) {
