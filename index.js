@@ -47,26 +47,26 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
 
     <div class="detail">
       <div class="name">
-        <svg class="svg_icon color_${chiNhanh.type.toLowerCase()}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" fill="rgba(0, 175, 239, 1)"> <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path> </svg>
+        <svg class="svg_icon color_${chiNhanh.type.toLowerCase()}" viewBox="0 0 24 24" fill="rgba(0, 175, 239, 1)"> <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path></svg>
         <span class="color_${chiNhanh.type.toLowerCase()}">${chiNhanh.name}</span>
-        <svg class="exit" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+        <svg class="exit" viewBox="0 0 1920 1920">
           <path d="M797.32 985.882 344.772 1438.43l188.561 188.562 452.549-452.549 452.548 452.549 188.562-188.562-452.549-452.548 452.549-452.549-188.562-188.561L985.882 797.32 533.333 344.772 344.772 533.333z"/>
         </svg>
       </div>
       <div class="hotline">
         <a href="tel: ${chiNhanh.hotline}">
-          <svg class="svg_icon color_${chiNhanh.type.toLowerCase()}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" fill="rgba(0, 175, 239, 1)"> <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"></path> </svg>
+          <svg class="svg_icon color_${chiNhanh.type.toLowerCase()}" viewBox="0 0 24 24" fill="rgba(0, 175, 239, 1)"> <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"></path> </svg>
           <span>${chiNhanh.hotline}</span>
         </a>
       </div>
       <div class="address">
       <a target="_blank" href="${chiNhanh.linkMap}">
-        <svg class="svg_icon color_${chiNhanh.type.toLowerCase()}" viewBox="0 0 24 24" id="magicoon-Filled" xmlns="http://www.w3.org/2000/svg"><path id="map-marker-Filled-2" data-name="map-marker-Filled" class="cls-1" d="M14,10a2,2,0,1,1-2-2A2.006,2.006,0,0,1,14,10Zm5.5,0c0,6.08-4.67,9.89-6.67,11.24a1.407,1.407,0,0,1-.83.26,1.459,1.459,0,0,1-.84-.26C9.16,19.89,4.5,16.09,4.5,10A7.33,7.33,0,0,1,12,2.5,7.336,7.336,0,0,1,19.5,10ZM16,10a4,4,0,1,0-4,4A4,4,0,0,0,16,10Z"/></g></svg>
+        <svg class="svg_icon color_${chiNhanh.type.toLowerCase()}" viewBox="0 0 24 24" id="magicoon-Filled" ><path id="map-marker-Filled-2" data-name="map-marker-Filled" class="cls-1" d="M14,10a2,2,0,1,1-2-2A2.006,2.006,0,0,1,14,10Zm5.5,0c0,6.08-4.67,9.89-6.67,11.24a1.407,1.407,0,0,1-.83.26,1.459,1.459,0,0,1-.84-.26C9.16,19.89,4.5,16.09,4.5,10A7.33,7.33,0,0,1,12,2.5,7.336,7.336,0,0,1,19.5,10ZM16,10a4,4,0,1,0-4,4A4,4,0,0,0,16,10Z"/></g></svg>
         <span>${chiNhanh.address}</span>
       </a>
       </div>
       <div class="clockWork">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"> <path d="M10,20C4.5,20,0,15.5,0,10S4.5,0,10,0s10,4.5,10,10S15.5,20,10,20z M10,2c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S14.4,2,10,2 z"/> <path d="M13.8,12l-4-1C9.3,10.9,9,10.5,9,10V5c0-0.6,0.4-1,1-1s1,0.4,1,1v4.2l3.2,0.8c0.5,0.1,0.9,0.7,0.7,1.2 C14.8,11.8,14.3,12.1,13.8,12z"/> </svg>
+        <svg version="1.1" id="Layer_1" width="14" height="14" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"> <path d="M10,20C4.5,20,0,15.5,0,10S4.5,0,10,0s10,4.5,10,10S15.5,20,10,20z M10,2c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S14.4,2,10,2 z"/> <path d="M13.8,12l-4-1C9.3,10.9,9,10.5,9,10V5c0-0.6,0.4-1,1-1s1,0.4,1,1v4.2l3.2,0.8c0.5,0.1,0.9,0.7,0.7,1.2 C14.8,11.8,14.3,12.1,13.8,12z"/> </svg>
         <span class="${chiNhanh.workingTime == "Coming soon" ? "coming_soon" : ""}" style="margin-top:2px">&nbsp${chiNhanh.workingTime}</span>
       </div>
     </div>
@@ -160,14 +160,18 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
 
 
   // ********************** FORM SEARCH FILTER **********************
-  let divDsInputChuyenKhoa = document.getElementById("div_chuyenkhoa"),
-    dsInputChuyenKhoa = divDsInputChuyenKhoa.querySelectorAll("input"), //danh sach input loai chi nhanh
-    inputChonTatCa = document.getElementById("ckb_all"),
-    inputTimDiaChi = document.getElementById("txt_timdiachi"),
-    inputTimTinhTp = document.getElementById("cbb_timtinhtp"),
+  let inputTimDiaChi = document.getElementById("txt_timdiachi"),
     dsDiaChiInput = document.getElementById("ds_diachi"),
-    btnLanCan = document.getElementById("btn_lancan");
-
+    inputTimTinhTp = document.getElementById("cbb_timtinhtp"),
+    divDsInputChuyenKhoa = document.getElementById("div_chuyenkhoa"),
+    dsInputChuyenKhoa = divDsInputChuyenKhoa.querySelectorAll("input"), // danh sach input loai chi nhanh
+    inputChonTatCa = document.getElementById("ckb_all"),
+    divTimLanCan = document.getElementById("div_timlancan"),
+    inputTimLanCan = document.getElementById("ckb_timlancan"),
+    divLoaiTimLanCan = document.getElementById("div_loaitimlancan"),
+    dsInputLoaiTimLanCan = document.getElementsByName("rad_timlancan"),// 0 = rad ban kinh, 1 = rad quan huyen
+    inputBanKinh = document.getElementById("txt_bankinh"),
+    inputQuanHuyen = document.getElementById("txt_quanhuyen");
   const xuLyChuoi = (str) => {
     str = str.toLowerCase();
     str = str.replace(/\s+/g, ' ');
@@ -208,14 +212,12 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
         liDiaChi.innerHTML = `<span class="color_${chiNhanh.type.toLowerCase()}">${chiNhanh.name}</span>` + " - " + chiNhanh.address;
         liDiaChi.addEventListener("click", () => {
           inputTimDiaChi.value = chiNhanh.address;
+          dsDiaChiInput.style.display = "none";
           setTimeout(() => {
             loadChiNhanh();
-            zoomToiChiNhanh(loadChiNhanh());
-            anHienChiNhanh(loadChiNhanh());
-            btnLanCan.value = "";
-            anHienChiNhanhLanCan();
-            dsDiaChiInput.style.display = "none";
-          }, 200);
+            zoomToiChiNhanh(dataMapDangXem);
+            anHienChiNhanh(dataMapDangXem);
+          }, 50);
         });
         dsDiaChiInput.appendChild(liDiaChi);
       });
@@ -223,14 +225,14 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     };
     let liDiaChi = document.createElement("li");
     liDiaChi.classList.add("p-2", "pe-5");
-    liDiaChi.innerHTML = `Không tìm thấy chi nhánh!<span class="me-4">&nbsp;</span>`;
+    liDiaChi.innerHTML = `Không tìm thấy chi nhánh!<span class="me-4 w-100">&nbsp;</span>`;
     liDiaChi.addEventListener("click", () => {
       dsDiaChiInput.style.display = "none";
     });
     dsDiaChiInput.appendChild(liDiaChi);
     return false;
   };
-  const loadDsTinhTp = () => {  //chọn tất cả các tỉnh/tp thì chuyền chuỗi "selected" 
+  const loadDsTinhTp = () => {
     inputTimTinhTp.innerHTML = `<option value="all" selected>Tất cả các Tỉnh/TP...</option>`;
     let dsTinhTp = [];
     dataMap315.map((chiNhanh) => {
@@ -241,9 +243,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     dsTinhTp.map((tinhTp) => {
       let optTinhTp = document.createElement("option");
       optTinhTp.value = tinhTp;
-      tinhTp.replace(/TP. HCM/g, 'Hồ Chí Minh');
-      optTinhTp.innerHTML = tinhTp;
-
+      optTinhTp.innerHTML = tinhTp.replace(/TP. HCM/g, 'Hồ Chí Minh');
       inputTimTinhTp.appendChild(optTinhTp);
     });
   };
@@ -262,23 +262,24 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   };
   const locTheoTuKhoa = (dataMap, tuKhoa) => {
     let dataMapTemp = [];
-    if (tuKhoa !== "" && tuKhoa !== "all") {
+    if (tuKhoa !== "all" && tuKhoa !== "") {
       dataMap.map((chiNhanh) => {
         if (xuLyChuoi(chiNhanh.address).includes(tuKhoa) || xuLyChuoi(chiNhanh.city).includes(tuKhoa)) {
           dataMapTemp.push(chiNhanh);
         }
       });
-    } else {
-      dataMapTemp = [...dataMap];
+      return dataMapTemp;
     }
-    return dataMapTemp;
+    return dataMap;
   };
   const zoomToiChiNhanh = (dataMap) => {
     if (dataMap.length > 0) {
       var latLng = new google.maps.LatLng(Number(dataMap[0].latitude), Number(dataMap[0].longitude));
       map.panTo(latLng);
     };
-    return anHienChiNhanh(dataMap);
+    setTimeout(() => {
+      anHienChiNhanh(dataMap);
+    }, 50);
   };
   const anHienChiNhanh = (dataMap) => {
     dataMap315.map((chiNhanh) => {
@@ -292,89 +293,70 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
         };
       };
     });
-    loadDsDiaChi(dataMap);
   };
   const loadChiNhanh = () => {
     let diaChiCanTim = xuLyChuoi(inputTimDiaChi.value),
       tinhTpCanTim = xuLyChuoi(inputTimTinhTp.value);
-
     dataMapChiNhanhLanCan = [];
     dataMapDangXem = locChuyenKhoa(dataMap315);
     dataMapDangXem = locTheoTuKhoa(dataMapDangXem, tinhTpCanTim);
     dataMapDangXem = locTheoTuKhoa(dataMapDangXem, diaChiCanTim);
     anHienChiNhanh(dataMapDangXem);
-    if (dataMapDangXem.length == 1 && diaChiCanTim === xuLyChuoi(dataMapDangXem[0].address)) {
-      btnLanCan.style.display = "block";
+    if (dataMapDangXem.length > 0 && inputTimDiaChi.value === dataMapDangXem[0].address) {
+      divTimLanCan.style.display = "block";
     } else {
-      btnLanCan.style.display = "none";
+      divTimLanCan.style.display = "none";
     };
+    resetChiNhanhLanCan();
     return dataMapDangXem;
   };
   const timDiaChi = () => {
     let diaChiCanTim = xuLyChuoi(inputTimDiaChi.value),
       dataMapTemp = locTheoTuKhoa(dataMapDangXem, diaChiCanTim);
     loadDsDiaChi(dataMapTemp);
-    anHienChiNhanh(dataMapTemp);
+    setTimeout(() => {
+      anHienChiNhanh(dataMapTemp);
+    }, 50);
     return dataMapTemp;
   };
   inputTimDiaChi.addEventListener("focus", () => {
     dsDiaChiInput.style.display = "block";
-    //anHienChiNhanhLanCan();
   });
   inputTimDiaChi.addEventListener("focusout", () => {
     setTimeout(() => {
       dsDiaChiInput.style.display = "none";
-      loadDsDiaChi(dataMapDangXem);
-    }, 200);
-    //anHienChiNhanhLanCan();
+    }, 250);
   });
   inputTimDiaChi.addEventListener("change", () => {
+    inputTimTinhTp.focus();
     loadChiNhanh();
-    zoomToiChiNhanh(loadChiNhanh());
-    anHienChiNhanh(loadChiNhanh());
-    //anHienChiNhanhLanCan();
+    zoomToiChiNhanh(dataMapDangXem);
+    anHienChiNhanh(dataMapDangXem);
   });
   inputTimDiaChi.addEventListener("keyup", () => {
     loadChiNhanh();
     loadDsDiaChi(timDiaChi());
     anHienChiNhanh(timDiaChi());
-    //anHienChiNhanhLanCan();
   });
   inputTimDiaChi.addEventListener("mousemove", () => {
-    loadChiNhanh();
     loadDsDiaChi(timDiaChi());
     anHienChiNhanh(timDiaChi());
-    //anHienChiNhanhLanCan();
   });
-  // dsDiaChiInput.addEventListener("click", () => {
-  //   let liDiaChi = dsDiaChiInput.querySelectorAll("li")[0],
-  //     idChiNhanhCanTim = liDiaChi.id.replace(/li_/g, '');
-  //   dataMap315.map((chiNhanh) => {
-  //     if (idChiNhanhCanTim === layIdChiNhanh(chiNhanh)) {
-  //       inputTimDiaChi.value = chiNhanh.address;
-  //     };
-  //   });
-  //   loadChiNhanh();
-  //   zoomToiChiNhanh(loadChiNhanh());
-  //   anHienChiNhanh(loadChiNhanh());
-  // });
   inputTimTinhTp.addEventListener("change", () => {
+    inputChonTatCa.focus();
     loadChiNhanh();
-    zoomToiChiNhanh(loadChiNhanh());
-    anHienChiNhanh(loadChiNhanh());
-    //anHienChiNhanhLanCan();
+    zoomToiChiNhanh(dataMapDangXem);
+    anHienChiNhanh(dataMapDangXem);
   });
-  inputTimTinhTp.addEventListener("mousemove", loadChiNhanh);
   inputChonTatCa.addEventListener("change", () => {
-    //anHienChiNhanhLanCan();
     if (inputChonTatCa.checked) {
       document.getElementById("bo_chon_tat_ca").style.display = "none";
       dsInputChuyenKhoa.forEach(input => {
         input.disabled = true;
         input.checked = true;
         loadChiNhanh();
-        zoomToiChiNhanh(loadChiNhanh());
-        anHienChiNhanh(loadChiNhanh());
+        zoomToiChiNhanh(dataMapDangXem);
+        anHienChiNhanh(dataMapDangXem);
       });
     } else {
       document.getElementById("bo_chon_tat_ca").style.display = "block";
@@ -388,60 +370,49 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       input.checked = false;
     });
     loadChiNhanh();
-    zoomToiChiNhanh(loadChiNhanh());
-    anHienChiNhanh(loadChiNhanh());
-    //anHienChiNhanhLanCan();
+    zoomToiChiNhanh(dataMapDangXem);
+    anHienChiNhanh(dataMapDangXem);
   });
   divDsInputChuyenKhoa.addEventListener("change", () => {
     loadChiNhanh();
-    zoomToiChiNhanh(loadChiNhanh());
-    anHienChiNhanh(loadChiNhanh());
-    //anHienChiNhanhLanCan();
+    zoomToiChiNhanh(dataMapDangXem);
+    anHienChiNhanh(dataMapDangXem);
   });
-  const cucTieu = (toaDo) => {
-    return ((Number(toaDo).toFixed(4) * 1000) / 1000) - 0.1;
+  inputTimLanCan.addEventListener("change", () => {
+    if (inputTimLanCan.checked) {
+      divLoaiTimLanCan.style.display = "block";
+      if (dsInputLoaiTimLanCan[0].checked) {
+        inputBanKinh.style.display = "block";
+        inputQuanHuyen.style.display = "none";
+        timLanCanTheoKm();
+      } else {
+        inputBanKinh.style.display = "none";
+        inputQuanHuyen.style.display = "block";
+      };
+    } else {
+      resetChiNhanhLanCan();
+      divLoaiTimLanCan.style.display = "none";
+    }
+  });
+  const tinhKhoangCach2ChiNhanh = (lat1, lng1, lat2, lng2) => {
+    const R = 6371e3,
+      φ1 = lat1 * Math.PI / 180,
+      φ2 = lat2 * Math.PI / 180,
+      Δφ = (lat2 - lat1) * Math.PI / 180,
+      Δλ = (lng2 - lng1) * Math.PI / 180,
+      a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2),
+      c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c / 1000;
   };
-  const cucDai = (toaDo) => {
-    return ((Number(toaDo).toFixed(4) * 1000) / 1000) + 0.1;
-  };
-  const anHienChiNhanhLanCan = () => {
-    let dsDivChiNhanhLanCan = document.getElementsByClassName("div_lancan");
-    if (dsDivChiNhanhLanCan.length == 0 && dataMapChiNhanhLanCan.length == 0 && btnLanCan.value === "xem") {
-      let chiNhanhCanXemLanCan = loadChiNhanh()[0];
-      dataMap315.map((chiNhanh) => {
-        let latMin = cucTieu(chiNhanhCanXemLanCan.latitude),
-          latMax = cucDai(chiNhanhCanXemLanCan.latitude),
-          lngMin = cucTieu(chiNhanhCanXemLanCan.longitude),
-          lngMax = cucDai(chiNhanhCanXemLanCan.longitude);
-        if (latMin < chiNhanh.latitude && chiNhanh.latitude < latMax && lngMin < chiNhanh.longitude && chiNhanh.longitude < lngMax) {
-          dataMapChiNhanhLanCan.push(chiNhanh);
-        };
-      });
-      if (dataMapChiNhanhLanCan.length > 0) {
-        dataMapChiNhanhLanCan.map((chiNhanh) => {
-          let idChiNhanh = layIdChiNhanh(chiNhanh),
-            divChiNhanh = document.getElementById(idChiNhanh);
-          divChiNhanh.classList.add("div_lancan");
-        });
-      }
-      let idChiNhanh = layIdChiNhanh(chiNhanhCanXemLanCan),
-        divChiNhanh = document.getElementById(idChiNhanh);
-      divChiNhanh.classList.add("div_chinh");
-      btnLanCan.value = "";
-      return dataMapChiNhanhLanCan;
-    };
+  const resetChiNhanhLanCan = () => {
     let divDangXem = document.getElementsByClassName("div_chinh");
+    let dsDivChiNhanhLanCan = document.getElementsByClassName("div_lancan");
     while (divDangXem.length > 0) {
       for (const div of divDangXem) {
         div.classList.remove("div_chinh");
       };
       divDangXem = document.getElementsByClassName("div_chinh");
     };
-    dataMapChiNhanhLanCan.map((chiNhanh) => {
-      let idChiNhanh = layIdChiNhanh(chiNhanh),
-        divChiNhanh = document.getElementById(idChiNhanh);
-      divChiNhanh.classList.remove("div_lancan");
-    });
     while (dsDivChiNhanhLanCan.length > 0) {
       for (const div of dsDivChiNhanhLanCan) {
         div.classList.remove("div_lancan");
@@ -449,10 +420,50 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       dsDivChiNhanhLanCan = document.getElementsByClassName("div_lancan");
     };
     dataMapChiNhanhLanCan = [];
-    btnLanCan.value = "xem";
     return dataMapChiNhanhLanCan;
-  }
-  btnLanCan.addEventListener("click", anHienChiNhanhLanCan);
+  };
+  const timLanCanTheoKm = () => {
+    resetChiNhanhLanCan();
+    let banKinh = inputBanKinh.value;
+    if (0 < banKinh && banKinh <= 1750 && dsInputLoaiTimLanCan[0].checked && inputTimLanCan.checked) {
+      let chiNhanhCanXemLanCan = dataMapDangXem[0];
+      dataMap315.map((chiNhanh) => {
+        if (tinhKhoangCach2ChiNhanh(chiNhanhCanXemLanCan.latitude, chiNhanhCanXemLanCan.longitude, chiNhanh.latitude, chiNhanh.longitude) <= banKinh) {
+          dataMapChiNhanhLanCan.push(chiNhanh);
+        };
+      });
+      if (dataMapChiNhanhLanCan.length > 0) {
+        dataMapChiNhanhLanCan.map((chiNhanh) => {
+          console.log(chiNhanh);
+          let idChiNhanh = layIdChiNhanh(chiNhanh),
+            divChiNhanh = document.getElementById(idChiNhanh);
+          if (divChiNhanh) {
+            console.log(divChiNhanh);
+            divChiNhanh.classList.add("div_lancan");
+          }
+        });
+      };
+      let idChiNhanh = layIdChiNhanh(chiNhanhCanXemLanCan),
+        divChiNhanh = document.getElementById(idChiNhanh);
+      divChiNhanh.classList.add("div_chinh");
+      return dataMapChiNhanhLanCan;
+    }
+    inputBanKinh.value = "";
+    return resetChiNhanhLanCan();
+  };
+  divLoaiTimLanCan.addEventListener("change", () => {
+    if (dsInputLoaiTimLanCan[0].checked) {
+      inputBanKinh.style.display = "block";
+      inputQuanHuyen.style.display = "none";
+      timLanCanTheoKm();
+    } else {
+      inputBanKinh.style.display = "none";
+      inputQuanHuyen.style.display = "block";
+    };
+  });
+  inputBanKinh.addEventListener("keyup", () => {
+    timLanCanTheoKm();
+  });
   document.getElementById("btn_timkiem").addEventListener("click", () => {
     document.getElementById("btn_timkiem").style.display = "none";
     document.getElementById("div_timkiem").style.display = "block";
@@ -468,12 +479,10 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   loadDsTinhTp();
 
   map.addListener("zoom_changed", () => {
-    loadChiNhanh();
-    anHienChiNhanh(loadChiNhanh());
+    anHienChiNhanh(dataMapDangXem);
   });
   map.addListener("mousemove", () => {
-    loadChiNhanh();
-    anHienChiNhanh(loadChiNhanh());
+    anHienChiNhanh(dataMapDangXem);
   });
 };
 initMap();
