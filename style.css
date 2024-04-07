@@ -531,7 +531,7 @@ body {
 }
 
 
-@media only screen and (min-width: 300px) {
+/* @media only screen and (min-width: 300px) {
   #map {
     zoom: 0.85;
   }
@@ -572,11 +572,58 @@ body {
     width: max-content;
     margin-right: 5px;
   }
+} */
+
+@media only screen and (max-width: 1280px) {
+  .mo_khung_timkiem {
+    width: 30% !important;
+    max-width: 30% !important;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .mo_khung_timkiem {
+    width: 35% !important;
+    max-width: 35% !important;
+  }
 }
 
 @media only screen and (max-width: 960px) {
+  #map {
+    height: 960px;
+  }
+
+  .address {
+    width: max-content;
+    margin-right: 5px;
+  }
+
   .mo_khung_timkiem {
     width: 40% !important;
     max-width: 40% !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #map {
+    zoom: 0.9;
+  }
+
+  .address {
+    width: 275px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  #map {
+    zoom: 0.85;
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #map {
+    zoom: 0.8;
   }
 }
