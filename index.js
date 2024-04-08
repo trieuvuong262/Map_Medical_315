@@ -361,7 +361,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   };
   const loadSoLuongChiNhanhLanCan = (dataMap) => {
     let soLuongChiNhanhLanCan = Number(dataMap.length) - 1;
-    if (soLuongChiNhanhLanCan > 0) {      
+    if (soLuongChiNhanhLanCan > 0) {
       document.getElementById("lbl_lancan").innerText = `Tìm chi nhánh lân cận - ` + soLuongChiNhanhLanCan + ` CN`;
       return true;
     };
@@ -395,74 +395,6 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     }, 50);
     return dataMapTemp;
   };
-  inputTimDiaChi.addEventListener("focus", () => {
-    dsDiaChiInput.style.display = "block";
-  });
-  inputTimDiaChi.addEventListener("focusout", () => {
-    setTimeout(() => {
-      dsDiaChiInput.style.display = "none";
-      if (inputTimDiaChi.value === "") {
-        loadChiNhanh();
-        loadDsDiaChi(dataMapDangXem);
-        zoomToiChiNhanh(dataMapDangXem);
-        anHienChiNhanh(dataMapDangXem);
-      };
-    }, 250);
-  });
-  inputTimDiaChi.addEventListener("change", () => {
-    inputTimTinhTp.focus();
-    loadChiNhanh();
-    zoomToiChiNhanh(dataMapDangXem);
-    anHienChiNhanh(dataMapDangXem);
-  });
-  inputTimDiaChi.addEventListener("keyup", () => {
-    loadChiNhanh();
-    loadDsDiaChi(timDiaChi());
-    anHienChiNhanh(timDiaChi());
-  });
-  inputTimDiaChi.addEventListener("mousemove", () => {
-    if (inputTimDiaChi.value === "") {
-      loadChiNhanh();
-    };
-    loadDsDiaChi(timDiaChi());
-    anHienChiNhanh(timDiaChi());
-  });
-  inputTimTinhTp.addEventListener("change", () => {
-    inputChonTatCa.focus();
-    loadChiNhanh();
-    zoomToiChiNhanh(dataMapDangXem);
-    anHienChiNhanh(dataMapDangXem);
-  });
-  inputChonTatCa.addEventListener("change", () => {
-    if (inputChonTatCa.checked) {
-      document.getElementById("bo_chon_tat_ca").style.display = "none";
-      dsInputChuyenKhoa.forEach(input => {
-        input.disabled = true;
-        input.checked = true;
-        loadChiNhanh();
-        zoomToiChiNhanh(dataMapDangXem);
-        anHienChiNhanh(dataMapDangXem);
-      });
-    } else {
-      document.getElementById("bo_chon_tat_ca").style.display = "block";
-      dsInputChuyenKhoa.forEach(input => {
-        input.disabled = false;
-      });
-    }
-  });
-  document.getElementById("bo_chon_tat_ca").addEventListener("click", () => {
-    dsInputChuyenKhoa.forEach(input => {
-      input.checked = false;
-    });
-    loadChiNhanh();
-    zoomToiChiNhanh(dataMapDangXem);
-    anHienChiNhanh(dataMapDangXem);
-  });
-  divDsInputChuyenKhoa.addEventListener("change", () => {
-    loadChiNhanh();
-    zoomToiChiNhanh(dataMapDangXem);
-    anHienChiNhanh(dataMapDangXem);
-  });
   const tinhKhoangCach2ChiNhanh = (lat1, lng1, lat2, lng2) => {
     const R = 6371e3,
       φ1 = lat1 * Math.PI / 180,
@@ -539,13 +471,81 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
             divChiNhanh.classList.add("div_lancan");
           }
         });
-      };      
+      };
       document.getElementById(layIdChiNhanh(dataMapDangXem[0])).classList.add("div_chinh");
       loadSoLuongChiNhanhLanCan(dataMapChiNhanhLanCan);
       return dataMapChiNhanhLanCan;
     };
     return resetChiNhanhLanCan();
   };
+  inputTimDiaChi.addEventListener("focus", () => {
+    dsDiaChiInput.style.display = "block";
+  });
+  inputTimDiaChi.addEventListener("focusout", () => {
+    setTimeout(() => {
+      dsDiaChiInput.style.display = "none";
+      if (inputTimDiaChi.value === "") {
+        loadChiNhanh();
+        loadDsDiaChi(dataMapDangXem);
+        zoomToiChiNhanh(dataMapDangXem);
+        anHienChiNhanh(dataMapDangXem);
+      };
+    }, 250);
+  });
+  inputTimDiaChi.addEventListener("change", () => {
+    inputTimTinhTp.focus();
+    loadChiNhanh();
+    zoomToiChiNhanh(dataMapDangXem);
+    anHienChiNhanh(dataMapDangXem);
+  });
+  inputTimDiaChi.addEventListener("keyup", () => {
+    loadChiNhanh();
+    loadDsDiaChi(timDiaChi());
+    anHienChiNhanh(timDiaChi());
+  });
+  inputTimDiaChi.addEventListener("mousemove", () => {
+    if (inputTimDiaChi.value === "") {
+      loadChiNhanh();
+    };
+    loadDsDiaChi(timDiaChi());
+    anHienChiNhanh(timDiaChi());
+  });
+  inputTimTinhTp.addEventListener("change", () => {
+    inputChonTatCa.focus();
+    loadChiNhanh();
+    zoomToiChiNhanh(dataMapDangXem);
+    anHienChiNhanh(dataMapDangXem);
+  });
+  inputChonTatCa.addEventListener("change", () => {
+    if (inputChonTatCa.checked) {
+      document.getElementById("bo_chon_tat_ca").style.display = "none";
+      dsInputChuyenKhoa.forEach(input => {
+        input.disabled = true;
+        input.checked = true;
+        loadChiNhanh();
+        zoomToiChiNhanh(dataMapDangXem);
+        anHienChiNhanh(dataMapDangXem);
+      });
+    } else {
+      document.getElementById("bo_chon_tat_ca").style.display = "block";
+      dsInputChuyenKhoa.forEach(input => {
+        input.disabled = false;
+      });
+    }
+  });
+  document.getElementById("bo_chon_tat_ca").addEventListener("click", () => {
+    dsInputChuyenKhoa.forEach(input => {
+      input.checked = false;
+    });
+    loadChiNhanh();
+    zoomToiChiNhanh(dataMapDangXem);
+    anHienChiNhanh(dataMapDangXem);
+  });
+  divDsInputChuyenKhoa.addEventListener("change", () => {
+    loadChiNhanh();
+    zoomToiChiNhanh(dataMapDangXem);
+    anHienChiNhanh(dataMapDangXem);
+  });
   inputTimLanCan.addEventListener("change", () => {
     if (inputTimLanCan.checked) {
       divLoaiTimLanCan.style.display = "block";
@@ -557,7 +557,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
         inputBanKinh.style.display = "none";
         divQuanHuyen.style.display = "block";
         loadQuanHuyen(dataMapDangXem[0].city);
-      };      
+      };
       document.getElementById(layIdChiNhanh(dataMapDangXem[0])).classList.add("div_chinh");
     } else {
       resetChiNhanhLanCan();
@@ -592,7 +592,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     document.getElementById("div_timkiem").style.display = "none";
     document.getElementById("btn_timkiem").style.display = "block";
     document.getElementById("form_select_filter").classList.remove("mo_khung_timkiem");
-  });  
+  });
   loadDsDiaChi(dataMapDangXem);
   loadDsTinhTp();
   loadSoLuongChiNhanh(dataMapDangXem);
