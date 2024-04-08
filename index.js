@@ -271,10 +271,10 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   const loadDsTinhTp = () => {
     inputTimTinhTp.innerHTML = `<option value="all" selected>Tất cả các Tỉnh/TP...</option>`;
     dataMap315.map((chiNhanh) => {
-      if (dsTinhTp.some(tinhTp => tinhTp.includes(chiNhanh.city)) === false) {
+      if (dsTinhTp.some(tinhTp => tinhTp === chiNhanh.city) === false) {
         dsTinhTp.push(chiNhanh.city);
       };
-      if (dsQuanHuyen.some(qh => qh.quanHuyen.includes(chiNhanh.district)) === false) {
+      if (dsQuanHuyen.some(qh => qh.quanHuyen === chiNhanh.district) === false) {
         dsQuanHuyen.push({ tinhTp: chiNhanh.city, quanHuyen: chiNhanh.district });
       };
     });
@@ -467,6 +467,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
         };
       });
       if (dataMapChiNhanhLanCan.length > 0) {
+        dataMapChiNhanhLanCan = locChuyenKhoa(dataMapChiNhanhLanCan);
         dataMapChiNhanhLanCan.map((chiNhanh) => {
           let idChiNhanh = layIdChiNhanh(chiNhanh),
             divChiNhanh = document.getElementById(idChiNhanh);
@@ -496,6 +497,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
         });
       });
       if (dataMapChiNhanhLanCan.length > 0) {
+        dataMapChiNhanhLanCan = locChuyenKhoa(dataMapChiNhanhLanCan);
         dataMapChiNhanhLanCan.map((chiNhanh) => {
           let idChiNhanh = layIdChiNhanh(chiNhanh),
             divChiNhanh = document.getElementById(idChiNhanh);
