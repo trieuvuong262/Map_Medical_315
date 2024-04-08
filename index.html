@@ -50,12 +50,13 @@
           </div>
           <div class="row mb-3">
             <div class="form-check form-switch fs-5 checkbox">
-              <label class="form-check-label" for="ckb_all">
-                <input id="ckb_all" class="form-check-input"
-                  type="checkbox"
-                  role="switch" checked>&nbsp;Chọn tất cả
-              </label>
-              <div id="bo_chon_tat_ca" title="Bỏ chọn tất cả các chuyên khoa">
+              <input id="ckb_all" class="form-check-input"
+                type="checkbox"
+                role="switch" checked>
+              <label class="form-check-label ms-1" for="ckb_all"
+                id="lbl_all"></label>
+              <div id="bo_chon_tat_ca"
+                title="Bỏ chọn tất cả các chuyên khoa">
                 <svg class="exit" viewBox="0 0 1920 1920">
                   <path
                     d="M797.32 985.882 344.772 1438.43l188.561 188.562 452.549-452.549 452.548 452.549 188.562-188.562-452.549-452.548 452.549-452.549-188.562-188.561L985.882 797.32 533.333 344.772 344.772 533.333z" />
@@ -64,73 +65,72 @@
             </div>
             <div id="div_chuyenkhoa" class="form-control p-2">
               <div class="checkbox">
-                <label class="form-check-label" for="ckb_nhi">
-                  <input id="ckb_nhi" class="form-check-input"
-                    type="checkbox"
-                    checked disabled>&nbsp;Nhi Đồng 315 & Tiêm Chủng Nhi
-                </label>
+                <input id="ckb_nhi" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_nhi"
+                  id="lbl_nhi"></label>
               </div>
               <div class="checkbox">
-                <label class="form-check-label" for="ckb_san">
-                  <input id="ckb_san" class="form-check-input"
-                    type="checkbox"
-                    checked disabled>&nbsp;Phụ Sản 315
-                </label>
+                <input id="ckb_san" class="form-check-input"
+                  type="checkbox" checked disabled>
+                <label class="form-check-label ms-0" for="ckb_san"
+                  id="lbl_san"></label>
               </div>
               <div class="checkbox">
-                <label class="form-check-label" for="ckb_lao">
-                  <input id="ckb_lao" class="form-check-input"
-                    type="checkbox"
-                    checked disabled>&nbsp;Tim Mạch - Tiểu Đường 315
-                </label>
+                <input id="ckb_lao" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_lao"
+                  id="lbl_lao"></label>
               </div>
               <div class="checkbox">
-                <label class="form-check-label" for="ckb_mat">
-                  <input id="ckb_mat" class="form-check-input"
-                    type="checkbox"
-                    checked disabled>&nbsp;Mắt 315
-                </label>
+                <input id="ckb_mat" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_mat"
+                  id="lbl_mat"></label>
               </div>
               <div class="checkbox">
-                <label class="form-check-label" for="ckb_bvsan">
-                  <input id="ckb_bvsan" class="form-check-input"
-                    type="checkbox"
-                    checked disabled>&nbsp;Bệnh viện Phụ Sản Quốc Tế 315
-                </label>
+                <input id="ckb_bvsan" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_bvsan"
+                  id="lbl_bvsan"></label>
               </div>
               <div class="checkbox">
-                <label class="form-check-label" for="ckb_bvnhi">
-                  <input id="ckb_bvnhi" class="form-check-input"
-                    type="checkbox"
-                    checked disabled>&nbsp;Bệnh viện Nhi Đồng Quốc Tế 315
-                </label>
+                <input id="ckb_bvnhi" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_bvnhi"
+                  id="lbl_bvnhi"></label>
               </div>
               <div class="checkbox">
-                <label class="form-check-label" for="ckb_vp">
-                  <input id="ckb_vp" class="form-check-input"
-                    type="checkbox"
-                    checked disabled>&nbsp;Văn phòng 315 MEDICAL
-                </label>
+                <input id="ckb_vp" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_vp"
+                  id="lbl_vp"></label>
               </div>
             </div>
           </div>
           <div class="row mb-3 pt-3 border-top border-1 justify-content-center"
             id="div_timlancan">
             <div class="form-check form-switch fs-5 checkbox">
-              <label class="form-check-label" for="ckb_timlancan">
-                <input id="ckb_timlancan" class="form-check-input"
-                  type="checkbox" role="switch">&nbsp;Tìm chi nhánh lân
-                cận
-              </label>
+              <input id="ckb_timlancan" class="form-check-input"
+                type="checkbox" role="switch">
+              <label class="form-check-label ms-1" for="ckb_timlancan"
+                id="lbl_lancan"></label>
             </div>
             <div class="form-control p-2" id="div_loaitimlancan">
               <div class="form-check">
-                <label class="form-check-label checkbox cursor"
-                  for="rad_timtheokm">
-                  <input class="form-check-input" name="rad_timlancan"
-                    type="radio" value="km"
-                    id="rad_timtheokm"
-                    checked>&nbsp;Bán kính</label>
+                <input class="form-check-input" name="rad_timlancan"
+                  type="radio" value="km"
+                  id="rad_timtheokm"
+                  checked>
+                <label class="form-check-label checkbox cursor ms-1"
+                  id="lbl_bankinh"
+                  for="rad_timtheokm">Bán kính</label>
                 <div class="row justify-content-center">
                   <div class="col-md-3 checkbox">
                     <input id="txt_bankinh"
@@ -142,11 +142,12 @@
                 </div>
               </div>
               <div class="form-check">
-                <label class="form-check-label checkbox cursor"
-                  for="rad_timtheoquan">
-                  <input class="form-check-input" name="rad_timlancan"
-                    type="radio" value="quan"
-                    id="rad_timtheoquan">&nbsp;Quận / Huyện</label>
+                <input class="form-check-input" name="rad_timlancan"
+                  type="radio" value="quan"
+                  id="rad_timtheoquan">
+                <label class="form-check-label checkbox cursor ms-1"
+                  id="lbl_quanhuyen"
+                  for="rad_timtheoquan">Quận / Huyện</label>
                 <div class="form-control" id="div_quanhuyen">
                   <div class="row">
                     <div class="col-md-4 checkbox p-2" id="div_quanhuyen_cot1">

@@ -471,7 +471,7 @@ body {
 #bo_chon_tat_ca {
   position: absolute;
   top: 150px;
-  left: 175px;
+  right: 215px;
   line-height: 30px;
   cursor: pointer;
   fill: #666;

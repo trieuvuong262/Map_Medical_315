@@ -23,7 +23,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   });
   let markers = [];
   const Name = {
-    nhi: "Nhi Đồng 315",
+    nhi: "Nhi Đồng 315 & Tiêm Chủng Nhi",
     san: "Phụ Sản 315",
     lao: "Tim Mạch - Tiểu Đường 315",
     mat: "Mắt 315",
@@ -94,9 +94,9 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       case "NHI":
         chiNhanh.img = "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/logo-315-moi-real-20230620043518-tn2we.png";
         if (chiNhanh.workingTime === "Time.part") {
-          chiNhanh.name = Name.nhi;
+          chiNhanh.name = "Nhi Đồng 315";
         } else {
-          chiNhanh.name = "Nhi Đồng 315 & Tiêm Chủng Nhi";
+          chiNhanh.name = Name.nhi;
         };
         break;
       case "SAN":
@@ -333,14 +333,49 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       };
     });
   };
+  const loadSoLuongChiNhanh = (dataMap) => {
+    // let nhi = 0,
+    // san = 0,
+    // lao = 0,
+    // mat = 0,
+    // bvsan = 0,
+    // bvnhi = 0,
+    // vp = 0;
+    // dataMap.map((chiNhanh) => {
+    //   if(chiNhanh.type === "NHI") nhi++;
+    //   else if(chiNhanh.type === "SAN") san++;
+    //   else if(chiNhanh.type === "LAO") lao++;
+    //   else if(chiNhanh.type === "MAT") mat++;
+    //   else if(chiNhanh.type === "BVSAN") bvsan++;
+    //   else if(chiNhanh.type === "BVNHI") bvnhi++;
+    //   else if(chiNhanh.type === "VP") vp++;
+    // });
+    document.getElementById("lbl_all").innerText = `Chọn tất cả - ` + dataMap.length + ` CN`;
+    document.getElementById("lbl_nhi").innerText = Name.nhi;// + ` - ` + nhi + ` CN`;
+    document.getElementById("lbl_san").innerText = Name.san;// + ` - ` + san + ` CN`;
+    document.getElementById("lbl_lao").innerText = Name.lao;// + ` - ` + lao + ` CN`;
+    document.getElementById("lbl_mat").innerText = Name.mat;// + ` - ` + mat + ` CN`;
+    document.getElementById("lbl_bvsan").innerText = Name.bvsan;// + ` - ` + bvsan + ` CN`;
+    document.getElementById("lbl_bvnhi").innerText = Name.bvnhi;// + ` - ` + bvnhi + ` CN`;
+    document.getElementById("lbl_vp").innerText = Name.vp;// + ` - ` + vp + ` CN`;
+  };
+  const loadSoLuongChiNhanhLanCan = (dataMap) => {
+    let soLuongChiNhanhLanCan = Number(dataMap.length) - 1;
+    if (soLuongChiNhanhLanCan > 0) {      
+      document.getElementById("lbl_lancan").innerText = `Tìm chi nhánh lân cận - ` + soLuongChiNhanhLanCan + ` CN`;
+      return true;
+    };
+    document.getElementById("lbl_lancan").innerText = `Tìm chi nhánh lân cận`;
+    return false;
+  };
   const loadChiNhanh = () => {
     let diaChiCanTim = xuLyChuoi(inputTimDiaChi.value),
       tinhTpCanTim = xuLyChuoi(inputTimTinhTp.value);
-    dataMapChiNhanhLanCan = [];
     dataMapDangXem = locChuyenKhoa(dataMap315);
     dataMapDangXem = locTheoTuKhoa(dataMapDangXem, tinhTpCanTim);
     dataMapDangXem = locTheoTuKhoa(dataMapDangXem, diaChiCanTim);
     anHienChiNhanh(dataMapDangXem);
+    loadSoLuongChiNhanh(dataMapDangXem);
     resetChiNhanhLanCan();
     if (dataMapDangXem.length > 0 && inputTimDiaChi.value === dataMapDangXem[0].address) {
       divTimLanCan.style.display = "block";
@@ -454,6 +489,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       dsDivChiNhanhLanCan = document.getElementsByClassName("div_lancan");
     };
     dataMapChiNhanhLanCan = [];
+    loadSoLuongChiNhanhLanCan(dataMapChiNhanhLanCan);
     return dataMapChiNhanhLanCan;
   };
   const timLanCanTheoBanKinh = () => {
@@ -476,9 +512,8 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
           }
         });
       };
-      let idChiNhanh = layIdChiNhanh(chiNhanhCanXemLanCan),
-        divChiNhanh = document.getElementById(idChiNhanh);
-      divChiNhanh.classList.add("div_chinh");
+      document.getElementById(layIdChiNhanh(dataMapDangXem[0])).classList.add("div_chinh");
+      loadSoLuongChiNhanhLanCan(dataMapChiNhanhLanCan);
       return dataMapChiNhanhLanCan;
     }
     inputBanKinh.value = "";
@@ -488,7 +523,6 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     resetChiNhanhLanCan();
     let dsInputQuanHuyen = document.getElementById("div_quanhuyen").querySelectorAll("input");
     if (dsInputLoaiTimLanCan[1].checked && inputTimLanCan.checked) {
-      let chiNhanhCanXemLanCan = dataMapDangXem[0];
       dataMap315.map((chiNhanh) => {
         dsInputQuanHuyen.forEach((input) => {
           if (input.checked && input.value === chiNhanh.district) {
@@ -505,10 +539,9 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
             divChiNhanh.classList.add("div_lancan");
           }
         });
-      };
-      let idChiNhanh = layIdChiNhanh(chiNhanhCanXemLanCan),
-        divChiNhanh = document.getElementById(idChiNhanh);
-      divChiNhanh.classList.add("div_chinh");
+      };      
+      document.getElementById(layIdChiNhanh(dataMapDangXem[0])).classList.add("div_chinh");
+      loadSoLuongChiNhanhLanCan(dataMapChiNhanhLanCan);
       return dataMapChiNhanhLanCan;
     };
     return resetChiNhanhLanCan();
@@ -524,7 +557,8 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
         inputBanKinh.style.display = "none";
         divQuanHuyen.style.display = "block";
         loadQuanHuyen(dataMapDangXem[0].city);
-      };
+      };      
+      document.getElementById(layIdChiNhanh(dataMapDangXem[0])).classList.add("div_chinh");
     } else {
       resetChiNhanhLanCan();
       divLoaiTimLanCan.style.display = "none";
@@ -558,9 +592,10 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     document.getElementById("div_timkiem").style.display = "none";
     document.getElementById("btn_timkiem").style.display = "block";
     document.getElementById("form_select_filter").classList.remove("mo_khung_timkiem");
-  });
+  });  
   loadDsDiaChi(dataMapDangXem);
   loadDsTinhTp();
+  loadSoLuongChiNhanh(dataMapDangXem);
 
   map.addListener("zoom_changed", () => {
     anHienChiNhanh(dataMapDangXem);
