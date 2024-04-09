@@ -431,7 +431,7 @@ body {
   position: absolute;
   overflow-x: hidden;
   overflow-y: auto;
-  top: 62px;
+  top: 92px;
   border: solid 1px #aaa;
   border-radius: 3px;
   max-height: 300px;
@@ -468,9 +468,9 @@ body {
   height: 15px;
 }
 
-#bo_chon_tat_ca {
+#bo_chontatca {
   position: absolute;
-  top: 149px;
+  top: 183px;
   left: 250px;
   line-height: 30px;
   cursor: pointer;
@@ -524,6 +524,48 @@ body {
   width: 25% !important;
   max-width: 25% !important;
   max-height: 97.5% !important;
+}
+
+#btn_ngonngu {
+  width: fit-content;
+  min-width: fit-content;
+  max-width: fit-content;
+  padding-bottom: 4px !important;
+}
+
+#btn_ngonngu svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ul_ngonngu {
+  top: -2px !important;
+  width: fit-content !important;
+  min-width: fit-content !important;
+  max-width: fit-content !important;
+}
+
+.ul_ngonngu a {
+  line-height: 16px;
+}
+
+.ul_ngonngu a:hover,
+.ul_ngonngu a:active {
+  background-color: #00ADEF;
+}
+
+.ul_ngonngu a:hover span,
+.ul_ngonngu a:active span {
+  color: #fbfbfb !important;
+}
+
+.ul_ngonngu svg {
+  height: 20px;
+  width: 20px;
+}
+
+#xoa_boloc {
+  display: none;
 }
 
 @media only screen and (max-width: 1280px) {

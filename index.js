@@ -29,7 +29,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     mat: "Mắt 315",
     bvsan: "Bệnh viện Phụ Sản Quốc Tế 315",
     bvnhi: "Bệnh viện Nhi Đồng Quốc Tế 315",
-    vp: "Văn phòng 315 MEDICAL",
+    vp: "Văn phòng Medical 315",
   };
   const layIdChiNhanh = (chiNhanh) => {
     return "id" + dataMap315.indexOf(chiNhanh);
@@ -176,17 +176,141 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     divQuanHuyen = document.getElementById("div_quanhuyen"),
     divQuanHuyenCot1 = document.getElementById("div_quanhuyen_cot1"),
     divQuanHuyenCot2 = document.getElementById("div_quanhuyen_cot2"),
-    divQuanHuyenCot3 = document.getElementById("div_quanhuyen_cot3");
+    divQuanHuyenCot3 = document.getElementById("div_quanhuyen_cot3"),
+    divXoaBoLoc = document.getElementById("xoa_boloc"),
+    divBoChonTatCa = document.getElementById("bo_chontatca"),
+    btnNgonNgu = document.getElementById("btn_ngonngu"),
+    btnTiengViet = document.getElementById("btn_tiengviet"),
+    btnTiengAnh = document.getElementById("btn_tienganh"),
+    svgTiengViet = document.getElementById("svg_tiengviet"),
+    svgTiengAnh = document.getElementById("svg_tienganh"),
+    lblChonTatCa = document.getElementById("lbl_all"),
+    lblTimLanCan = document.getElementById("lbl_lancan"),
+    lblBanKinh = document.getElementById("lbl_bankinh"),
+    lblQuanHuyen = document.getElementById("lbl_quanhuyen"),
+    lblNhi = document.getElementById("lbl_nhi"),
+    lblSan = document.getElementById("lbl_san"),
+    lblLao = document.getElementById("lbl_lao"),
+    lblMat = document.getElementById("lbl_mat"),
+    lblBvSan = document.getElementById("lbl_bvsan"),
+    lblBvNhi = document.getElementById("lbl_bvnhi"),
+    lblVp = document.getElementById("lbl_vp");
 
+  const loadNgonNgu = () => {
+    btnNgonNgu.innerHTML = ``;
+    let clone = svgTiengViet.cloneNode(true),
+      lang = btnNgonNgu.value,
+      dsOptionTinhTp = inputTimTinhTp.querySelectorAll("option"),
+      dsSpanQuanHuyen = divQuanHuyen.querySelectorAll("span");
+    loadSoLuongChiNhanh();
+    loadSoLuongChiNhanhLanCan();
+    if (lang === "en") {
+      clone = svgTiengAnh.cloneNode(true);
+    };
+    inputTimDiaChi.placeholder = dichNgonNgu(inputTimDiaChi.placeholder, lang);
+    dsOptionTinhTp.forEach((opt) => {
+      opt.innerText = dichNgonNgu(opt.innerText, lang);
+    });
+    lblNhi.innerText = dichNgonNgu(Name.nhi, lang);
+    lblSan.innerText = dichNgonNgu(Name.san, lang);
+    lblLao.innerText = dichNgonNgu(Name.lao, lang);
+    lblMat.innerText = dichNgonNgu(Name.mat, lang);
+    lblBvSan.innerText = dichNgonNgu(Name.bvsan, lang);
+    lblBvNhi.innerText = dichNgonNgu(Name.bvnhi, lang);
+    lblVp.innerText = dichNgonNgu(Name.vp, lang);
+    lblChonTatCa.innerHTML = dichNgonNgu(lblChonTatCa.innerHTML, lang);
+    lblTimLanCan.innerHTML = dichNgonNgu(lblTimLanCan.innerHTML, lang);
+    lblBanKinh.innerText = dichNgonNgu(lblBanKinh.innerText, lang);
+    lblQuanHuyen.innerText = dichNgonNgu(lblQuanHuyen.innerText, lang);
+    dsSpanQuanHuyen.forEach((span) => {
+      span.innerText = dichNgonNgu(span.innerText, lang);
+    });
+    if (lang === "vn") {
+      if (dataMapDangXem.length === 1 || dataMapDangXem.length === 2) {
+        loadQuanHuyen(dataMapDangXem[0].city);
+        btnNgonNgu.value = "";
+        if (dsInputLoaiTimLanCan[1].checked) {
+          resetChiNhanhLanCan();
+        };
+      };
+
+    };
+    btnNgonNgu.appendChild(clone);
+  };
+  const dichNgonNgu = (str, lang) => {
+    str = str.replace(/\s+/g, ' ');
+    str = str.trim();
+    if (lang === "en") {
+      str = str.replace(/Tìm địa chỉ.../g, "Address searching...");
+      str = str.replace(/Tất cả các Tỉnh\/TP.../g, "All Provinces/Cities...");
+      str = str.replace(/Chọn tất cả/g, "Select all");
+      str = str.replace(/Nhi Đồng 315 & Tiêm Chủng Nhi/g, "Pediatric & Vaccination 315");
+      str = str.replace(/Phụ Sản 315/g, "Maternity 315");
+      str = str.replace(/Tim Mạch - Tiểu Đường 315/g, "Cardiovascular & Diabetes 315");
+      str = str.replace(/Mắt 315/g, "Ophthalmology 315");
+      str = str.replace(/Bệnh viện Phụ Sản Quốc Tế 315/g, "International Maternity Hospital 315");
+      str = str.replace(/Bệnh viện Nhi Đồng Quốc Tế 315/g, "International Pediatric Hospital 315");
+      str = str.replace(/Văn phòng Medical 315/g, "Medical 315 Office");
+      str = str.replace(/Tìm lân cận/g, "Nearby");
+      str = str.replace(/Bán kính/g, "Radius");
+      str = str.replace(/Quận \/ Huyện/g, "Districts");
+      str = str.replace(/Q. 1/g, "District 1");
+      str = str.replace(/Q. 2/g, "District 2");
+      str = str.replace(/Q. 3/g, "District 3");
+      str = str.replace(/Q. 4/g, "District 4");
+      str = str.replace(/Q. 5/g, "District 5");
+      str = str.replace(/Q. 6/g, "District 6");
+      str = str.replace(/Q. 7/g, "District 7");
+      str = str.replace(/Q. 8/g, "District 8");
+      str = str.replace(/Q. 9/g, "District 9");
+      str = str.replace(/Q. 10/g, "District 10");
+      str = str.replace(/Q. 11/g, "District 11");
+      str = str.replace(/Q. 12/g, "District 12");
+      str = str.replace(/CN/g, "Clinic");
+      str = str.replace(/KP\.|P\.|X\.|TT\.|TX\.|Q\.|H\.|TP\.|Tỉnh/g, "");
+      str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+      str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+      str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+      str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+      str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+      str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+      str = str.replace(/đ/g, "d");
+      str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "A");
+      str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "E");
+      str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "I");
+      str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "O");
+      str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
+      str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
+      str = str.replace(/Đ/g, "D");
+    } else {
+      str = str.replace(/Address searching.../g, "Tìm địa chỉ...");
+      str = str.replace(/All Provinces\/Cities.../g, "Tất cả các Tỉnh/TP...");
+      str = str.replace(/Select all/g, "Chọn tất cả");
+      str = str.replace(/Pediatric & Vaccination 315/g, "Nhi Đồng 315 & Tiêm Chủng Nhi");
+      str = str.replace(/Maternity 315/g, "Phụ Sản 315");
+      str = str.replace(/Cardiovascular & Diabetes 315/g, "Tim Mạch - Tiểu Đường 315");
+      str = str.replace(/Ophthalmology 315/g, "Mắt 315");
+      str = str.replace(/International Maternity Hospital 315/g, "Bệnh viện Phụ Sản Quốc Tế 315");
+      str = str.replace(/International Pediatric Hospital 315/g, "Bệnh viện Nhi Đồng Quốc Tế 315");
+      str = str.replace(/Medical 315 Office/g, "Văn phòng Medical 315");
+      str = str.replace(/Nearby/g, "Tìm lân cận");
+      str = str.replace(/Radius/g, "Bán kính");
+      str = str.replace(/Districts/g, "Quận / Huyện");
+      str = str.replace(/Clinic/g, "CN");
+    }
+    str = str.replace(/\s+/g, ' ');
+    str = str.trim();
+    return str;
+  };
   const xuLyChuoi = (str) => {
     str = str.toLowerCase();
-    str = str.replace(/\s+/g, ' ');
+    str = str.replace(/\s+|street|ward|district|city/g, ' ');
     str = str.trim();
     str = str.replace(/thành phố|thanh pho|tp /g, 'tp. ');
     str = str.replace(/tphcm|tp.hcm/g, 'tp. hcm');
     str = str.replace(/q2|q9|quận 2|quận 9|quan 2|quan 9/g, 'tp. thủ đức');
-    str = str.replace(/quận|q |q./g, 'q. ');
-    str = str.replace(/huyện/g, 'h. ');
+    str = str.replace(/quận|q |q\./g, 'q. ');
+    str = str.replace(/huyện|h\./g, 'h. ');
     str = str.replace(/q1|quận 1|quan 1/g, 'q. 1');
     str = str.replace(/q3|quận 3|quan 3/g, 'q. 3');
     str = str.replace(/q4|quận 4|quan 4/g, 'q. 4');
@@ -257,7 +381,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
         divQuanHuyenCot.innerHTML += `<div class="row">
         <label class="form-check-label" for="ckb_quanhuyen${stt}">
           <input id="ckb_quanhuyen${stt}" class="form-check-input"
-           value="${qh.quanHuyen}" type="checkbox">&nbsp;${quanHuyen}
+           value="${qh.quanHuyen}" type="checkbox">&nbsp;<span>${quanHuyen}</span>
         </label></div>`;
         if (flag === 1 || flag === 2) {
           flag++;
@@ -340,9 +464,10 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     });
     loadSoLuongChiNhanh();
     loadSoLuongChiNhanhLanCan();
+    loadNgonNgu();
   };
   const loadSoLuongChiNhanh = () => {
-    let soLuongChiNhanhLanCan = Number(dataMapDangXem.length);
+    let soLuongChiNhanh = Number(dataMapDangXem.length);
     // let nhi = 0,
     // san = 0,
     // lao = 0,
@@ -359,22 +484,21 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     //   else if(chiNhanh.type === "BVNHI") bvnhi++;
     //   else if(chiNhanh.type === "VP") vp++;
     // });
-    document.getElementById("lbl_all").innerText = `Chọn tất cả - ` + soLuongChiNhanhLanCan + ` CN`;
-    document.getElementById("lbl_nhi").innerText = Name.nhi;// + ` - ` + nhi + ` CN`;
-    document.getElementById("lbl_san").innerText = Name.san;// + ` - ` + san + ` CN`;
-    document.getElementById("lbl_lao").innerText = Name.lao;// + ` - ` + lao + ` CN`;
-    document.getElementById("lbl_mat").innerText = Name.mat;// + ` - ` + mat + ` CN`;
-    document.getElementById("lbl_bvsan").innerText = Name.bvsan;// + ` - ` + bvsan + ` CN`;
-    document.getElementById("lbl_bvnhi").innerText = Name.bvnhi;// + ` - ` + bvnhi + ` CN`;
-    document.getElementById("lbl_vp").innerText = Name.vp;// + ` - ` + vp + ` CN`;
+    if (soLuongChiNhanh < Number(dataMap315.length)) {
+      divXoaBoLoc.style.display = "block";
+    } else {
+      divXoaBoLoc.style.display = "none";
+    };
+    lblChonTatCa.innerText = `Chọn tất cả - ` + soLuongChiNhanh + ` CN`;
+    return soLuongChiNhanh;
   };
   const loadSoLuongChiNhanhLanCan = () => {
     let soLuongChiNhanhLanCan = Number(dataMapChiNhanhLanCan.length);
     if (soLuongChiNhanhLanCan > 0) {
-      document.getElementById("lbl_lancan").innerText = `Tìm lân cận - ` + soLuongChiNhanhLanCan + ` CN`;
-      return true;
+      lblTimLanCan.innerHTML = `Tìm lân cận - <span id="span_all">` + soLuongChiNhanhLanCan + `</span> CN`;
+      return soLuongChiNhanhLanCan;
     };
-    document.getElementById("lbl_lancan").innerText = `Tìm lân cận`;
+    lblTimLanCan.innerHTML = `Tìm lân cận`;
     return false;
   };
   const loadChiNhanh = () => {
@@ -534,7 +658,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   });
   inputChonTatCa.addEventListener("change", () => {
     if (inputChonTatCa.checked) {
-      document.getElementById("bo_chon_tat_ca").style.display = "none";
+      divBoChonTatCa.style.display = "none";
       dsInputChuyenKhoa.forEach(input => {
         input.disabled = true;
         input.checked = true;
@@ -543,13 +667,13 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
         anHienChiNhanh();
       });
     } else {
-      document.getElementById("bo_chon_tat_ca").style.display = "block";
+      divBoChonTatCa.style.display = "block";
       dsInputChuyenKhoa.forEach(input => {
         input.disabled = false;
       });
     }
   });
-  document.getElementById("bo_chon_tat_ca").addEventListener("click", () => {
+  divBoChonTatCa.addEventListener("click", () => {
     dsInputChuyenKhoa.forEach(input => {
       input.checked = false;
     });
@@ -609,6 +733,22 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   inputBanKinh.addEventListener("keyup", () => {
     timLanCanTheoBanKinh();
   });
+  divXoaBoLoc.addEventListener("click", () => {
+    inputTimDiaChi.value = "";
+    inputTimTinhTp.value = "all";
+    inputChonTatCa.checked = true;
+    divBoChonTatCa.style.display = "none";
+    dsInputChuyenKhoa.forEach(input => {
+      input.disabled = true;
+      input.checked = true;
+      loadChiNhanh();
+      zoomToiChiNhanh(dataMapDangXem);
+      anHienChiNhanh();
+    });
+    loadChiNhanh();
+    zoomToiChiNhanh(dataMapDangXem);
+    anHienChiNhanh();
+  });
   document.getElementById("btn_timkiem").addEventListener("click", () => {
     document.getElementById("btn_timkiem").style.display = "none";
     document.getElementById("div_timkiem").style.display = "block";
@@ -620,10 +760,14 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     document.getElementById("btn_timkiem").style.display = "block";
     document.getElementById("form_select_filter").classList.remove("mo_khung_timkiem");
   });
-  loadDsDiaChi(dataMapDangXem);
-  loadDsTinhTp();
-  loadSoLuongChiNhanh();
-
+  btnTiengViet.addEventListener("click", () => {
+    btnNgonNgu.value = "vn";
+    loadNgonNgu();
+  });
+  btnTiengAnh.addEventListener("click", () => {
+    btnNgonNgu.value = "en";
+    loadNgonNgu();
+  });
   map.addListener("zoom_changed", () => {
     anHienChiNhanh();
   });
@@ -644,5 +788,8 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       anHienChiNhanh();
     }, 50);
   });
+  loadDsDiaChi(dataMapDangXem);
+  loadDsTinhTp();
+  loadSoLuongChiNhanh();
 };
 initMap();
