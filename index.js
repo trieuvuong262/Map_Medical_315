@@ -569,6 +569,8 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       dsInputLoaiTimLanCan[0].checked = true;
       inputBanKinh.style.display = "block";
       divQuanHuyen.style.display = "none";
+      loadQuanHuyen(dataMapDangXem[0].city);
+      timLanCanTheoBanKinh();
       setTimeout(() => {
         let divDangXem = document.getElementById(layIdChiNhanh(dataMapDangXem[0])),
           divChinh = document.getElementsByClassName("div_chinh");
@@ -578,8 +580,6 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
           };
           divChinh = document.getElementsByClassName("div_chinh");
         };
-        loadQuanHuyen(dataMapDangXem[0].city);
-        timLanCanTheoBanKinh();
       }, 100);
     } else {
       resetChiNhanhLanCan();
@@ -588,21 +588,19 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   });
   divLoaiTimLanCan.addEventListener("change", () => {
     zoomToiChiNhanh(dataMapDangXem);
-    setTimeout(() => {
-      if (dsInputLoaiTimLanCan[0].checked) {
-        inputBanKinh.style.display = "block";
-        divQuanHuyen.style.display = "none";
-        timLanCanTheoBanKinh();
-      } else if (dsInputLoaiTimLanCan[1].checked) {
-        inputBanKinh.style.display = "none";
-        divQuanHuyen.style.display = "block";
-        timLanCanTheoQuanHuyen();
-      } else {
-        resetChiNhanhLanCan();
-        divLoaiTimLanCan.style.display = "none";
-        inputTimLanCan.checked = false;
-      };
-    }, 100);
+    if (dsInputLoaiTimLanCan[0].checked) {
+      inputBanKinh.style.display = "block";
+      divQuanHuyen.style.display = "none";
+      timLanCanTheoBanKinh();
+    } else if (dsInputLoaiTimLanCan[1].checked) {
+      inputBanKinh.style.display = "none";
+      divQuanHuyen.style.display = "block";
+      timLanCanTheoQuanHuyen();
+    } else {
+      resetChiNhanhLanCan();
+      divLoaiTimLanCan.style.display = "none";
+      inputTimLanCan.checked = false;
+    };
   });
   dsInputLoaiTimLanCan[1].addEventListener("change", () => {
     resetChiNhanhLanCan();
@@ -626,17 +624,25 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   loadDsTinhTp();
   loadSoLuongChiNhanh();
 
-  document.addEventListener("mousemove", () => {
-    anHienChiNhanh();
-  });
-  document.addEventListener("change", () => {
-    anHienChiNhanh();
-  });
   map.addListener("zoom_changed", () => {
     anHienChiNhanh();
   });
   map.addListener("mousemove", () => {
     anHienChiNhanh();
+  });
+  map.addListener("mouseup", () => {
+    anHienChiNhanh();
+  });
+  document.addEventListener("change", () => {
+    anHienChiNhanh();
+  });
+  document.addEventListener("mousemove", () => {
+    anHienChiNhanh();
+  });
+  document.addEventListener("mouseup", () => {
+    setTimeout(() => {
+      anHienChiNhanh();
+    }, 50);
   });
 };
 initMap();
