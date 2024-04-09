@@ -228,12 +228,11 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     if (lang === "vn") {
       if (dataMapDangXem.length === 1 || dataMapDangXem.length === 2) {
         loadQuanHuyen(dataMapDangXem[0].city);
-        btnNgonNgu.value = "";
         if (dsInputLoaiTimLanCan[1].checked) {
           resetChiNhanhLanCan();
         };
       };
-
+      btnNgonNgu.value = "";
     };
     btnNgonNgu.appendChild(clone);
   };
@@ -464,7 +463,10 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     });
     loadSoLuongChiNhanh();
     loadSoLuongChiNhanhLanCan();
-    loadNgonNgu();
+
+    if (btnNgonNgu.value === "vn" || btnNgonNgu.value === "en") {
+      loadNgonNgu();
+    };
   };
   const loadSoLuongChiNhanh = () => {
     let soLuongChiNhanh = Number(dataMapDangXem.length);
