@@ -2218,5 +2218,20 @@
         "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.82814360323408!2d106.85792136749382!3d10.944455951502258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174de85ed3dd1c5%3A0x82b10f28452fcbb!2zNTI1IFBo4bqhbSBWxINuIFRodeG6rW4sIFRhbSBIaeG7h3AsIFRow6BuaCBwaOG7kSBCacOqbiBIw7JhLCDEkOG7k25nIE5haQ!5e0!3m2!1svi!2s!4v1712290660693!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "latitude": "10.944411560964408",
         "longitude": "106.85786507360932"
+    },
+    {
+        "title": "Số 172-174 Hà Huy Tập",
+        "type": "NHI",
+        "img": "SrcLogo.nhi",
+        "name": "Name.nhi",
+        "hotline": "Hotline315",
+        "address": "172-174 Hà Huy Tập, P. Hòa Khê, Q. Thanh Khê, TP. Đà Nẵng",
+        "district": "Q. Thanh Khê",
+        "city": "Đà Nẵng",
+        "workingTime": "Time.comingsoon",
+        "linkMap": "https://maps.app.goo.gl/siXY99Ui5d6Ruvrm8",
+        "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d239.62816688516256!2d108.1917990699406!3d16.06286018842474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219aa41f2ef4f%3A0x842414fd44def073!2zMTcyIEjDoCBIdXkgVOG6rXAsIEjDsmEgS2jDqiwgVGhhbmggS2jDqiwgxJDDoCBO4bq1bmcgNTUwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2sus!4v1712930291039!5m2!1svi!2sus' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "latitude": "16.062852133761865",
+        "longitude": "108.19178632944906"
     }
 ]
