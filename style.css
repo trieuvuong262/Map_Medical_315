@@ -578,16 +578,16 @@ body {
 @media only screen and (max-width: 1080px) {
   .mo_khung_timkiem {
     zoom: 0.9;
-    width: 40%;
-    max-width: 40%;
+    width: 45%;
+    max-width: 45%;
   }
 }
 
 @media only screen and (max-width: 960px) {
   .mo_khung_timkiem {
     zoom: 0.9;
-    width: 40%;
-    max-width: 40%;
+    width: 45%;
+    max-width: 45%;
   }
 
   #map {
