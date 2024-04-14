@@ -784,6 +784,11 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
   map.addListener("mouseup", () => {
     anHienChiNhanh();
   });
+  map.addListener("click", () => {
+    document.getElementById("div_timkiem").style.display = "none";
+    document.getElementById("btn_timkiem").style.display = "block";
+    document.getElementById("form_select_filter").classList.remove("mo_khung_timkiem");
+  });
   document.addEventListener("change", () => {
     anHienChiNhanh();
   });
