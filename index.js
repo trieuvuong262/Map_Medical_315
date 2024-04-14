@@ -232,6 +232,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
           resetChiNhanhLanCan();
         };
       };
+      loadDsTinhTp();
       btnNgonNgu.value = "";
     };
     btnNgonNgu.appendChild(clone);
@@ -392,6 +393,9 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     });
   }
   const loadDsTinhTp = () => {
+    let valueTemp = "";
+    if (inputTimTinhTp.value !== "") valueTemp = inputTimTinhTp.value;
+    inputTimTinhTp.innerHTML = "";
     inputTimTinhTp.innerHTML = `<option value="all" selected>Tất cả các Tỉnh/TP...</option>`;
     dataMap315.map((chiNhanh) => {
       if (dsTinhTp.some(tinhTp => tinhTp === chiNhanh.city) === false) {
@@ -407,6 +411,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
       optTinhTp.innerHTML = tinhTp.replace(/TP. HCM/g, 'Hồ Chí Minh');
       inputTimTinhTp.appendChild(optTinhTp);
     });
+    if (valueTemp !== "") inputTimTinhTp.value = valueTemp;
     return dsQuanHuyen.sort(sapXepQuanHuyen);
   };
   const checkInputChuyenKhoa = (chuyenKhoa) => {
