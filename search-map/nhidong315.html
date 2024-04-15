@@ -246,7 +246,7 @@
                 inputTimTinhTp = document.getElementById("cbb_timtinhtp"),
                 inputTimQuanHuyen = document.getElementById("cbb_timquanhuyen");
 
-            fetch('https://raw.githubusercontent.com/QuocTai2002/Map_Medical_315/master/data_map.json').then(response => response.json()).then(data => {
+            fetch('../data_map.json').then(response => response.json()).then(data => {
                 const locChuyenKhoa = (dataMap, dsQuanHuyen) => {
                     let dataMapTemp = [],
                         dsTinhTp = [];
