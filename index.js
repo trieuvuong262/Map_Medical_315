@@ -306,10 +306,12 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
     str = str.toLowerCase();
     str = str.replace(/\s+|street|ward|district|city/g, ' ');
     str = str.trim();
+    str = str.replace(/ql\.|ql/g, 'quoc lo ');
+    str = str.replace(/tl\.|tl/g, 'tinh lo ');
     str = str.replace(/thành phố|thanh pho|tp /g, 'tp. ');
     str = str.replace(/tphcm|tp.hcm/g, 'tp. hcm');
     str = str.replace(/q2|q9|quận 2|quận 9|quan 2|quan 9/g, 'tp. thủ đức');
-    str = str.replace(/quận|q |q\./g, 'q. ');
+    str = str.replace(/quận|q\.|q /g, 'q. ');
     str = str.replace(/huyện|h\./g, 'h. ');
     str = str.replace(/q1|quận 1|quan 1/g, 'q. 1');
     str = str.replace(/q3|quận 3|quan 3/g, 'q. 3');
