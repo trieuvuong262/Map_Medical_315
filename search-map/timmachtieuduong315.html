@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <link type="image/x-icon"
-            href="https://w.ladicdn.com/5aa6273ea81f66ca2eacc40b/logo-315-1-1-20240404155152-vjczz.png"
+            href="https://w.ladicdn.com/5aa6273ea81f66ca2eacc40b/logo-lao-315-1-1-20240415143649-ogtkm.png"
             rel="icon">
         <title>Search Map 315</title>
         <!-- Required meta tags -->
@@ -49,7 +49,7 @@
 
         .timkiem_chinhanh ::-webkit-scrollbar-thumb:hover,
         .timkiem_chinhanh ::-webkit-scrollbar-thumb:active {
-        background-color: #00ADEF; /******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
+        background-color: #F58220; /******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
         }
         .timkiem_chinhanh .tim_diachi label {
             background-color: #eee;
@@ -101,12 +101,12 @@
         .ds_chinhanh .detail svg{
             height: 20px;
             width: 20px;
-            fill: #00ADEF;/******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
+            fill: #F58220;/******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
         }
         .ds_chinhanh .detail .name{
             text-transform: uppercase;
             font-weight: bold;
-            color: #00ADEF;/******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
+            color: #F58220;/******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
         }        
         .ds_chinhanh .detail .hotline a{
             width: fit-content;
@@ -159,7 +159,7 @@
         .ketqua{
             border-top-left-radius: 8px !important;
             border-top-right-radius: 8px !important;
-            background-color: #00ADEF;/******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
+            background-color: #F58220;/******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
             color: #F5F5F5;
             font-size: 20px;
         }
@@ -252,7 +252,7 @@
                     if (dataMap.length > 0) {
                         dataMap.forEach(chiNhanh => {
                             //******************** điền chuyên khoa của website (NHI, SAN, LAO, MAT, BVSAN, BVNHI) ********************//
-                            if (chiNhanh.type === "NHI" || chiNhanh.type === "BVNHI") {
+                            if (chiNhanh.type === "LAO") {
                                 chiNhanh.name = (chiNhanh.workingTime === "Time.part" ? "Nhi Đồng 315" : "Nhi Đồng 315 & Tiêm Chủng Nhi");
                                 chiNhanh.name = (chiNhanh.type === "BVNHI" ? "Bệnh viện Nhi Đồng Quốc Tế 315" : chiNhanh.name);
                                 chiNhanh.hotline = (chiNhanh.hotline === "Hotline315" ? `0901.315.315` : chiNhanh.hotline);
