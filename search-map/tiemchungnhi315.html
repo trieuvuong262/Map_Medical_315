@@ -426,8 +426,8 @@
                                             </a>
                                         </div>
                                         <div class="clockWork border-top border-1 mt-1 pt-1 border-secondary-subtle">
-                                            <span ${chiNhanh.workingTime === "Coming soon" || chiNhanh.tiemchung === "Coming soon" ? `style="color: red !important; font-weight: bold !important;"` : ``}>
-                                                <i class="fa fa-clock-o"></i>&nbsp;${chiNhanh.tiemchung && chiNhanh.tiemchung === "Coming soon"?chiNhanh.tiemchung : chiNhanh.workingTime}
+                                            <span ${(chiNhanh.workingTime === "Coming soon" || chiNhanh.tiemChung === "Coming soon") ? `style="color: red !important; font-weight: bold !important;"` : ``}>
+                                                <i class="fa fa-clock-o"></i>&nbsp;${(chiNhanh.tiemChung && chiNhanh.tiemChung === "Coming soon")? chiNhanh.tiemChung : chiNhanh.workingTime}
                                             </span>
                                         </div>
                                     </div>
