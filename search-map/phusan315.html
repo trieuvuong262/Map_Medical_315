@@ -255,7 +255,7 @@
                             //******************** điền chuyên khoa của website (NHI, SAN, LAO, MAT, BVSAN, BVNHI) ********************//
                             if (chiNhanh.type === "SAN" || chiNhanh.type === "BVSAN") {
                                 chiNhanh.name = "Phụ Sản 315";
-                                chiNhanh.name = (chiNhanh.type === "BVNHI" ? "Bệnh viện Phụ Sản Quốc Tế 315" : chiNhanh.name);
+                                chiNhanh.name = (chiNhanh.type === "BVSAN" ? "Bệnh viện Phụ Sản Quốc Tế 315" : chiNhanh.name);
                                 chiNhanh.hotline = (chiNhanh.hotline === "Hotline315" ? `0901.315.315` : chiNhanh.hotline);
                                 chiNhanh.workingTime = (chiNhanh.workingTime === "Time.full" ? `T2-CN: 8:00 - 11:30 & 13:30 - 20:30` : chiNhanh.workingTime === "Time.part" ? `T2-T6: 17:00 - 20:30</br>&nbsp;&nbsp;&nbsp;&nbsp;T7-CN: 8:00 - 11:30 & 13:30 - 20:30` : "Coming soon")
                                 dataMapTemp.push(chiNhanh);
