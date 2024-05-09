@@ -1528,7 +1528,7 @@
         "address": "428 Nguyễn Thị Định, P. Thạnh Mỹ Lợi, TP. Thủ Đức, TP. Hồ Chí Minh",
         "district": "TP. Thủ Đức",
         "city": "TP. HCM",
-        "workingTime": "Time.full",
+        "workingTime": "Time.part",
         "linkMap": "https://maps.app.goo.gl/9nrZX7jVujLQrChx9",
         "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15677.541703396899!2d106.7610788!3d10.7817636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752504a19a263d%3A0x4fb2eb62e5f0e86b!2zUGjhu6UgU-G6o24gMzE1!5e0!3m2!1svi!2s!4v1711702739722!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "latitude": "10.78271214792592",
