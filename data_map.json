@@ -2144,22 +2144,6 @@
         "tiemChung": ""
     },
     {
-        "title": "Số 112 Vũ Phạm Hàm",
-        "type": "NHI",
-        "img": "SrcLogo.nhi",
-        "name": "Name.nhi",
-        "hotline": "Hotline315",
-        "address": "112 Vũ Phạm Hàm, P. Yên Hoà, Q. Cầu Giấy, TP. Hà Nội",
-        "district": "Q. Cầu Giấy",
-        "city": "Hà Nội",
-        "workingTime": "Time.comingsoon",
-        "linkMap": "https://maps.app.goo.gl/ytv43ggWWcW17pJt5",
-        "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d931.087668149621!2d105.79845826963576!3d21.018650250662056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDAxJzA3LjEiTiAxMDXCsDQ3JzU2LjgiRQ!5e0!3m2!1svi!2s!4v1711704833793!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
-        "latitude": "21.018638625669976",
-        "longitude": "105.79911155259457",
-        "tiemChung": "Coming soon"
-    },
-    {
         "title": "Số 1212 Lê Đức Thọ",
         "type": "LAO",
         "img": "SrcLogo.lao",
