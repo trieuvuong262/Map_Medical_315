@@ -104,7 +104,7 @@ const initMap = async () => {// toa do hcm 10.7996365, 106.6717373
         chiNhanh.name = Name.san;
         break;
       case "LAO":
-        chiNhanh.img = "https://w.ladicdn.com/s450x400/5aa6273ea81f66ca2eacc40b/1t-20230612033443-n9-wa.png";
+        chiNhanh.img = "https://w.ladicdn.com/5aa6273ea81f66ca2eacc40b/logo-tmtd-315-1-1-20240529060955-anfj2.png";
         chiNhanh.name = Name.lao;
         break;
       case "MAT":
