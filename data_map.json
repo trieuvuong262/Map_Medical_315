@@ -2398,5 +2398,21 @@
         "latitude": "9.291791537154278",
         "longitude": "105.71470285455435",
         "tiemChung": "Coming soon"
+    },    {
+        "title": "Số 315 Luỹ Bán Bích",
+        "type": "SAN",
+        "img": "SrcLogo.san",
+        "name": "Name.san",
+        "hotline": "Hotline315",
+        "address": "315 Luỹ Bán Bích, phường Hiệp Tân, quận Tân Phú, Thành phố Hồ Chí Minh",
+        "district": "Q. Tân Phú",
+        "city": "TP.HCM",
+        "workingTime": "Time.comingsoon",
+        "linkMap": "https://maps.app.goo.gl/877i6gYWzrrhwWae9",
+        "srcIframe": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5083152464877!2d106.6318129!3d10.772325799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ea035b44e7d%3A0xadfbbf73f043cee2!2zMzE1IMSQLiBMxal5IELDoW4gQsOtY2gsIEhvw6AgVGhhbmgsIFTDom4gUGjDuiwgSOG7kyBDaMOtIE1pbmggMDA4NDg0!5e0!3m2!1svi!2s!4v1719037712507!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>
+",
+        "latitude": "10.772296491466408",
+        "longitude": "106.6319493027954",
+        "tiemChung": ""
     }
 ]
